@@ -1,0 +1,133 @@
+/*
+	Fast CSS made by Martin Rodalgaard
+*/
+
+* { 
+	padding: 0; 
+	margin: 0; 
+}
+
+body {
+	background-color: #cacaca;
+}
+
+p { 
+	color: #000; 
+	font-family: Helvetica;
+	font-size: 16px; 
+	line-height: 24px;
+	margin-bottom: 22px; 
+	-webkit-font-smoothing: antialiased; 
+}
+		
+a { 
+	color: #000; 
+	font-weight: bold;
+	text-decoration: none; 
+}
+		
+a:hover { 
+	color: #c9282d;
+}
+		
+#about { 
+	width: 380px; 
+	margin: -35px 30px 0 auto !important; 
+}
+
+.hiddenbutton {
+    left:42%;
+    top:50%;
+    position: fixed;
+    -webkit-border-radius: 120px;
+    -moz-border-radius: 120px;
+    border-radius: 120px;
+    width: 120px;
+    height: 120px;
+    float:left;
+}
+
+.hiddenbutton:hover {
+	cursor: pointer;
+}
+
+#mail {
+	padding: 20px 0 50px 0;
+	margin: 0 auto 0 50px;
+}
+
+/* button styles */
+
+a.mail {
+	display: block;
+	background-color: transparent;
+	background-image: url(../images/mail_icon.png);
+	background-repeat: no-repeat;
+	background-position: 0 -256px;
+	width: 128px;
+	height: 128px;
+	float:left;
+}
+
+a.mail:hover {
+	background-position: 0 0;
+}
+
+a.button {
+	display: block;
+	background-color: transparent;
+	background-image: url(../images/social_icons.png);
+	background-repeat: no-repeat;
+	width: 47px;
+	height: 47px;
+	margin: 0 auto 0 12px;
+	float:left;
+}
+
+#facebook {
+	background-position: 0 -94px;
+}
+
+#facebook:hover {
+	background-position: 0 0;
+}
+
+#linkedin {
+	background-position: -47px -94px;
+}
+
+#linkedin:hover {
+	background-position: -47px 0;
+}
+
+#flickr {
+	background-position: -94px -94px;
+}
+
+#flickr:hover {
+	background-position: -94px 0;
+}
+
+#github {
+	background-position: -141px -94px;
+}
+
+#github:hover {
+	background-position: -141px 0;
+}
+
+#twitter {
+	background-position: -188px -94px;
+}
+
+#twitter:hover {
+	background-position: -188px 0;
+}
+
+#filmfilmfilm {
+	background-position: -235px -94px;
+}
+
+#filmfilmfilm:hover {
+	background-position: -235px 0;
+}

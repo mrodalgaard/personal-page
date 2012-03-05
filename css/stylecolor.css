@@ -1,0 +1,37 @@
+/*
+	Fast CSS made by Martin Rodalgaard
+	Complement to style.css, adds color
+*/
+
+@import url("style.css");
+
+/* button styles */
+
+a.mail {
+	background-position: 0 -128px;
+}
+
+#facebook {
+	background-position: 0 -47px;
+}
+
+#linkedin {
+	background-position: -47px -47px;
+}
+
+#flickr {
+	background-position: -94px -47px;
+}
+
+#github {
+	background-position: -141px -47px;
+}
+
+#twitter {
+	background-position: -188px -47px;
+}
+
+
+#filmfilmfilm {
+	background-position: -235px -47px;
+}
