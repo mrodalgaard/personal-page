@@ -16,7 +16,7 @@
 	<?php if($set_array['hiddenButton']) echo '<div class="hiddenbutton" onclick="toogleCSS()"></div>'; ?>
 
 	<div id="mail">
-		<a href="mailto:<?php echo $info_array['mail'] ?>" class="mail"></a>
+		<a href="mailto:<?php echo $info_array['mail']; ?>" class="mail"></a>
 	</div>
 	
 	<div id="about">
@@ -30,8 +30,6 @@
 	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 	<script type="text/javascript"> $.backstretch("<?php if($set_array['blacknwhite'] == TRUE) echo 'images/background.jpg'; else echo 'images/background2.jpg'; ?>", {speed: 4500});</script>
-
-	
 
 </body>	
 </html>

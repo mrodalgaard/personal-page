@@ -24,7 +24,7 @@ The gear he uses almost every day includes his MacBook Pro 2010, iPhone 4S, Cano
 $social_array = array(
 	
 // Insert links and the order of the social websites you want on your personal page
-// Leave the unwanted blank or delete them from the array
+// Leave the unwanted blank or remove them from the array
 'facebook' 		=> 'http://facebook.com/mrodalgaard',
 'linkedin' 		=> 'http://dk.linkedin.com/pub/martin-rodalgaard/41/336/587',
 'flickr' 		=> 'http://flickr.com/mrodalgaard',
@@ -36,9 +36,9 @@ $social_array = array(
 /* SETTINGS */
 $set_array = array(
 
-'blacknwhite'	=> TRUE,	// Should the site be in black and white or colors
-'mobileVersion' => TRUE,	// Should you support a mobile version of the site
-'hiddenButton'  => TRUE		// Should the site have a hidden button in the middle to switch from bw to color
+'blacknwhite'	=> TRUE,	// Should the site be in black and white or colors?
+'mobileVersion' => TRUE,	// Should you support a mobile version of the site?
+'hiddenButton'  => TRUE		// Should the site have a hidden button in the middle to switch from bw to color?
 
 );
 ?>

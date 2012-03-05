@@ -1,16 +1,16 @@
 <hr><p align=center><b> INFO </b></p>
 
-Project: ..... Personal-Page				<br>
-Version: .... 0.2							<br>
-Created: ... 03-03-2012						<br>
-Author:	...... Martin Rodalgaard			<br>
-Website: ... www.martin.rodalgaard.dk		<br>
+<b>Project:</b> Personal-Page<br>
+<b>Version:</b> 0.2<br>
+<b>Created:</b> 03-03-2012<br>
+<b>Author:</b>  Martin Rodalgaard<br>
+<b>Website:</b>	www.martin.rodalgaard.dk<br>
 
 <hr> <p align=center><b> INSTRUCTIONS </b></p>
 
 Upload everything to a server that supports php5.<br>
 Replace background.jpg and background2.jpg in the images folder.<br>
-Edit CONFIG.php with your information and settings<br>
+Edit CONFIG.php with your information and settings.<br>
 
 <hr> <p align=center><b> BONUS </b></p>
 
@@ -25,9 +25,9 @@ Fork it, branch it, clone it, zip it, text it, git it...<br>
 <hr> <p align=center><b> TO-DO </b></p>
 
 <ul>
-	<li>~~Working site and git repo~~</li>
-	<li>~~Only necessary to edit CONFIG.php and images~~</li>
-	<li>~~Instructions~~</li>
+	<li>DONE! Working site and git repo</li>
+	<li>DONE! Only necessary to edit CONFIG.php and images</li>
+	<li>DONE! Instructions</li>
 	
 	<li>Mobile version</li>
 	<li>More logos and images</li>

@@ -1,6 +1,6 @@
 /*
 	Fast CSS made by Martin Rodalgaard
-	Complement to style.css, adds color
+	Extends style.css, adds color
 */
 
 @import url("style.css");
@@ -30,7 +30,6 @@ a.mail {
 #twitter {
 	background-position: -188px -47px;
 }
-
 
 #filmfilmfilm {
 	background-position: -235px -47px;
