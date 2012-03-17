@@ -1,0 +1,113 @@
+/*
+	Fast CSS made by Martin Rodalgaard
+	For mobile devices
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #FFFFFF;
+}
+
+p { 
+	color: #000;
+	font-family: Helvetica;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 4px 4px 10px 4px;
+	-webkit-font-smoothing: antialiased;
+}
+
+a { 
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+table {
+	width:100%;
+	font-size:25px;
+}
+
+#cell {
+	border:solid 1px #000000;
+	background-color:#cacaca;
+	
+	/*-moz-box-shadow: 1px 1px 1px #000000;
+	-webkit-box-shadow: 1px 1px 1px #000000;
+	box-shadow: 1px 1px 1px #000000;
+	*/
+	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 2px 2px 2px 2px;
+}
+
+#cell-about {
+	border:solid 1px #000000;
+	background-color:#cacaca;
+	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 2px 2px 2px 2px;
+	display: none;
+}
+
+#cell:active {
+	background-color:#0274ee;
+}
+
+cellaccessory {
+	font-size:25px;
+	font-weight:bold;
+    margin: 0 4px 0 0;
+}
+
+/* button styles */
+
+icon {
+	display: block;
+	background-color: transparent;
+	background-image: url(../images/social_icons.png);
+	background-repeat: no-repeat;
+	width: 47px;
+	height: 47px;
+	margin: 1px 1px 1px 1px;
+}
+
+#facebook {
+	background-position: -47px 0;
+}
+
+#linkedin {
+	background-position: -94px 0;
+}
+
+#flickr {
+	background-position: -141px 0;
+}
+
+#github {
+	background-position: -188px 0;
+}
+
+#twitter {
+	background-position: -235px 0;
+}
+
+#filmfilmfilm {
+	background-position: -282px 0;
+}
+
+#mail {
+	background-position: -329px 0;
+}
+
+#about {
+	background-position: -376px 0;
+}

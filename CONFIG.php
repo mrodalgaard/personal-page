@@ -37,7 +37,7 @@ $social_array = array(
 $set_array = array(
 
 'blacknwhite'	=> TRUE,	// Should the site be in black and white or colors?
-'mobileVersion' => TRUE,	// Should you support a mobile version of the site?
+'mobileversion' => TRUE,	// Should you support a mobile version of the site?
 'hiddenButton'  => TRUE		// Should the site have a hidden button in the middle to switch from bw to color?
 
 );

@@ -12,25 +12,25 @@ a.mail {
 }
 
 #facebook {
-	background-position: 0 -47px;
-}
-
-#linkedin {
 	background-position: -47px -47px;
 }
 
-#flickr {
+#linkedin {
 	background-position: -94px -47px;
 }
 
-#github {
+#flickr {
 	background-position: -141px -47px;
 }
 
-#twitter {
+#github {
 	background-position: -188px -47px;
 }
 
-#filmfilmfilm {
+#twitter {
 	background-position: -235px -47px;
+}
+
+#filmfilmfilm {
+	background-position: -282px -47px;
 }
