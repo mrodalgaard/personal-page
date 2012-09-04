@@ -14,28 +14,11 @@ function toogleCSS() {
 	}
 }
 
-function detectPhone()
-{
-	var uagent = "";
-	if (navigator && navigator.userAgent)
-	    uagent = navigator.userAgent.toLowerCase();
-	
-	if (uagent.search("iphone") > -1)
-    {
-       return true;
-    }
-    else
-       return false;
-}
-
-function redirectPhone()
-{
-	if (detectPhone()) {
-		window.location = 'mobile.php';
-	}
-}
-
 function showAbout() {
     document.getElementById('cell-about').style.display = 'block';
     document.getElementById('cell').style.display = 'none';
+}
+
+function fullsite_click() {
+	window.location = 'index.php?fullsite';
 }

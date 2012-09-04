@@ -1,7 +1,7 @@
 <hr><p align=center><b> INFO </b></p>
 
 <b>Project:</b> Personal-Page<br>
-<b>Version:</b> 0.4.0<br>
+<b>Version:</b> 0.4.1<br>
 <b>Created:</b> 03-03-2012<br>
 <b>Licence:</b> GNU General Public License<br>
 <b>Author:</b>  Martin Rodalgaard<br>
@@ -15,9 +15,8 @@ Edit CONFIG.php with your information and settings.<br>
 
 <hr> <p align=center><b> BONUS </b></p>
 
-Tested on local apache2.2.22 with php5.3.10<br>
-and on a web10 server with an earlier php5 version.<br>
-See it in action: www.martin.rodalgaard.dk<br>
+Tested on local apache2.2.22 with php5.3.10.<br>
+Chrome, Safari, IE and Firefox.<br>
 <br>
 Feel free to use for whatever your heart desires.<br>
 Please point out issues, improvements and redundant statements.<br>

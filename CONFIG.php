@@ -12,10 +12,10 @@ $info_array = array(
 // Include links, lists, breaks and other html tags
 // WARNING: Avoid using "'"
 'description' => '
-<a href="http://facebook.com/mrodalgaard">Martin Rodalgaard</a> is a 25 year old engineer living in Aarhus, Denmark, with his wonderful girlfriend <a href="http://facebook.com/profile.php?id=676176876">Rikke</a>.<br><br>
+<a href="http://facebook.com/mrodalgaard">Martin Rodalgaard</a> is a 26 year old engineer living in Aarhus, Denmark, with his wonderful girlfriend <a href="http://facebook.com/profile.php?id=676176876">Rikke</a>.<br><br>
 He has a <a href="http://dk.linkedin.com/pub/martin-rodalgaard/41/336/587">Bachelor of Engineering</a> degree in Electrical, Electronic and Computer Engineering, specialized in Embedded Systems. He currently studies at IHA to get a <a href="http://http://dk.linkedin.com/pub/martin-rodalgaard/41/336/587">Business Engineering</a> degree on top of that.<br><br>
 He plays soccer in a <a href="http://fcroyal.dk/">local club</a>, traveled the globe while loving it, and have always had an odd passion for programming everything from embedded C to object-oriented Java.<br><br>
-The gear he uses almost every day includes his MacBook Pro 2010, iPhone 4S, Canon EOS 550D, Giant 1992 road racer and Line El Invader skies. The blogs he enjoys reading includes <a href="http://lifehacker.com">lifehacker</a>, <a href="http://engadget.com">engadget</a>, <a href="http://macworld.com">macworld</a> and <a href="http://techcrunch.com">techcrunch</a><br><br>
+The gear he uses almost every day includes his MacBook Pro 2012, iPhone 4S, Canon EOS 550D, Giant \'92 road racer and Line skies. The blogs he enjoys reading includes <a href="http://lifehacker.com">lifehacker</a>, <a href="http://engadget.com">engadget</a> and <a href="http://macworld.com">macworld</a><br><br>
 - Catch you on the flip side...
 '
 );
@@ -37,8 +37,15 @@ $social_array = array(
 $set_array = array(
 
 'blacknwhite'	=> TRUE,	// Should the site be in black and white or colors?
-'mobileversion' => TRUE,	// Should you support a mobile version of the site?
+'mobile' 		=> TRUE,	// Should you support a mobile version of the site?
 'hiddenButton'  => TRUE		// Should the site have a hidden button in the middle to switch from bw to color?
+);
 
+/* GOOGLE ANALYTICS */
+$g_array = array(
+
+'analytics'		=> FALSE,				// Do you want Google Analytics support
+'account'		=> 'UA-31135766-1',		// Account for Google Analytics
+'domain'		=> 'rodalgaard.dk'		// Domain for Google Analytics
 );
 ?>

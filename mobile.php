@@ -16,9 +16,9 @@
 </head>
 
 <body>
-	
+	<?php if ($g_array['analytics'] == TRUE) include_once("php/analyticstracking.php"); ?>
+
 	<div>
-	
 		<div id="cell-about">
 			<p><?php echo $info_array['description'] ?></p>
 		</div>
@@ -34,7 +34,8 @@
 		</div>
 
 		<?php echo $social_links; ?>
-
+		</br>
+		<button class="fullsite_button" onclick="fullsite_click(); return false;">full site</button>	
 	</div>
 
 </body>	
