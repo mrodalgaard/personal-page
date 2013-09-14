@@ -1,0 +1,28 @@
+
+a { 
+	color: #c9282d;
+}
+
+.quote p {
+  color: #c9282d;
+}
+
+a.mail {
+	background-position: 0 -128px;
+}
+
+#facebook {
+	background-position: -60px -60px;
+}
+
+#linkedin {
+	background-position: -120px -60px;
+}
+
+#twitter {
+	background-position: -180px -60px;
+}
+
+#github {
+	background-position: -240px -60px;
+}

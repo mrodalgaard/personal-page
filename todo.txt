@@ -1,0 +1,8 @@
+<h1> To Do </h1>
+
+- New grayscale favicon
+- Mobile app with big logos
+- Programming skills graph (evolving)
+- Map or graph over where you've been (% of the world?)
+- IMDB 250 progress (easy to update)
+- Custom color selection
