@@ -13,7 +13,6 @@ module.exports = function(grunt) {
         dest: 'dist/helper.min.js'
       }
     },
-    
     cssmin: {
       compress: {
         files: {
@@ -21,34 +20,29 @@ module.exports = function(grunt) {
         }
       }
     },
-    
     jshint: {
       options: {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
       files: [ "js/*.js" ]
     },
-    
     express: {
       all: {
         options: {
           port: 9000,
           hostname: "0.0.0.0",
-          bases: ['.'],
-          livereload: true
+          bases: ['app']
         }
       }
     },
-    
     watch: {
       all: {
-        files: "**",
+        files: "app/**",
         options: {
           livereload: true
         }
       }
     },
-    
     open: {
       all: {
         path: 'http://localhost:<%= express.all.options.port%>',
