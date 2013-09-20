@@ -1,7 +1,19 @@
 /*!
  * @file
- * 
+ * Martin - www.rodalgaard.dk
  */
+
+var SKILLS = [
+  {name: "C",           level: "85"},
+  {name: "C++",         level: "65"},
+  {name: "C#",          level: "70"},
+  {name: "Python",      level: "70"},
+  {name: "HTML / CSS",  level: "90"},
+  {name: "JavaScript",  level: "90"},
+  {name: "Android",     level: "70"},
+  {name: "iOS",         level: "75"},
+  {name: "Photoshop",   level: "65"}
+];
 
 (function($) {
   $.fn.countAge = function(options) {
@@ -67,6 +79,8 @@ function addQuote() {
 }
 
 function slideInfo() {
+  $(".info").hide();
+  $(".icons .social-btn").hide();
   $(".info").slideDown({
     duration: 1500,
     easing: "swing",
@@ -76,14 +90,59 @@ function slideInfo() {
   });
 }
 
+function toggleColor() {
+  var ref = $("link[href='css/style-color.css']");
+  if (ref[0]) {
+    $("link[href='css/style-color.css']").remove();
+  }
+  else {
+    $("head").append("<link media='screen' href='css/style-color.css' rel='stylesheet'>");
+  }
+}
+
+function animateSkills(div, reset) {
+  div.find(".progress div").each(function() {
+    $(this).css("width", function() {
+      if (reset) {
+        return "0%";
+      }
+      else {
+        return $(this).data("level") + "%";
+      }
+    });
+  });
+}
+
+function toggleSkills() {
+  var skillsDiv = $(".skills");
+  
+  if ($(".skills:empty").length || !skillsDiv.is(":visible")) {
+    if ($(".skills:empty").length) {
+      var skillsStr = "";
+      $.each(SKILLS, function() {
+        skillsStr += '<p class="skill">'+this.name+'</p><div class="progress"><div class="progress-bar" role="progressbar" data-level="'+this.level+'"></div></div>';
+      });
+      skillsDiv.html(skillsStr);
+    }
+    
+    skillsDiv.show();
+    $('html, body').animate({
+      scrollTop: skillsDiv.offset().top
+    }, 1000);
+    animateSkills(skillsDiv, false);
+  }
+  else {
+    skillsDiv.hide();
+    animateSkills(skillsDiv, true);
+  }
+}
+
 $(document).ready(function(){
   addQuote();
   
   var ageInterval = 0;
   if ($(window).width() > 767) {
     $.backstretch("img/background.jpg", {speed: 4000});
-    $(".info").hide();
-    $(".icons .social-btn").hide();
     slideInfo();
     ageInterval = 100;
   }
@@ -97,26 +156,9 @@ $(document).ready(function(){
     addQuote();
   });
   $(this).on("click", "#program-a", function() {
-  
+    toggleSkills();
   });
   $(this).on("click", "#color-a", function() {
-    var ref = $("link[href='css/style-color.css']");
-    if (ref[0]) {
-      $("link[href='css/style-color.css']").remove();
-    }
-    else {
-      $("head").append("<link media='screen' href='css/style-color.css' rel='stylesheet'>");
-    }
-  });
-  $(this).on("click", "#color-btn", function() {
-    var that = $("#color-btn");
-    if (that.hasClass("btn-info")) {
-      $("#color-btn").removeClass("btn-info");
-      $("link[href='css/style-color.css']").remove();
-    }
-    else {
-      $("#color-btn").addClass("btn-info");
-      $("head").append("<link media='screen' href='css/style-color.css' rel='stylesheet'>");
-    }
+    toggleColor();
   });
 });

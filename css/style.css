@@ -13,20 +13,46 @@ body {
   left: 10px;
   bottom: -3px;
 }
-		
+
+.progress {
+  background: #f8f8f8 url(../img/note.jpg);
+}
+
+.progress-bar {
+  background-color: #999;
+}
+
+.progress-bar:hover {
+  background-color: #428BCA;
+}
+
+.skill {
+  margin-right: 4px;
+  float: left;
+  position: absolute;
+}
+
+p.skill {
+  color: #f8f8f8;
+  margin-left: 3px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 3px;
+}
+
 a { 
-	color: #000;
-	font-weight: bold;
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
 }
-		
+    
 a:hover { 
-	color: #c9282d;
+  color: #c9282d;
 }
 
 .info {
   background: #f8f8f8 url(../img/note.jpg);
-  margin-bottom: 50px;
 }
 
 .icons {
@@ -54,75 +80,64 @@ a:hover {
   height: 9px;
 }
 
-@media (min-width: 768px) {
-  .info {
-    width: 330px;
-    float: right;
-  }
-}
-
 @media (max-width: 480px) {
   #twitter, #github {
     display: none;
-  }
-  
-  .mail {
-    margin-left: -12px;
   }
 }
 
 /* Button styles */
 
 a.mail {
-	background-color: transparent;
-	background: url(../img/mail_icon.png) no-repeat;
-	background-position: 0 -256px;
-	width: 128px;
-	height: 128px;
-	float: left;
+  background-color: transparent;
+  background: url(../img/mail_icon.png) no-repeat;
+  background-position: 0 -256px;
+  width: 128px;
+  height: 128px;
+  float: left;
 }
 
 a.mail:hover {
-	background-position: 0 0;
+  background-position: 0 0;
 }
 
 a.social-btn {
-	background-color: transparent;
-	background: url(../img/social_icons.png) no-repeat;
-	width: 60px;
-	height: 60px;
+  background-color: transparent;
+  background: url(../img/social_icons.png) no-repeat;
+  width: 60px;
+  height: 60px;
   margin-right: 2px;
-	float: right;
+  float: right;
 }
 
 #facebook {
-	background-position: -60px 0;
+  background-position: -60px 0;
 }
 
 #facebook:hover {
-	background-position: -60px -120px;
+  background-position: -60px -120px;
 }
 
 #linkedin {
-	background-position: -120px 0;
+  background-position: -120px 0;
 }
 
 #linkedin:hover {
-	background-position: -120px -120px;
+  background-position: -120px -120px;
 }
 
 #twitter {
-	background-position: -180px 0;
+  background-position: -180px 0;
 }
 
 #twitter:hover {
-	background-position: -180px -120px;
+  background-position: -180px -120px;
 }
 
 #github {
-	background-position: -240px 0;
+  background-position: -240px 0;
 }
 
 #github:hover {
-	background-position: -240px -120px;
+  background-position: -240px -120px;
 }
