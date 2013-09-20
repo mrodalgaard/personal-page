@@ -9,14 +9,14 @@ module.exports = function(grunt) {
         report: "min"
       },
       build: {
-        src: ['js/*.js'],
-        dest: 'dist/helper.min.js'
+        src: ['app/js/*.js'],
+        dest: 'app/dist/helper.min.js'
       }
     },
     cssmin: {
       compress: {
         files: {
-          'css/style.min.css': [ 'css/style.css' ]
+          'app/css/style.min.css': [ 'app/css/style.css' ]
         }
       }
     },
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
-      files: [ "js/*.js" ]
+      files: [ "app/js/*.js" ]
     },
     express: {
       all: {
