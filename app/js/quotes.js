@@ -3,7 +3,7 @@
  * 
  */
 
-var quotes = [
+var QUOTES = [
   {
     author: "Jack from The Shining",
     quote:  "All work and no play makes Jack a dull boy."

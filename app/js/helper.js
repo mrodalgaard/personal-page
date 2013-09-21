@@ -3,6 +3,8 @@
  * Martin - www.rodalgaard.dk
  */
 
+/*global QUOTES */
+
 var SKILLS = [
   {name: "C",           level: "85"},
   {name: "C++",         level: "65"},
@@ -72,9 +74,9 @@ var SKILLS = [
 })(jQuery);
 
 function addQuote() {
-  var randIndex = _.random(quotes.length - 1);
-  var quote = '<i>"' + quotes[randIndex].quote + '"</i>' +
-              '<p>- ' + quotes[randIndex].author + '</p>';
+  var randIndex = _.random(QUOTES.length - 1);
+  var quote = '<i>"' + QUOTES[randIndex].quote + '"</i>' +
+              '<p>- ' + QUOTES[randIndex].author + '</p>';
   $(".quote").html(quote);
 }
 
