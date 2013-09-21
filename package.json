@@ -1,6 +1,21 @@
 {
-  "name": "Martin-Rodalgaard",
+  "name": "personal-page",
+  "description": "Simple personal page for Martin",
   "version": "0.1.0",
+  "homepage": "https://github.com/mrodalgaard/personal-page",
+  "author": {
+    "name": "Martin Rodalgaard",
+    "email": "mrodalgaard@gmail.com",
+    "url": "http://martin.rodalgaard.dk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrodalgaard/personal-page.git"
+  },
+  "main": "Gruntfile.js",
+  "scripts": {
+    "default": "grunt"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.3",
@@ -8,6 +23,8 @@
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-cssmin": "~0.6.1",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
     "grunt-processhtml": "~0.1.0",
     "grunt-express": "~1.2.0",
     "grunt-open": "~0.2.2",
