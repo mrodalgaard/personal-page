@@ -4,19 +4,30 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'app/',
+        src: ['**', "!js/**"],
+        dest: 'dest/'
+      }
+    },
+    clean: {
+      main: ["dest"]
+    },
     uglify: {
       options: {
         report: "min"
       },
       build: {
         src: ['app/js/*.js'],
-        dest: 'app/dist/helper.min.js'
+        dest: 'dest/libs/helper.min.js'
       }
     },
     cssmin: {
       compress: {
         files: {
-          'app/css/style.min.css': [ 'app/css/style.css' ]
+          'dest/css/style.css': [ 'app/css/style.css' ]
         }
       }
     },
@@ -25,6 +36,13 @@ module.exports = function(grunt) {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
       files: [ "app/js/*.js" ]
+    },
+    processhtml: {
+      normal: {
+        files: {
+          'dest/index.html': ['app/index.html']
+        }
+      }
     },
     express: {
       all: {
@@ -52,6 +70,6 @@ module.exports = function(grunt) {
   });
   
   grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('debug', ['jshint', 'uglify', 'cssmin']);
+  grunt.registerTask('deploy', ['jshint', 'clean', 'copy', 'uglify', 'cssmin', 'processhtml']);
   grunt.registerTask('server', ['express', 'open', 'watch']);
 };

@@ -2,5 +2,6 @@
 node_modules
 npm-debug.log
 tmp
+dest
 .idea
 todo.txt
