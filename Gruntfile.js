@@ -17,6 +17,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
+        banner: '/*! <%= pkg.author.name %>\'s <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         report: "min"
       },
       build: {
@@ -27,7 +28,8 @@ module.exports = function(grunt) {
     cssmin: {
       compress: {
         files: {
-          'dest/css/style.css': [ 'app/css/style.css' ]
+          'dest/css/style.css': ['app/css/style.css'],
+          'dest/css/style-color.css': ['app/css/style-color.css']
         }
       }
     },
