@@ -9,11 +9,11 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'app/',
         src: ['**', "!js/**"],
-        dest: 'dest/'
+        dest: 'dist/'
       }
     },
     clean: {
-      main: ["dest"]
+      main: ["dist"]
     },
     uglify: {
       options: {
@@ -22,14 +22,14 @@ module.exports = function(grunt) {
       },
       build: {
         src: ['app/js/*.js'],
-        dest: 'dest/libs/helper.min.js'
+        dest: 'dist/libs/helper.min.js'
       }
     },
     cssmin: {
       compress: {
         files: {
-          'dest/css/style.css': ['app/css/style.css'],
-          'dest/css/style-color.css': ['app/css/style-color.css']
+          'dist/css/style.css': ['app/css/style.css'],
+          'dist/css/style-color.css': ['app/css/style-color.css']
         }
       }
     },
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     processhtml: {
       normal: {
         files: {
-          'dest/index.html': ['app/index.html']
+          'dist/index.html': ['app/index.html']
         }
       }
     },
