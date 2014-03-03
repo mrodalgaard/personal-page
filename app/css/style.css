@@ -5,6 +5,7 @@ body {
   background-color: #ccc;
   background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,0.2) 50%);
   background-size: 50px 50px;
+  color: #333;
 }
 
 @media screen and (min-width: 500px) {
@@ -17,7 +18,7 @@ body {
 /* Links */
 
 a { 
-  color: #000;
+  color: #333;
   font-weight: bold;
   cursor: pointer;
 }
@@ -30,33 +31,32 @@ a:hover {
 
 .letter {
   padding: 20px;
-  border-radius: 2px;
-  background: #f8f8f8 url(../img/note.jpg);
+  border-radius: 1px;
+  background: url(../img/note.jpg);
   margin-bottom: 20px;
 }
 
 /* Envelope */
 
 .envelope-up {
-	border-bottom: 60px solid #666;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	width: 99%;
-  margin: 20px auto 0;
+  width: 100%;
+  margin-top: 20px;
+  border-bottom: 60px solid #333;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
 }
 
 .envelope {
-  padding: 5px;
-  height: 200px;
   position: relative;
+  height: 200px;
+  padding: 5px;
   font-weight: bold;
   font-size: 22px;
 }
 
-.envelope-content {
+.envelope p {
   width: 50%;
-  height: 70px;
-  overflow: auto;
+  height: 60px;
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
@@ -66,7 +66,7 @@ a:hover {
 /* Quote */
 
 .quote {
-  border-left: 5px solid #ccc;
+  border-left: 5px solid #333;
   padding-left: 10px;
 }
 
@@ -82,7 +82,6 @@ a:hover {
 /* Mail */
 
 a.mail {
-  background-color: transparent;
   background: url(../img/mail.png) no-repeat;
   background-position: 0 -96px;
   width: 96px;
