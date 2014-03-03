@@ -1,5 +1,4 @@
-
-/* General layout */
+/* General */
 
 body {
   -webkit-tap-highlight-color: rgba(201,40,45,0.6);
@@ -8,38 +7,14 @@ body {
   background-size: 50px 50px;
 }
 
-.footer {
-  position: fixed;
-  left: 10px;
-  bottom: -3px;
+@media screen and (min-width: 500px) {
+  .content {
+    float: right;
+    width: 400px;
+  }
 }
 
-.progress {
-  background: #f8f8f8 url(../img/note.jpg);
-}
-
-.progress-bar {
-  background-color: #999;
-}
-
-.progress-bar:hover {
-  background-color: #428BCA;
-}
-
-.skill {
-  margin-right: 4px;
-  float: left;
-  position: absolute;
-}
-
-p.skill {
-  color: #f8f8f8;
-  margin-left: 3px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 18px;
-  letter-spacing: 3px;
-}
+/* Links */
 
 a { 
   color: #000;
@@ -51,15 +26,44 @@ a:hover {
   color: #c9282d;
 }
 
-.info {
+/* Letter */
+
+.letter {
+  padding: 20px;
+  border-radius: 2px;
   background: #f8f8f8 url(../img/note.jpg);
+  margin-bottom: 20px;
 }
 
-.icons {
-  height: 65px;
-  width: 100%;
-  margin-top: -29px;
+/* Envelope */
+
+.envelope-up {
+	border-bottom: 60px solid #666;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	width: 99%;
+  margin: 20px auto 0;
 }
+
+.envelope {
+  padding: 5px;
+  height: 200px;
+  position: relative;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.envelope-content {
+  width: 50%;
+  height: 70px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  font-size: 16px;
+}
+
+/* Quote */
 
 .quote {
   border-left: 5px solid #ccc;
@@ -75,69 +79,17 @@ a:hover {
   cursor: pointer;
 }
 
-.col-mail {
-  z-index: 1;
-  height: 9px;
-}
-
-@media (max-width: 480px) {
-  #twitter, #github {
-    display: none;
-  }
-}
-
-/* Button styles */
+/* Mail */
 
 a.mail {
   background-color: transparent;
-  background: url(../img/mail_icon.png) no-repeat;
-  background-position: 0 -256px;
-  width: 128px;
-  height: 128px;
-  float: left;
+  background: url(../img/mail.png) no-repeat;
+  background-position: 0 -96px;
+  width: 96px;
+  height: 96px;
+  float: right;
 }
 
 a.mail:hover {
   background-position: 0 0;
-}
-
-a.social-btn {
-  background-color: transparent;
-  background: url(../img/social_icons.png) no-repeat;
-  width: 60px;
-  height: 60px;
-  margin-right: 2px;
-  float: right;
-}
-
-#facebook {
-  background-position: -60px 0;
-}
-
-#facebook:hover {
-  background-position: -60px -120px;
-}
-
-#linkedin {
-  background-position: -120px 0;
-}
-
-#linkedin:hover {
-  background-position: -120px -120px;
-}
-
-#twitter {
-  background-position: -180px 0;
-}
-
-#twitter:hover {
-  background-position: -180px -120px;
-}
-
-#github {
-  background-position: -240px 0;
-}
-
-#github:hover {
-  background-position: -240px -120px;
 }

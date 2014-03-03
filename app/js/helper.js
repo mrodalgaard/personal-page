@@ -3,19 +3,7 @@
  * Martin - www.rodalgaard.dk
  */
 
-/*global QUOTES */
-
-var SKILLS = [
-  {name: "C",           level: "85"},
-  {name: "C++",         level: "65"},
-  {name: "C#",          level: "70"},
-  {name: "Python",      level: "70"},
-  {name: "HTML / CSS",  level: "90"},
-  {name: "JavaScript",  level: "90"},
-  {name: "Android",     level: "70"},
-  {name: "iOS",         level: "75"},
-  {name: "Photoshop",   level: "65"}
-];
+/* global QUOTES */
 
 (function($) {
   $.fn.countAge = function(options) {
@@ -80,18 +68,6 @@ function addQuote() {
   $(".quote").html(quote);
 }
 
-function slideInfo() {
-  $(".info").hide();
-  $(".icons .social-btn").hide();
-  $(".info").slideDown({
-    duration: 1500,
-    easing: "swing",
-    complete: function() {
-      $(".icons .social-btn").fadeIn();
-    }
-  });
-}
-
 function toggleColor() {
   var ref = $("link[href='css/style-color.css']");
   if (ref[0]) {
@@ -102,50 +78,17 @@ function toggleColor() {
   }
 }
 
-function animateSkills(div, reset) {
-  div.find(".progress div").each(function() {
-    $(this).css("width", function() {
-      if (reset) {
-        return "0%";
-      }
-      else {
-        return $(this).data("level") + "%";
-      }
-    });
-  });
-}
-
-function toggleSkills() {
-  var skillsDiv = $(".skills");
-  
-  if ($(".skills:empty").length || !skillsDiv.is(":visible")) {
-    if ($(".skills:empty").length) {
-      var skillsStr = "";
-      $.each(SKILLS, function() {
-        skillsStr += '<p class="skill">'+this.name+'</p><div class="progress"><div class="progress-bar" role="progressbar" data-level="'+this.level+'"></div></div>';
-      });
-      skillsDiv.html(skillsStr);
-    }
-    
-    skillsDiv.show();
-    $('html, body').animate({
-      scrollTop: skillsDiv.offset().top
-    }, 1000);
-    animateSkills(skillsDiv, false);
-  }
-  else {
-    skillsDiv.hide();
-    animateSkills(skillsDiv, true);
-  }
+function toggleReader() {
+  // TODO: Change background to mirror
+  console.log("Reader!");
 }
 
 $(document).ready(function(){
   addQuote();
   
   var ageInterval = 0;
-  if ($(window).width() > 767) {
+  if ($(window).width() > 500) {
     $.backstretch("img/background.jpg", {speed: 4000});
-    slideInfo();
     ageInterval = 100;
   }
   
@@ -157,8 +100,8 @@ $(document).ready(function(){
   $(this).on("click", ".quote", function() {
     addQuote();
   });
-  $(this).on("click", "#program-a", function() {
-    toggleSkills();
+  $(this).on("click", "#reader-a", function() {
+    toggleReader();
   });
   $(this).on("click", "#color-a", function() {
     toggleColor();

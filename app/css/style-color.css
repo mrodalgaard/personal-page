@@ -7,26 +7,10 @@ a {
   color: #c9282d;
 }
 
-.progress-bar {
-  background-color: #428BCA;
-}
-
 a.mail {
-  background-position: 0 -128px;
+  background-position: 0 0;
 }
 
-#facebook {
-  background-position: -60px -60px;
-}
-
-#linkedin {
-  background-position: -120px -60px;
-}
-
-#twitter {
-  background-position: -180px -60px;
-}
-
-#github {
-  background-position: -240px -60px;
+.envelope-up {
+	border-bottom: 60px solid #c9282d;
 }
