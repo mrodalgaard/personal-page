@@ -7,7 +7,8 @@ define([
   "jquery",
   "backstretch",
   "age",
-  "quotes"
+  "quotes",
+  "analytics"
 ], function($) {
   var initialize = function() {
     var ageInterval = 0;

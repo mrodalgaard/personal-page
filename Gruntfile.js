@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
-      files: [ "app/js/*.js" ]
+      files: [ "app/js/*.js", "!app/js/analytics.js" ]
     },
     processhtml: {
       normal: {
