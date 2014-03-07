@@ -4,32 +4,17 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     
-    copy: {
-      main: {
-        expand: true,
-        cwd: 'app/',
-        src: ['**', "!js/**"],
-        dest: 'dist/'
-      }
-    },
-    clean: {
-      main: ["dist"]
-    },
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.author.name %>\'s <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-        report: "min"
-      },
-      build: {
-        src: ['app/js/*.js'],
-        dest: 'dist/libs/helper.min.js'
-      }
-    },
-    cssmin: {
-      compress: {
-        files: {
-          'dist/css/style.css': ['app/css/style.css'],
-          'dist/css/style-color.css': ['app/css/style-color.css']
+    requirejs: {
+      compile: {
+        options: {
+          appDir: "app",
+          baseUrl: "js",
+          mainConfigFile: "app/js/main.js",
+          dir: "dist",
+          name: "main",
+          removeCombined: true,
+          preserveLicenseComments: false,
+          optimizeCss: "standard"
         }
       }
     },
@@ -42,10 +27,11 @@ module.exports = function(grunt) {
     processhtml: {
       normal: {
         files: {
-          'dist/index.html': ['app/index.html']
+          'dist/index.html': ['dist/index.html']
         }
       }
     },
+    
     express: {
       all: {
         options: {
@@ -72,6 +58,6 @@ module.exports = function(grunt) {
   });
   
   grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('deploy', ['jshint', 'clean', 'copy', 'uglify', 'cssmin', 'processhtml']);
+  grunt.registerTask('deploy', ['jshint', 'requirejs', 'processhtml']);
   grunt.registerTask('server', ['express', 'open', 'watch']);
 };
