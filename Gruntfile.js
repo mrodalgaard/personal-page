@@ -23,41 +23,8 @@ module.exports = function(grunt) {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
       files: [ "app/js/*.js", "!app/js/analytics.js" ]
-    },
-    processhtml: {
-      normal: {
-        files: {
-          'dist/index.html': ['dist/index.html']
-        }
-      }
-    },
-    
-    express: {
-      all: {
-        options: {
-          port: 9000,
-          hostname: "0.0.0.0",
-          bases: ['app']
-        }
-      }
-    },
-    watch: {
-      all: {
-        files: "app/**",
-        options: {
-          livereload: true
-        }
-      }
-    },
-    open: {
-      all: {
-        path: 'http://localhost:<%= express.all.options.port%>',
-        app: "Firefox"
-      }
     }
   });
   
-  grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('deploy', ['jshint', 'requirejs', 'processhtml']);
-  grunt.registerTask('server', ['express', 'open', 'watch']);
+  grunt.registerTask('default', ['jshint', 'requirejs']);
 };
