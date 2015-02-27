@@ -4,9 +4,8 @@
  */
 
 define([
-  "jquery",
-  "underscore"
-], function($, _) {
+  "jquery"
+], function($) {
   var QUOTES = [
     {
       author: "Jack from The Shining",
@@ -47,7 +46,9 @@ define([
   ];
   
   $.fn.quote = function() {
-    var index = _.random(QUOTES.length - 1);
+    var min = 0;
+    var max = QUOTES.length - 1;
+    var index = Math.floor(Math.random() * (max - min + 1)) + min;
     var quote = '<i>"' + QUOTES[index].quote + '"</i>' +
                 '<p>- ' + QUOTES[index].author + '</p>';
     $(this).html(quote);

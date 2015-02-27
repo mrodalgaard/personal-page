@@ -5,12 +5,8 @@
 
 require.config({
   paths: {
-    // Library paths
-    jquery: "libs/jquery.min",
-    backstretch: "libs/jquery.backstretch.min",
-    underscore: "libs/underscore-min",
-    backbone: "libs/backbone-min",
-    fastclick: "libs/fastclick.min"
+    jquery: "../../bower_components/jquery/dist/jquery.min",
+    backstretch: "../../bower_components/jquery-backstretch/jquery.backstretch.min"
   },
   shim: {
     backstretch: {

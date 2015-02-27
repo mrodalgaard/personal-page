@@ -7,8 +7,7 @@ define([
   "jquery",
   "backstretch",
   "age",
-  "quotes",
-  "analytics"
+  "quotes"
 ], function($) {
   var initialize = function() {
     var ageInterval = 0;
@@ -16,7 +15,7 @@ define([
       $.backstretch("img/background.jpg", {speed: 4000});
       ageInterval = 100;
     }
-  
+    
     $("#age").countAge({
       birthday: "08/22/1986",
       interval: ageInterval
@@ -49,7 +48,7 @@ define([
       toggleColor();
     });
   };
-  return { 
+  return {
     initialize: initialize
   };
 });
