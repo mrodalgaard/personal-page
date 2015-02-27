@@ -10,27 +10,32 @@ define([
   "quotes"
 ], function($) {
   var initialize = function() {
-    var ageInterval = 0;
-    if ($(window).width() > 500) {
-      $.backstretch("img/background.jpg", {speed: 4000});
-      ageInterval = 100;
+    
+    function toggleBackground(colors) {
+      if ($(window).width() < 500) { return true; }
+      
+      var img = colors ? "img/background-colors.jpg" : "img/background.jpg";
+      $.backstretch(img, {speed: 4000});
     }
     
-    $("#age").countAge({
-      birthday: "08/22/1986",
-      interval: ageInterval
-    });
-
-    $(".quote").quote();
-    
     function toggleColor() {
-      $("html").toggleClass("colors");
+      var colors = $("html").toggleClass("colors").hasClass("colors");
+      toggleBackground(colors);
     }
     
     function toggleReader() {
       // TODO: Change background to mirror
       console.log("Reader!");
     }
+    
+    $("#age").countAge({
+      birthday: "08/22/1986",
+      interval: $(window).width() < 500 ? 0 : 100
+    });
+
+    $(".quote").quote();
+    
+    toggleBackground(false);
     
     $(document).on("click", ".quote", function() {
       $(".quote").quote();
