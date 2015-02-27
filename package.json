@@ -1,6 +1,6 @@
 {
   "name": "personal-page",
-  "description": "Simple personal page for Martin",
+  "description": "My simple personal page",
   "version": "0.1.0",
   "homepage": "https://github.com/mrodalgaard/personal-page",
   "author": {
@@ -15,12 +15,14 @@
   "main": "Gruntfile.js",
   "scripts": {
     "build": "grunt",
-    "lint": "grunt jshint"
+    "lint": "grunt jshint",
+    "postinstall": "bower install"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-requirejs": "~0.4.3",
-    "grunt-contrib-jshint": "~0.6.3",
-    "matchdep": "~0.1.2"
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "load-grunt-tasks": "~0.4.0"
   }
 }

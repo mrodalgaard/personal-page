@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -13,16 +13,22 @@ module.exports = function(grunt) {
           dir: "dist",
           name: "main",
           removeCombined: true,
+          skipDirOptimize: true,
           preserveLicenseComments: false,
           optimizeCss: "standard"
         }
       }
     },
+    
     jshint: {
       options: {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
-      files: [ "app/js/*.js", "!app/js/analytics.js" ]
+      files: ["app/js/*.js", "!app/js/require.js"]
+    },
+    
+    clean: {
+      main: ["dist/js/libs"]
     }
   });
   
