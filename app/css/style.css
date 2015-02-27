@@ -26,7 +26,7 @@ a {
   cursor: pointer;
 }
     
-a:hover { 
+a:hover, a:focus { 
   color: #c9282d;
 }
 
@@ -94,4 +94,22 @@ a.mail {
 
 a.mail:hover {
   background-position: 0 0;
+}
+
+/* Colors */
+
+.colors a { 
+  color: #c9282d;
+}
+
+.colors .quote p {
+  color: #c9282d;
+}
+
+.colors a.mail {
+  background-position: 0 0;
+}
+
+.colors .envelope-up {
+	border-bottom: 60px solid #c9282d;
 }

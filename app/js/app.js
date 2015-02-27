@@ -24,13 +24,7 @@ define([
     $(".quote").quote();
     
     function toggleColor() {
-      var ref = $("link[href='css/style-color.css']");
-      if (ref[0]) {
-        $("link[href='css/style-color.css']").remove();
-      }
-      else {
-        $("head").append("<link media='screen' href='css/style-color.css' rel='stylesheet'>");
-      }
+      $("html").toggleClass("colors");
     }
     
     function toggleReader() {
