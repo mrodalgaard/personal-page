@@ -24,6 +24,7 @@ a {
   color: #333;
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.75s ease;
 }
     
 a:hover, a:focus { 
@@ -108,8 +109,4 @@ a.mail:hover {
 
 .colors a.mail {
   background-position: 0 0;
-}
-
-.colors .envelope-up {
-	border-bottom: 60px solid #c9282d;
 }

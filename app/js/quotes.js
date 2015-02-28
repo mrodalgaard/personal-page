@@ -51,6 +51,6 @@ define([
     var index = Math.floor(Math.random() * (max - min + 1)) + min;
     var quote = '<i>"' + QUOTES[index].quote + '"</i>' +
                 '<p>- ' + QUOTES[index].author + '</p>';
-    $(this).html(quote);
+    $(this).html(quote).hide().fadeIn("slow");
   };
 });
