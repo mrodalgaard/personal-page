@@ -9,6 +9,7 @@ Dynamically resized background image thanks to [jquery-backstretch](https://gith
 Responsive style with the help of [twitter bootstrap](https://github.com/twbs/bootstrap).
 Module loading with [requirejs](http://requirejs.org/).
 Build automation by [grunt](https://github.com/gruntjs/grunt).
+Package management by [bower](http://bower.io/).
 
 > _Simple, yet sophisticated._
 

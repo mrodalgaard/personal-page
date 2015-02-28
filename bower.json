@@ -8,7 +8,9 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "~2.1.1",
-    "jquery-backstretch": "~2.0.4"
+    "jquery-backstretch": "~2.0.4",
+    "fontawesome": "~4.3.0",
+    "bootstrap": "~3.3.2"
   },
   "resolutions": {
     "jquery": "~2.1.1"

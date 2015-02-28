@@ -12,7 +12,7 @@ module.exports = function(grunt) {
           mainConfigFile: "app/js/main.js",
           dir: "dist",
           name: "main",
-          removeCombined: true,
+          removeCombined: false,
           skipDirOptimize: true,
           preserveLicenseComments: false,
           optimizeCss: "standard"
@@ -24,13 +24,13 @@ module.exports = function(grunt) {
       options: {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
-      files: ["app/js/*.js", "!app/js/require.js"]
+      files: ["app/js/*.js"]
     },
     
     clean: {
-      main: ["dist/js/libs"]
+      main: ["dist/js/*.js", "!dist/js/main.js"]
     }
   });
   
-  grunt.registerTask('default', ['jshint', 'requirejs']);
+  grunt.registerTask('default', ['jshint', 'requirejs', 'clean']);
 };
