@@ -15,17 +15,36 @@ define([
       if ($(window).width() < 500) { return true; }
       
       var img = colors ? "img/background-colors.jpg" : "img/background.jpg";
-      $.backstretch(img, {speed: 4000});
+      $.backstretch(img, {speed: 3500});
     }
     
-    function toggleColor() {
-      var colors = $("html").toggleClass("colors").hasClass("colors");
+    function toggleColors(colors, check) {
+      if (localStorage && typeof colors === "undefined") {
+        if (localStorage.getItem("colors")) {
+          colors = false;
+          localStorage.removeItem("colors");
+        }
+        else {
+          colors = true;
+          localStorage.setItem("colors", colors);
+        }
+      }
+      else if (typeof colors === "undefined") {
+        colors = !$("html").hasClass("colors");
+      }
+      
+      $("html").toggleClass("colors", colors);
       toggleBackground(colors);
     }
     
     function toggleReader() {
       // TODO: Change background to mirror
       console.log("Reader!");
+    }
+    
+    function init() {
+      var colors = localStorage && localStorage.getItem("colors") ? true : false;
+      toggleColors(colors);
     }
     
     $("#age").countAge({
@@ -35,7 +54,7 @@ define([
 
     $(".quote").quote();
     
-    toggleBackground(false);
+    init();
     
     $(document).on("click", ".quote", function() {
       $(".quote").quote();
@@ -44,7 +63,7 @@ define([
       toggleReader();
     });
     $(document).on("click", "#color-a", function() {
-      toggleColor();
+      toggleColors();
     });
   };
   return {
