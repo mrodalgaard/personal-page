@@ -37,11 +37,6 @@ define([
       toggleBackground(colors);
     }
     
-    function toggleReader() {
-      // TODO: Change background to mirror
-      console.log("Reader!");
-    }
-    
     function init() {
       var colors = localStorage && localStorage.getItem("colors") ? true : false;
       toggleColors(colors);
@@ -59,10 +54,7 @@ define([
     $(document).on("click", ".quote", function() {
       $(".quote").quote();
     });
-    $(document).on("click", "#reader-a", function() {
-      toggleReader();
-    });
-    $(document).on("click", "#color-a", function() {
+    $(document).on("click", "#color-link", function() {
       toggleColors();
     });
   };
