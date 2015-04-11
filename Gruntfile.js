@@ -12,11 +12,36 @@ module.exports = function(grunt) {
           mainConfigFile: "app/js/main.js",
           dir: "dist",
           name: "main",
-          removeCombined: false,
+          removeCombined: true,
           skipDirOptimize: true,
           preserveLicenseComments: false,
-          optimizeCss: "standard"
+          fileExclusionRegExp: /^\.|less/
         }
+      }
+    },
+    
+    less: {
+      default: {
+        options: {
+          compress: true,
+          strictMath: true,
+          strictUnits: true
+        },
+        src: 'app/less/style.less',
+        dest: 'dist/css/style.css'
+      }
+    },
+    
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        expand: true,
+        cwd: 'app',
+        src: ['*.html'],
+        dest: 'dist/'
       }
     },
     
@@ -27,10 +52,36 @@ module.exports = function(grunt) {
       files: ["app/js/*.js"]
     },
     
-    clean: {
-      main: ["dist/js/*.js", "!dist/js/main.js"]
-    }
+    watch: {
+      src: {
+        files: 'app/js/**/*.js',
+        tasks: ['requirejs', 'less']
+      },
+      less: {
+        files: 'app/less/**/*.less',
+        tasks: 'less'
+      },
+      html: {
+        files: 'app/*.html',
+        tasks: 'htmlmin'
+      },
+      configFiles: {
+        files: 'Gruntfile.js'
+      }
+    },
   });
   
-  grunt.registerTask('default', ['jshint', 'requirejs', 'clean']);
+  grunt.registerTask('copy-fonts', 'Copy fontawesome files to dist', function() {
+    var done = this.async();
+    
+    var proc = require("child_process").exec;
+    proc("cp -r bower_components/fontawesome/fonts dist", function(err, stdout, stderr) {
+      if (err) {
+        grunt.fail.fatal(stderr);
+      }
+      done();
+    });
+  });
+  
+  grunt.registerTask('default', ['jshint', 'requirejs', 'htmlmin', 'less', 'copy-fonts']);
 };
