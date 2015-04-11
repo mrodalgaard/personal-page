@@ -13,10 +13,6 @@ define([
     },
     {
       author: "Steve Jobs",
-      quote:  "People who know what they're talking about don't need PowerPoint."
-    },
-    {
-      author: "Steve Jobs",
       quote:  "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them."
     },
     {
@@ -42,6 +38,10 @@ define([
     {
       author: "Simon Sinek",
       quote:  "People don't buy what you do, they buy why you do it."
+    },
+    {
+      author: "Dr. Seuss",
+      quote:  "Don't cry because it's over, smile because it happened."
     }
   ];
   
