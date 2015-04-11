@@ -31,14 +31,13 @@ define([
 
     return $(this).each(function() {
       function update() {
-        count += 1;
-        $(that).text(count);
+        $(that).text("a " + count + " year old");
     
         if (typeof(options.onUpdate) === 'function') {
           options.onUpdate.call(that, count);
         }
     
-        if (count >= age) {
+        if (count++ >= age) {
           clearInterval(interval);
           if (typeof(options.onComplete) === 'function') {
             options.onComplete.call(that, count);
