@@ -16,17 +16,17 @@
   "main": "Gruntfile.js",
   "scripts": {
     "build": "grunt",
-    "lint": "grunt jshint",
+    "lint": "grunt eslint",
     "postinstall": "bower install"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-htmlmin": "^2.2.0",
-    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-requirejs": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^19.0.0",
     "grunt-ftp-deploy": "^0.1.10",
     "load-grunt-tasks": "^3.5.2"
   }

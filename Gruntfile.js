@@ -45,11 +45,8 @@ module.exports = function(grunt) {
       }
     },
 
-    jshint: {
-      options: {
-        jshintrc: process.env.HOME + "/.jshintrc"
-      },
-      files: ["app/js/*.js"]
+    eslint: {
+      src: ["Gruntfile.js", "app/js/*.js"]
     },
 
     watch: {
@@ -83,5 +80,5 @@ module.exports = function(grunt) {
     });
   });
 
-  grunt.registerTask('default', ['jshint', 'requirejs', 'htmlmin', 'less', 'copy-fonts']);
+  grunt.registerTask('default', ['eslint', 'requirejs', 'htmlmin', 'less', 'copy-fonts']);
 };
