@@ -33,19 +33,23 @@ define([
       var that = this, count = 0;
 
       var interval = setInterval(function() {
-          $(that).text("a " + count + " year old");
+        var countText = count.toString()
+        if (count < 10) {
+          countText = "&nbsp;&nbsp;" + countText
+        }
+        $(that).html("a " + countText + " year old");
 
-          if (typeof(options.onUpdate) === 'function') {
-            options.onUpdate.call(that, count);
-          }
+        if (typeof(options.onUpdate) === 'function') {
+          options.onUpdate.call(that, count);
+        }
 
-          if (count++ >= age) {
-            clearInterval(interval);
-            if (typeof(options.onComplete) === 'function') {
-              options.onComplete.call(that, count);
-            }
+        if (count++ >= age) {
+          clearInterval(interval);
+          if (typeof(options.onComplete) === 'function') {
+            options.onComplete.call(that, count);
           }
-        }, options.interval);
+        }
+      }, options.interval);
     });
   };
 
