@@ -7,12 +7,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "jquery": "~2.1.1",
-    "jquery-backstretch": "~2.0.4",
-    "bootstrap": "~3.3.2",
-    "fontawesome": "~4.3.0"
+    "jquery": "^3.1.1",
+    "jquery-backstretch": "^2.0.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
   },
   "resolutions": {
-    "jquery": "~2.1.1"
+    "jquery": "^3.1.1"
   }
 }

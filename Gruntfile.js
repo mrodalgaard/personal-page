@@ -75,7 +75,7 @@ module.exports = function(grunt) {
     var done = this.async();
 
     var proc = require("child_process").exec;
-    proc("cp -r bower_components/fontawesome/fonts dist", function(err, stdout, stderr) {
+    proc("cp -r bower_components/font-awesome/fonts dist", function(err, stdout, stderr) {
       if (err) {
         grunt.fail.fatal(stderr);
       }
