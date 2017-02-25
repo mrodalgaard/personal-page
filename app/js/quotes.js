@@ -8,12 +8,8 @@ define([
 ], function($) {
   var QUOTES = [
     {
-      author: "Jack from The Shining",
-      quote:  "All work and no play makes Jack a dull boy."
-    },
-    {
       author: "Steve Jobs",
-      quote:  "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them."
+      quote:  "You can't just ask customers what they want and then try to give that to them. By the time you get it built, they'll want something new."
     },
     {
       author: "Bill Gates",
@@ -36,15 +32,19 @@ define([
       quote:  "Computers are useless. They can only give you answers."
     },
     {
-      author: "Simon Sinek",
-      quote:  "People don't buy what you do, they buy why you do it."
+      author: "Leonardo da Vinci",
+      quote:  "Simplicity is the ultimate sophistication."
+    },
+    {
+      author: "Confucius",
+      quote: "Give a man a fish and he will eat for a day. Teach a man to fish and he will eat for a lifetime."
     },
     {
       author: "Dr. Seuss",
       quote:  "Don't cry because it's over, smile because it happened."
     }
   ];
-  
+
   $.fn.quote = function() {
     var min = 0;
     var max = QUOTES.length - 1;
