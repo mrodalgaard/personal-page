@@ -3,6 +3,7 @@
   "description": "My simple personal page",
   "version": "1.0.0",
   "homepage": "https://github.com/mrodalgaard/personal-page",
+  "license": "MIT",
   "author": {
     "name": "Martin Rodalgaard",
     "email": "mrodalgaard@gmail.com",
@@ -22,7 +23,7 @@
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-htmlmin": "^0.4.0",
-    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-less": "^1.0.0",
     "grunt-contrib-requirejs": "~0.4.3",
     "grunt-contrib-watch": "^0.6.1",

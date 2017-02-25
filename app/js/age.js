@@ -30,24 +30,22 @@ define([
     }
 
     return $(this).each(function() {
-      function update() {
-        $(that).text("a " + count + " year old");
-    
-        if (typeof(options.onUpdate) === 'function') {
-          options.onUpdate.call(that, count);
-        }
-    
-        if (count++ >= age) {
-          clearInterval(interval);
-          if (typeof(options.onComplete) === 'function') {
-            options.onComplete.call(that, count);
+      var that = this, count = 0;
+
+      var interval = setInterval(function() {
+          $(that).text("a " + count + " year old");
+
+          if (typeof(options.onUpdate) === 'function') {
+            options.onUpdate.call(that, count);
           }
-        }
-      }
-  
-      var that = this,
-        count = 0,
-        interval = setInterval(update, options.interval);
+
+          if (count++ >= age) {
+            clearInterval(interval);
+            if (typeof(options.onComplete) === 'function') {
+              options.onComplete.call(that, count);
+            }
+          }
+        }, options.interval);
     });
   };
 
