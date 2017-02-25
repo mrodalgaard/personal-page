@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
     requirejs: {
       compile: {
         options: {
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     less: {
       default: {
         options: {
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         dest: 'dist/css/style.css'
       }
     },
-    
+
     htmlmin: {
       dist: {
         options: {
@@ -44,14 +44,14 @@ module.exports = function(grunt) {
         dest: 'dist/'
       }
     },
-    
+
     jshint: {
       options: {
         jshintrc: process.env.HOME + "/.jshintrc"
       },
       files: ["app/js/*.js"]
     },
-    
+
     watch: {
       src: {
         files: 'app/js/**/*.js',
@@ -70,10 +70,10 @@ module.exports = function(grunt) {
       }
     },
   });
-  
+
   grunt.registerTask('copy-fonts', 'Copy fontawesome files to dist', function() {
     var done = this.async();
-    
+
     var proc = require("child_process").exec;
     proc("cp -r bower_components/fontawesome/fonts dist", function(err, stdout, stderr) {
       if (err) {
@@ -82,6 +82,6 @@ module.exports = function(grunt) {
       done();
     });
   });
-  
+
   grunt.registerTask('default', ['jshint', 'requirejs', 'htmlmin', 'less', 'copy-fonts']);
 };
