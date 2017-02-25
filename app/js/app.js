@@ -9,8 +9,7 @@ define([
   "age",
   "quotes"
 ], function($) {
-  var initialize = function() {
-    
+  var init = function() {
     function toggleBackground(colors) {
       if ($(window).width() < 500) { return true; }
       
@@ -58,7 +57,8 @@ define([
       toggleColors();
     });
   };
+  
   return {
-    initialize: initialize
+    init: init
   };
 });
