@@ -65,14 +65,15 @@ a {
 }
 
 a.mail {
-  background: url(../img/mail.png) no-repeat;
-  background-position: 0 -96px;
-  width: 96px;
-  height: 96px;
+  @image-size: 64px;
+  background-image: url(../img/mail-grey.png);
+  background-size: @image-size @image-size;
+  width: @image-size;
+  height: @image-size;
   float: right;
 
   &:hover {
-    background-position: 0 0;
+    background-image: url(../img/mail.png);
   }
 }
 
@@ -86,6 +87,6 @@ a.mail {
   }
 
   a.mail {
-    background-position: 0 0;
+    background-image: url(../img/mail.png);
   }
 }
