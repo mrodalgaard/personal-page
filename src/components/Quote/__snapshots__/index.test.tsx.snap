@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote renders 1`] = `
+<styled.div
+  onClick={[Function]}
+>
+  <i>
+    "Text"
+  </i>
+  <styled.p>
+    - 
+    Author
+  </styled.p>
+</styled.div>
+`;
