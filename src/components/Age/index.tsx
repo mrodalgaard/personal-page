@@ -1,6 +1,6 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import useAge from './useAge';
+import * as React from "react";
+import styled from "styled-components";
+import useAge from "./useAge";
 
 const AgeSpan = styled.span`
   width: 20px;

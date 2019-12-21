@@ -1,5 +1,5 @@
-import { IAppState } from '../components/App/AppContext';
-import { ActionType, IAction } from './actions';
+import { IAppState } from "../components/App/AppContext";
+import { ActionType, IAction } from "./actions";
 
 const reducer = (state: IAppState, action: IAction) => {
   switch (action.type) {
