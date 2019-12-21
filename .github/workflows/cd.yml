@@ -29,3 +29,23 @@ jobs:
         with:
           name: web
           path: build
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: web
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: "web"
+          CLEAN: true
