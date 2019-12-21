@@ -2,7 +2,7 @@
 
 exports[`Age renders 1`] = `
 <Age
-  birthday="11-14-2009"
+  birthday="02-06-2000"
   updateInterval={1000}
 >
   <styled.span>
