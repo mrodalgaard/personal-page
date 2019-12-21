@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Age renders 1`] = `
+<Age
+  birthday="02-06-2000"
+  updateInterval={1000}
+>
+  <styled.span>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "gEHCiL",
+            "rules": Array [
+              "
+  width: 20px;
+  display: inline-block;
+",
+            ],
+          },
+          "displayName": "styled.span",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "span",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <span
+        className="sc-bdVaJa gEHCiL"
+      >
+        0
+      </span>
+    </StyledComponent>
+  </styled.span>
+</Age>
+`;
