@@ -1,17 +1,17 @@
-import * as React from "react";
-import { useContext } from "react";
+import * as React from 'react';
+import { useContext } from 'react';
 import {
   ImageProps,
   LazyImage,
   LazyImageRenderPropArgs,
-  RefArg
-} from "react-lazy-images";
-import styled from "styled-components";
-import backgroundColorsImg from "../../assets/img/background-colors.jpg";
-import backgroundLowImg from "../../assets/img/background-low.jpg";
-import backgroundImg from "../../assets/img/background.jpg";
-import { AppBackground } from "../../util/constants";
-import AppContext from "../App/AppContext";
+  RefArg,
+} from 'react-lazy-images';
+import styled from 'styled-components';
+import backgroundColorsImg from '../../assets/img/background-colors.jpg';
+import backgroundLowImg from '../../assets/img/background-low.jpg';
+import backgroundImg from '../../assets/img/background.jpg';
+import { AppBackground } from '../../util/constants';
+import AppContext from '../App/AppContext';
 
 const Img = styled.img`
   height: 100%;
@@ -57,7 +57,7 @@ const Background = () => {
 
   const placeholder = ({
     imageProps,
-    ref
+    ref,
   }: LazyImageRenderPropArgs & RefArg) => (
     <ImgFadeIn ref={ref} src={backgroundLowImg} alt={imageProps.alt} />
   );

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import getAge from "../../util/getAge";
+import { useEffect, useState } from 'react';
+import getAge from '../../util/getAge';
 
 interface IProps {
   birthday: string;
@@ -17,7 +17,7 @@ const useAge = (props: IProps) => {
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
-      updateAge(ageState => {
+      updateAge((ageState) => {
         if (ageState >= actualAge) {
           clearInterval(intervalId);
           return ageState;

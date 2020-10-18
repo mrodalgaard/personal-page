@@ -1,15 +1,15 @@
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons/faFacebookF";
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
-import * as React from "react";
-import { useContext } from "react";
-import styled from "styled-components";
-import noteImg from "../../assets/img/note.jpg";
-import { AppColors } from "../../util/theme";
-import AppContext from "../App/AppContext";
-import MailLink from "../MailLink";
-import SocialLink from "../SocialLink";
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
+import * as React from 'react';
+import { useContext } from 'react';
+import styled from 'styled-components';
+import noteImg from '../../assets/img/note.jpg';
+import { AppColors } from '../../util/theme';
+import AppContext from '../App/AppContext';
+import MailLink from '../MailLink';
+import SocialLink from '../SocialLink';
 
 const EnvelopeTop = styled.div`
   border-bottom: 60px solid ${AppColors.grey};

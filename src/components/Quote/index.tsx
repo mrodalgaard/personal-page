@@ -1,8 +1,8 @@
-import * as React from "react";
-import { useState } from "react";
-import styled from "styled-components";
-import { AppColors } from "../../util/theme";
-import { IQuote, Quotes } from "./Quotes";
+import * as React from 'react';
+import { useState } from 'react';
+import styled from 'styled-components';
+import { AppColors } from '../../util/theme';
+import { IQuote, Quotes } from './Quotes';
 
 const Container = styled.div`
   border-left: 5px solid ${AppColors.grey};
@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const AuthorText = styled.p`
   text-align: right;
-  color: ${props => (props.color ? props.color : AppColors.primary)};
+  color: ${(props) => (props.color ? props.color : AppColors.primary)};
 `;
 
 interface IProps {
