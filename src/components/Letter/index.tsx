@@ -1,12 +1,12 @@
-import * as React from "react";
-import { useContext } from "react";
-import styled from "styled-components";
-import noteImg from "../../assets/img/note.jpg";
-import Age from "../Age";
-import AppContext from "../App/AppContext";
-import Link from "../Link";
-import Quote from "../Quote";
-import { IQuote } from "../Quote/Quotes";
+import * as React from 'react';
+import { useContext } from 'react';
+import styled from 'styled-components';
+import noteImg from '../../assets/img/note.jpg';
+import Age from '../Age';
+import AppContext from '../App/AppContext';
+import Link from '../Link';
+import Quote from '../Quote';
+import { IQuote } from '../Quote/Quotes';
 
 const Container = styled.div`
   position: relative;
@@ -38,7 +38,7 @@ const Letter = (props: IProps) => {
   return (
     <Container>
       <p>
-        Dear{" "}
+        Dear{' '}
         <Link href="http://www.whatsmybrowser.org/" color={color}>
           Reader
         </Link>
@@ -47,28 +47,28 @@ const Letter = (props: IProps) => {
       <p>
         <Link href="http://facebook.com/mrodalgaard" color={color}>
           Martin Rodalgaard
-        </Link>{" "}
+        </Link>{' '}
         is a <Age birthday="08-22-1986" updateInterval={100} /> year old
         engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke
         and his daughter Gry.
       </p>
       <p>
-        He is educated in{" "}
+        He is educated in{' '}
         <Link href="http://linkedin.com/in/mrodalgaard" color={color}>
           Electrical Engineering
-        </Link>{" "}
-        specialised in Embedded Systems and{" "}
+        </Link>{' '}
+        specialised in Embedded Systems and{' '}
         <Link href="http://github.com/mrodalgaard" color={color}>
           Programming
         </Link>
-        . He currently works at{" "}
+        . He currently works at{' '}
         <Link href="http://trifork.com" color={color}>
           Trifork A/S
-        </Link>{" "}
+        </Link>{' '}
         as a Software Pilot creating mobile apps and future technology.
       </p>
       <p>
-        Martin loves{" "}
+        Martin loves{' '}
         <Link href="#" onClick={onColorsClick} color={color}>
           colors
         </Link>

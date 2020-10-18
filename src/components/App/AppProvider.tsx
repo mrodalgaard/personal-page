@@ -1,11 +1,11 @@
-import * as React from "react";
-import { ReactNode, useReducer } from "react";
-import { ActionType } from "../../store/actions";
-import reducer from "../../store/reducer";
-import { AppBackground } from "../../util/constants";
-import Persist from "../../util/Persist";
-import AppContext, { initialState } from "./AppContext";
-import { AppColors } from "../../util/theme";
+import * as React from 'react';
+import { ReactNode, useReducer } from 'react';
+import { ActionType } from '../../store/actions';
+import reducer from '../../store/reducer';
+import { AppBackground } from '../../util/constants';
+import Persist from '../../util/Persist';
+import { AppColors } from '../../util/theme';
+import AppContext, { initialState } from './AppContext';
 
 interface IProps {
   children: ReactNode;
@@ -27,7 +27,7 @@ const AppProvider = (props: IProps) => {
     background:
       state.background === AppBackground.greyscale
         ? AppBackground.default
-        : state.background
+        : state.background,
   });
 
   // Inject dispatch actions into provider value
@@ -39,7 +39,7 @@ const AppProvider = (props: IProps) => {
           state.background === AppBackground.colored
             ? AppBackground.greyscale
             : AppBackground.colored,
-        type: ActionType.UPDATE_BACKGROUND
+        type: ActionType.UPDATE_BACKGROUND,
       });
     },
     toggleColor: () => {
@@ -48,9 +48,9 @@ const AppProvider = (props: IProps) => {
           state.color === AppColors.primary
             ? AppColors.secondary
             : AppColors.primary,
-        type: ActionType.UPDATE_COLOR
+        type: ActionType.UPDATE_COLOR,
       });
-    }
+    },
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

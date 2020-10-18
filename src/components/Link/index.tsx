@@ -1,9 +1,9 @@
-import * as React from "react";
-import styled from "styled-components";
-import { AppColors } from "../../util/theme";
+import * as React from 'react';
+import styled from 'styled-components';
+import { AppColors } from '../../util/theme';
 
 const StyledLink = styled.a`
-  color: ${props => (props.color ? props.color : AppColors.primary)};
+  color: ${(props) => (props.color ? props.color : AppColors.primary)};
   text-decoration: none;
   font-weight: bold;
   transition: color 0.5s ease;

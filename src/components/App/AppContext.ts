@@ -1,6 +1,6 @@
-import { createContext } from "react";
-import { AppBackground } from "../../util/constants";
-import { AppColors } from "../../util/theme";
+import { createContext } from 'react';
+import { AppBackground } from '../../util/constants';
+import { AppColors } from '../../util/theme';
 
 export interface IAppState {
   color: AppColors;
@@ -11,7 +11,7 @@ export interface IAppState {
 
 export const initialState: IAppState = {
   background: AppBackground.default,
-  color: AppColors.primary
+  color: AppColors.primary,
 };
 
 const AppContext = createContext(initialState);

@@ -1,16 +1,16 @@
-import { mount } from "enzyme";
-import * as React from "react";
-import Background from ".";
-import { AppBackground } from "../../util/constants";
-import AppContext, { initialState } from "../App/AppContext";
+import { mount } from 'enzyme';
+import * as React from 'react';
+import Background from '.';
+import { AppBackground } from '../../util/constants';
+import AppContext, { initialState } from '../App/AppContext';
 
-describe("Background", () => {
+describe('Background', () => {
   const windowIntersectionObserver = window.IntersectionObserver;
 
   beforeAll(() => {
     // Mock IntersectionObserver used by LazyImage
     window.IntersectionObserver = jest.fn(() => ({
-      observe: jest.fn
+      observe: jest.fn,
     })) as any;
   });
 
@@ -18,7 +18,7 @@ describe("Background", () => {
     window.IntersectionObserver = windowIntersectionObserver;
   });
 
-  it("renders", () => {
+  it('renders', () => {
     const wrapper = mount(
       <AppContext.Provider value={initialState}>
         <Background />
@@ -27,10 +27,10 @@ describe("Background", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("renders using other background", () => {
+  it('renders using other background', () => {
     const initialStateMock = {
       ...initialState,
-      background: AppBackground.greyscale
+      background: AppBackground.greyscale,
     };
 
     const wrapper = mount(
