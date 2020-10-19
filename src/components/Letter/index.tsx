@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import noteImg from '../../assets/img/note.jpg';
+import analytics, { LogEvent } from '../../util/analytics';
 import Age from '../Age';
 import AppContext from '../App/AppContext';
 import Link from '../Link';
@@ -29,23 +30,23 @@ const Letter = (props: IProps) => {
 
   const onColorsClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    if (toggleBackground && toggleColor) {
-      toggleBackground();
-      toggleColor();
-    }
+
+    toggleBackground && toggleBackground();
+    toggleColor && toggleColor();
+    analytics.logEvent(LogEvent.ColorClick);
   };
 
   return (
     <Container>
       <p>
         Dear{' '}
-        <Link href="http://www.whatsmybrowser.org/" color={color}>
+        <Link href="https://whatsmybrowser.org/" color={color}>
           Reader
         </Link>
         ,
       </p>
       <p>
-        <Link href="http://facebook.com/mrodalgaard" color={color}>
+        <Link href="https://facebook.com/mrodalgaard" color={color}>
           Martin Rodalgaard
         </Link>{' '}
         is a <Age birthday="08-22-1986" updateInterval={100} /> year old
@@ -54,15 +55,15 @@ const Letter = (props: IProps) => {
       </p>
       <p>
         He is educated in{' '}
-        <Link href="http://linkedin.com/in/mrodalgaard" color={color}>
+        <Link href="https://linkedin.com/in/mrodalgaard" color={color}>
           Electrical Engineering
         </Link>{' '}
         specialised in Embedded Systems and{' '}
-        <Link href="http://github.com/mrodalgaard" color={color}>
+        <Link href="https://github.com/mrodalgaard" color={color}>
           Programming
         </Link>
         . He currently works at{' '}
-        <Link href="http://trifork.com" color={color}>
+        <Link href="https://trifork.com" color={color}>
           Trifork A/S
         </Link>{' '}
         as a Software Pilot creating mobile apps and future technology.

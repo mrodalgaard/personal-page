@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
+import analytics, { LogEvent } from '../../util/analytics';
 import { AppColors } from '../../util/theme';
 import { IQuote, Quotes } from './Quotes';
 
@@ -33,8 +34,9 @@ const Quote = (props: IProps) => {
     initialQuote ? initialQuote : quotes.getRandomQuote()
   );
 
-  const onClick = (event: React.MouseEvent<HTMLElement>) => {
+  const onClick = () => {
     setQuote(quotes.getRandomQuote());
+    analytics.logEvent(LogEvent.QuoteClick);
   };
 
   return (
