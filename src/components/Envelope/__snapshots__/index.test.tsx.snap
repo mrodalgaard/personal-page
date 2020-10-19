@@ -83,7 +83,7 @@ exports[`Envelope renders 1`] = `
       >
         <SocialLink
           color="#000000"
-          href="http://facebook.com/mrodalgaard"
+          href="https://facebook.com/mrodalgaard"
           icon={
             Object {
               "icon": Array [
@@ -100,7 +100,7 @@ exports[`Envelope renders 1`] = `
         >
           <Styled(Link)
             color="#000000"
-            href="http://facebook.com/mrodalgaard"
+            href="https://facebook.com/mrodalgaard"
           >
             <StyledComponent
               color="#000000"
@@ -129,17 +129,17 @@ exports[`Envelope renders 1`] = `
                 }
               }
               forwardedRef={null}
-              href="http://facebook.com/mrodalgaard"
+              href="https://facebook.com/mrodalgaard"
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
-                href="http://facebook.com/mrodalgaard"
+                href="https://facebook.com/mrodalgaard"
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
-                  href="http://facebook.com/mrodalgaard"
+                  href="https://facebook.com/mrodalgaard"
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -180,12 +180,12 @@ exports[`Envelope renders 1`] = `
                       }
                     }
                     forwardedRef={null}
-                    href="http://facebook.com/mrodalgaard"
+                    href="https://facebook.com/mrodalgaard"
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
-                      href="http://facebook.com/mrodalgaard"
+                      href="https://facebook.com/mrodalgaard"
                     >
                       <FontAwesomeIcon
                         border={false}
@@ -245,7 +245,7 @@ exports[`Envelope renders 1`] = `
         </SocialLink>
         <SocialLink
           color="#000000"
-          href="http://linkedin.com/in/mrodalgaard"
+          href="https://linkedin.com/in/mrodalgaard"
           icon={
             Object {
               "icon": Array [
@@ -262,7 +262,7 @@ exports[`Envelope renders 1`] = `
         >
           <Styled(Link)
             color="#000000"
-            href="http://linkedin.com/in/mrodalgaard"
+            href="https://linkedin.com/in/mrodalgaard"
           >
             <StyledComponent
               color="#000000"
@@ -291,17 +291,17 @@ exports[`Envelope renders 1`] = `
                 }
               }
               forwardedRef={null}
-              href="http://linkedin.com/in/mrodalgaard"
+              href="https://linkedin.com/in/mrodalgaard"
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
-                href="http://linkedin.com/in/mrodalgaard"
+                href="https://linkedin.com/in/mrodalgaard"
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
-                  href="http://linkedin.com/in/mrodalgaard"
+                  href="https://linkedin.com/in/mrodalgaard"
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -342,12 +342,12 @@ exports[`Envelope renders 1`] = `
                       }
                     }
                     forwardedRef={null}
-                    href="http://linkedin.com/in/mrodalgaard"
+                    href="https://linkedin.com/in/mrodalgaard"
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
-                      href="http://linkedin.com/in/mrodalgaard"
+                      href="https://linkedin.com/in/mrodalgaard"
                     >
                       <FontAwesomeIcon
                         border={false}
@@ -407,7 +407,7 @@ exports[`Envelope renders 1`] = `
         </SocialLink>
         <SocialLink
           color="#000000"
-          href="http://github.com/mrodalgaard"
+          href="https://github.com/mrodalgaard"
           icon={
             Object {
               "icon": Array [
@@ -424,7 +424,7 @@ exports[`Envelope renders 1`] = `
         >
           <Styled(Link)
             color="#000000"
-            href="http://github.com/mrodalgaard"
+            href="https://github.com/mrodalgaard"
           >
             <StyledComponent
               color="#000000"
@@ -453,17 +453,17 @@ exports[`Envelope renders 1`] = `
                 }
               }
               forwardedRef={null}
-              href="http://github.com/mrodalgaard"
+              href="https://github.com/mrodalgaard"
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
-                href="http://github.com/mrodalgaard"
+                href="https://github.com/mrodalgaard"
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
-                  href="http://github.com/mrodalgaard"
+                  href="https://github.com/mrodalgaard"
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -504,12 +504,12 @@ exports[`Envelope renders 1`] = `
                       }
                     }
                     forwardedRef={null}
-                    href="http://github.com/mrodalgaard"
+                    href="https://github.com/mrodalgaard"
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
-                      href="http://github.com/mrodalgaard"
+                      href="https://github.com/mrodalgaard"
                     >
                       <FontAwesomeIcon
                         border={false}
@@ -569,7 +569,7 @@ exports[`Envelope renders 1`] = `
         </SocialLink>
         <SocialLink
           color="#000000"
-          href="http://twitter.com/mrodalgaard"
+          href="https://twitter.com/mrodalgaard"
           icon={
             Object {
               "icon": Array [
@@ -586,7 +586,7 @@ exports[`Envelope renders 1`] = `
         >
           <Styled(Link)
             color="#000000"
-            href="http://twitter.com/mrodalgaard"
+            href="https://twitter.com/mrodalgaard"
           >
             <StyledComponent
               color="#000000"
@@ -615,17 +615,17 @@ exports[`Envelope renders 1`] = `
                 }
               }
               forwardedRef={null}
-              href="http://twitter.com/mrodalgaard"
+              href="https://twitter.com/mrodalgaard"
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
-                href="http://twitter.com/mrodalgaard"
+                href="https://twitter.com/mrodalgaard"
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
-                  href="http://twitter.com/mrodalgaard"
+                  href="https://twitter.com/mrodalgaard"
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -666,12 +666,12 @@ exports[`Envelope renders 1`] = `
                       }
                     }
                     forwardedRef={null}
-                    href="http://twitter.com/mrodalgaard"
+                    href="https://twitter.com/mrodalgaard"
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
-                      href="http://twitter.com/mrodalgaard"
+                      href="https://twitter.com/mrodalgaard"
                     >
                       <FontAwesomeIcon
                         border={false}

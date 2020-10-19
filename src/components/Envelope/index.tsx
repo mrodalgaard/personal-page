@@ -50,22 +50,22 @@ const Envelope = () => {
       <EnvelopeTop />
       <EnvelopeBody>
         <SocialLink
-          href="http://facebook.com/mrodalgaard"
+          href="https://facebook.com/mrodalgaard"
           icon={faFacebookF}
           color={color}
         />
         <SocialLink
-          href="http://linkedin.com/in/mrodalgaard"
+          href="https://linkedin.com/in/mrodalgaard"
           icon={faLinkedin}
           color={color}
         />
         <SocialLink
-          href="http://github.com/mrodalgaard"
+          href="https://github.com/mrodalgaard"
           icon={faGithub}
           color={color}
         />
         <SocialLink
-          href="http://twitter.com/mrodalgaard"
+          href="https://twitter.com/mrodalgaard"
           icon={faTwitter}
           color={color}
         />

@@ -53,11 +53,11 @@ exports[`Letter renders 1`] = `
            
           <Link
             color="#000000"
-            href="http://www.whatsmybrowser.org/"
+            href="https://whatsmybrowser.org/"
           >
             <styled.a
               color="#000000"
-              href="http://www.whatsmybrowser.org/"
+              href="https://whatsmybrowser.org/"
             >
               <StyledComponent
                 color="#000000"
@@ -97,12 +97,12 @@ exports[`Letter renders 1`] = `
                   }
                 }
                 forwardedRef={null}
-                href="http://www.whatsmybrowser.org/"
+                href="https://whatsmybrowser.org/"
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
-                  href="http://www.whatsmybrowser.org/"
+                  href="https://whatsmybrowser.org/"
                 >
                   Reader
                 </a>
@@ -114,11 +114,11 @@ exports[`Letter renders 1`] = `
         <p>
           <Link
             color="#000000"
-            href="http://facebook.com/mrodalgaard"
+            href="https://facebook.com/mrodalgaard"
           >
             <styled.a
               color="#000000"
-              href="http://facebook.com/mrodalgaard"
+              href="https://facebook.com/mrodalgaard"
             >
               <StyledComponent
                 color="#000000"
@@ -158,12 +158,12 @@ exports[`Letter renders 1`] = `
                   }
                 }
                 forwardedRef={null}
-                href="http://facebook.com/mrodalgaard"
+                href="https://facebook.com/mrodalgaard"
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
-                  href="http://facebook.com/mrodalgaard"
+                  href="https://facebook.com/mrodalgaard"
                 >
                   Martin Rodalgaard
                 </a>
@@ -220,11 +220,11 @@ exports[`Letter renders 1`] = `
            
           <Link
             color="#000000"
-            href="http://linkedin.com/in/mrodalgaard"
+            href="https://linkedin.com/in/mrodalgaard"
           >
             <styled.a
               color="#000000"
-              href="http://linkedin.com/in/mrodalgaard"
+              href="https://linkedin.com/in/mrodalgaard"
             >
               <StyledComponent
                 color="#000000"
@@ -264,12 +264,12 @@ exports[`Letter renders 1`] = `
                   }
                 }
                 forwardedRef={null}
-                href="http://linkedin.com/in/mrodalgaard"
+                href="https://linkedin.com/in/mrodalgaard"
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
-                  href="http://linkedin.com/in/mrodalgaard"
+                  href="https://linkedin.com/in/mrodalgaard"
                 >
                   Electrical Engineering
                 </a>
@@ -281,11 +281,11 @@ exports[`Letter renders 1`] = `
            
           <Link
             color="#000000"
-            href="http://github.com/mrodalgaard"
+            href="https://github.com/mrodalgaard"
           >
             <styled.a
               color="#000000"
-              href="http://github.com/mrodalgaard"
+              href="https://github.com/mrodalgaard"
             >
               <StyledComponent
                 color="#000000"
@@ -325,12 +325,12 @@ exports[`Letter renders 1`] = `
                   }
                 }
                 forwardedRef={null}
-                href="http://github.com/mrodalgaard"
+                href="https://github.com/mrodalgaard"
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
-                  href="http://github.com/mrodalgaard"
+                  href="https://github.com/mrodalgaard"
                 >
                   Programming
                 </a>
@@ -341,11 +341,11 @@ exports[`Letter renders 1`] = `
            
           <Link
             color="#000000"
-            href="http://trifork.com"
+            href="https://trifork.com"
           >
             <styled.a
               color="#000000"
-              href="http://trifork.com"
+              href="https://trifork.com"
             >
               <StyledComponent
                 color="#000000"
@@ -385,12 +385,12 @@ exports[`Letter renders 1`] = `
                   }
                 }
                 forwardedRef={null}
-                href="http://trifork.com"
+                href="https://trifork.com"
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
-                  href="http://trifork.com"
+                  href="https://trifork.com"
                 >
                   Trifork A/S
                 </a>
