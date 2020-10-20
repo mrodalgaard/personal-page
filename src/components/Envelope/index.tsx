@@ -6,6 +6,7 @@ import * as React from 'react';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import noteImg from '../../assets/img/note.jpg';
+import { LogEvent } from '../../util/analytics';
 import { AppColors } from '../../util/theme';
 import AppContext from '../App/AppContext';
 import MailLink from '../MailLink';
@@ -53,21 +54,25 @@ const Envelope = () => {
           href="https://facebook.com/mrodalgaard"
           icon={faFacebookF}
           color={color}
+          logEvent={LogEvent.FacebookLink}
         />
         <SocialLink
           href="https://linkedin.com/in/mrodalgaard"
           icon={faLinkedin}
           color={color}
+          logEvent={LogEvent.LinkedInLink}
         />
         <SocialLink
           href="https://github.com/mrodalgaard"
           icon={faGithub}
           color={color}
+          logEvent={LogEvent.GithubLink}
         />
         <SocialLink
           href="https://twitter.com/mrodalgaard"
           icon={faTwitter}
           color={color}
+          logEvent={LogEvent.TwitterLink}
         />
         <MailLink href="mailto:mrodalgaard@gmail.com" color={color} />
         <EnvelopeText>

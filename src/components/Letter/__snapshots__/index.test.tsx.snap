@@ -54,10 +54,12 @@ exports[`Letter renders 1`] = `
           <Link
             color="#000000"
             href="https://whatsmybrowser.org/"
+            onClick={[Function]}
           >
             <styled.a
               color="#000000"
               href="https://whatsmybrowser.org/"
+              onClick={[Function]}
             >
               <StyledComponent
                 color="#000000"
@@ -98,11 +100,13 @@ exports[`Letter renders 1`] = `
                 }
                 forwardedRef={null}
                 href="https://whatsmybrowser.org/"
+                onClick={[Function]}
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
                   href="https://whatsmybrowser.org/"
+                  onClick={[Function]}
                 >
                   Reader
                 </a>
@@ -115,10 +119,12 @@ exports[`Letter renders 1`] = `
           <Link
             color="#000000"
             href="https://facebook.com/mrodalgaard"
+            onClick={[Function]}
           >
             <styled.a
               color="#000000"
               href="https://facebook.com/mrodalgaard"
+              onClick={[Function]}
             >
               <StyledComponent
                 color="#000000"
@@ -159,11 +165,13 @@ exports[`Letter renders 1`] = `
                 }
                 forwardedRef={null}
                 href="https://facebook.com/mrodalgaard"
+                onClick={[Function]}
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
                   href="https://facebook.com/mrodalgaard"
+                  onClick={[Function]}
                 >
                   Martin Rodalgaard
                 </a>
@@ -213,7 +221,7 @@ exports[`Letter renders 1`] = `
               </StyledComponent>
             </styled.span>
           </Age>
-           year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and his daughter Gry.
+           year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry and Thor.
         </p>
         <p>
           He is educated in
@@ -221,10 +229,12 @@ exports[`Letter renders 1`] = `
           <Link
             color="#000000"
             href="https://linkedin.com/in/mrodalgaard"
+            onClick={[Function]}
           >
             <styled.a
               color="#000000"
               href="https://linkedin.com/in/mrodalgaard"
+              onClick={[Function]}
             >
               <StyledComponent
                 color="#000000"
@@ -265,11 +275,13 @@ exports[`Letter renders 1`] = `
                 }
                 forwardedRef={null}
                 href="https://linkedin.com/in/mrodalgaard"
+                onClick={[Function]}
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
                   href="https://linkedin.com/in/mrodalgaard"
+                  onClick={[Function]}
                 >
                   Electrical Engineering
                 </a>
@@ -282,10 +294,12 @@ exports[`Letter renders 1`] = `
           <Link
             color="#000000"
             href="https://github.com/mrodalgaard"
+            onClick={[Function]}
           >
             <styled.a
               color="#000000"
               href="https://github.com/mrodalgaard"
+              onClick={[Function]}
             >
               <StyledComponent
                 color="#000000"
@@ -326,11 +340,13 @@ exports[`Letter renders 1`] = `
                 }
                 forwardedRef={null}
                 href="https://github.com/mrodalgaard"
+                onClick={[Function]}
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
                   href="https://github.com/mrodalgaard"
+                  onClick={[Function]}
                 >
                   Programming
                 </a>
@@ -342,10 +358,12 @@ exports[`Letter renders 1`] = `
           <Link
             color="#000000"
             href="https://trifork.com"
+            onClick={[Function]}
           >
             <styled.a
               color="#000000"
               href="https://trifork.com"
+              onClick={[Function]}
             >
               <StyledComponent
                 color="#000000"
@@ -386,11 +404,13 @@ exports[`Letter renders 1`] = `
                 }
                 forwardedRef={null}
                 href="https://trifork.com"
+                onClick={[Function]}
               >
                 <a
                   className="sc-bwzfXH bQBBwn"
                   color="#000000"
                   href="https://trifork.com"
+                  onClick={[Function]}
                 >
                   Trifork A/S
                 </a>
@@ -398,7 +418,7 @@ exports[`Letter renders 1`] = `
             </styled.a>
           </Link>
            
-          as a Software Pilot creating mobile apps and future technology.
+          as a Software Pilot creating mobile and web apps for customers.
         </p>
         <p>
           Martin loves
@@ -472,7 +492,7 @@ exports[`Letter renders 1`] = `
           <u>
             can
           </u>
-           live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster Aqua Terra on his wrist.
+           live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
         </p>
         <Quote
           color="#000000"

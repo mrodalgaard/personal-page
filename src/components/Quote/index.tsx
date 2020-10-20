@@ -26,9 +26,7 @@ interface IProps {
   initialQuote?: IQuote;
 }
 
-const Quote = (props: IProps) => {
-  const { color, initialQuote } = props;
-
+const Quote = ({ color, initialQuote }: IProps) => {
   const quotes = new Quotes();
   const [quote, setQuote] = useState(
     initialQuote ? initialQuote : quotes.getRandomQuote()

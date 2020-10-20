@@ -21,9 +21,7 @@ interface IProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Link = (props: IProps) => {
-  const { children, className, color, href, onClick } = props;
-
+const Link = ({ children, className, color, href, onClick }: IProps) => {
   return (
     <StyledLink
       className={className}

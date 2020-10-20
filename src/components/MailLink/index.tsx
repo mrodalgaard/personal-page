@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import mailGreyImg from '../../assets/img/mail-grey.png';
 import mailImg from '../../assets/img/mail.png';
+import analytics, { LogEvent } from '../../util/analytics';
 import { AppColors } from '../../util/theme';
 
 const Link = styled.a`
@@ -22,10 +23,12 @@ interface IProps {
   href: string;
 }
 
-const MailLink = (props: IProps) => {
-  const { color, href } = props;
+const MailLink = ({ color, href }: IProps) => {
+  const onClick = () => {
+    analytics.logEvent(LogEvent.MailClick);
+  };
 
-  return <Link color={color} href={href} />;
+  return <Link color={color} href={href} onClick={onClick} />;
 };
 
 export default MailLink;

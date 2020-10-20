@@ -97,10 +97,12 @@ exports[`Envelope renders 1`] = `
               "prefix": "fab",
             }
           }
+          logEvent="facebook_link"
         >
           <Styled(Link)
             color="#000000"
             href="https://facebook.com/mrodalgaard"
+            onClick={[Function]}
           >
             <StyledComponent
               color="#000000"
@@ -130,16 +132,19 @@ exports[`Envelope renders 1`] = `
               }
               forwardedRef={null}
               href="https://facebook.com/mrodalgaard"
+              onClick={[Function]}
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
                 href="https://facebook.com/mrodalgaard"
+                onClick={[Function]}
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
                   href="https://facebook.com/mrodalgaard"
+                  onClick={[Function]}
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -181,11 +186,13 @@ exports[`Envelope renders 1`] = `
                     }
                     forwardedRef={null}
                     href="https://facebook.com/mrodalgaard"
+                    onClick={[Function]}
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
                       href="https://facebook.com/mrodalgaard"
+                      onClick={[Function]}
                     >
                       <FontAwesomeIcon
                         border={false}
@@ -259,10 +266,12 @@ exports[`Envelope renders 1`] = `
               "prefix": "fab",
             }
           }
+          logEvent="linkedin_link"
         >
           <Styled(Link)
             color="#000000"
             href="https://linkedin.com/in/mrodalgaard"
+            onClick={[Function]}
           >
             <StyledComponent
               color="#000000"
@@ -292,16 +301,19 @@ exports[`Envelope renders 1`] = `
               }
               forwardedRef={null}
               href="https://linkedin.com/in/mrodalgaard"
+              onClick={[Function]}
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
                 href="https://linkedin.com/in/mrodalgaard"
+                onClick={[Function]}
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
                   href="https://linkedin.com/in/mrodalgaard"
+                  onClick={[Function]}
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -343,11 +355,13 @@ exports[`Envelope renders 1`] = `
                     }
                     forwardedRef={null}
                     href="https://linkedin.com/in/mrodalgaard"
+                    onClick={[Function]}
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
                       href="https://linkedin.com/in/mrodalgaard"
+                      onClick={[Function]}
                     >
                       <FontAwesomeIcon
                         border={false}
@@ -421,10 +435,12 @@ exports[`Envelope renders 1`] = `
               "prefix": "fab",
             }
           }
+          logEvent="github_link"
         >
           <Styled(Link)
             color="#000000"
             href="https://github.com/mrodalgaard"
+            onClick={[Function]}
           >
             <StyledComponent
               color="#000000"
@@ -454,16 +470,19 @@ exports[`Envelope renders 1`] = `
               }
               forwardedRef={null}
               href="https://github.com/mrodalgaard"
+              onClick={[Function]}
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
                 href="https://github.com/mrodalgaard"
+                onClick={[Function]}
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
                   href="https://github.com/mrodalgaard"
+                  onClick={[Function]}
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -505,11 +524,13 @@ exports[`Envelope renders 1`] = `
                     }
                     forwardedRef={null}
                     href="https://github.com/mrodalgaard"
+                    onClick={[Function]}
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
                       href="https://github.com/mrodalgaard"
+                      onClick={[Function]}
                     >
                       <FontAwesomeIcon
                         border={false}
@@ -583,10 +604,12 @@ exports[`Envelope renders 1`] = `
               "prefix": "fab",
             }
           }
+          logEvent="twitterLink"
         >
           <Styled(Link)
             color="#000000"
             href="https://twitter.com/mrodalgaard"
+            onClick={[Function]}
           >
             <StyledComponent
               color="#000000"
@@ -616,16 +639,19 @@ exports[`Envelope renders 1`] = `
               }
               forwardedRef={null}
               href="https://twitter.com/mrodalgaard"
+              onClick={[Function]}
             >
               <Link
                 className="sc-htpNat ffBkYG"
                 color="#000000"
                 href="https://twitter.com/mrodalgaard"
+                onClick={[Function]}
               >
                 <styled.a
                   className="sc-htpNat ffBkYG"
                   color="#000000"
                   href="https://twitter.com/mrodalgaard"
+                  onClick={[Function]}
                 >
                   <StyledComponent
                     className="sc-htpNat ffBkYG"
@@ -667,11 +693,13 @@ exports[`Envelope renders 1`] = `
                     }
                     forwardedRef={null}
                     href="https://twitter.com/mrodalgaard"
+                    onClick={[Function]}
                   >
                     <a
                       className="sc-bwzfXH bQBBwn sc-htpNat ffBkYG"
                       color="#000000"
                       href="https://twitter.com/mrodalgaard"
+                      onClick={[Function]}
                     >
                       <FontAwesomeIcon
                         border={false}
@@ -736,6 +764,7 @@ exports[`Envelope renders 1`] = `
           <styled.a
             color="#000000"
             href="mailto:mrodalgaard@gmail.com"
+            onClick={[Function]}
           >
             <StyledComponent
               color="#000000"
@@ -777,11 +806,13 @@ exports[`Envelope renders 1`] = `
               }
               forwardedRef={null}
               href="mailto:mrodalgaard@gmail.com"
+              onClick={[Function]}
             >
               <a
                 className="sc-bdVaJa NOaSb"
                 color="#000000"
                 href="mailto:mrodalgaard@gmail.com"
+                onClick={[Function]}
               />
             </StyledComponent>
           </styled.a>

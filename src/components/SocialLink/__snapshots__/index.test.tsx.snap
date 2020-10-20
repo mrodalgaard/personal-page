@@ -3,6 +3,7 @@
 exports[`SocialLink renders 1`] = `
 <Styled(Link)
   href="#"
+  onClick={[Function]}
 >
   <FontAwesomeIcon
     border={false}
