@@ -8,9 +8,7 @@ interface IProps {
 
 const DEFAULT_AGE = 0;
 
-const useAge = (props: IProps) => {
-  const { birthday, updateInterval } = props;
-
+const useAge = ({ birthday, updateInterval }: IProps) => {
   const [age, updateAge] = useState(DEFAULT_AGE);
 
   const actualAge = getAge(birthday) || DEFAULT_AGE;

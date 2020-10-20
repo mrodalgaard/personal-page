@@ -3,5 +3,6 @@
 exports[`MailLink renders 1`] = `
 <styled.a
   href="#"
+  onClick={[Function]}
 />
 `;

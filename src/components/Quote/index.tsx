@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { useState } from 'react';
 import styled from 'styled-components';
+import analytics, { LogEvent } from '../../util/analytics';
 import { AppColors } from '../../util/theme';
-import { IQuote, Quotes } from './Quotes';
+import useQuote, { IQuote } from './useQuote';
 
 const Container = styled.div`
   border-left: 5px solid ${AppColors.grey};
   padding-left: 10px;
   user-select: none;
+  transition: color 0.5s ease;
 
   &:hover {
     color: ${AppColors.secondary};
@@ -25,16 +26,12 @@ interface IProps {
   initialQuote?: IQuote;
 }
 
-const Quote = (props: IProps) => {
-  const { color, initialQuote } = props;
+const Quote = ({ color, initialQuote }: IProps) => {
+  const [quote, nextQuote] = useQuote({ initialQuote });
 
-  const quotes = new Quotes();
-  const [quote, setQuote] = useState(
-    initialQuote ? initialQuote : quotes.getRandomQuote()
-  );
-
-  const onClick = (event: React.MouseEvent<HTMLElement>) => {
-    setQuote(quotes.getRandomQuote());
+  const onClick = () => {
+    nextQuote();
+    analytics.logEvent(LogEvent.QuoteClick);
   };
 
   return (
