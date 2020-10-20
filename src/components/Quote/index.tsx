@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { useState } from 'react';
 import styled from 'styled-components';
 import analytics, { LogEvent } from '../../util/analytics';
 import { AppColors } from '../../util/theme';
-import { IQuote, Quotes } from './Quotes';
+import useQuote, { IQuote } from './useQuote';
 
 const Container = styled.div`
   border-left: 5px solid ${AppColors.grey};
@@ -28,13 +27,10 @@ interface IProps {
 }
 
 const Quote = ({ color, initialQuote }: IProps) => {
-  const quotes = new Quotes();
-  const [quote, setQuote] = useState(
-    initialQuote ? initialQuote : quotes.getRandomQuote()
-  );
+  const [quote, nextQuote] = useQuote({ initialQuote });
 
   const onClick = () => {
-    setQuote(quotes.getRandomQuote());
+    nextQuote();
     analytics.logEvent(LogEvent.QuoteClick);
   };
 

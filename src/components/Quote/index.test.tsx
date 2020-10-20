@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
 import Quote from '.';
-import { IQuote } from './Quotes';
+import { IQuote } from './useQuote';
 
 describe('Quote', () => {
   const quote: IQuote = {

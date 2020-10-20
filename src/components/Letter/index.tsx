@@ -5,7 +5,7 @@ import Age from '../Age';
 import AppContext from '../App/AppContext';
 import Link from '../Link';
 import Quote from '../Quote';
-import { IQuote } from '../Quote/Quotes';
+import { IQuote } from '../Quote/useQuote';
 import { Paper } from '../Shared/Paper';
 
 interface IProps {
