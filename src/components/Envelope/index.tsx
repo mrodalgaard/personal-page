@@ -5,11 +5,11 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 import * as React from 'react';
 import { useContext } from 'react';
 import styled from 'styled-components';
-import noteImg from '../../assets/img/note.jpg';
 import { LogEvent } from '../../util/analytics';
 import { AppColors } from '../../util/theme';
 import AppContext from '../App/AppContext';
 import MailLink from '../MailLink';
+import { Paper } from '../Shared/Paper';
 import SocialLink from '../SocialLink';
 
 const EnvelopeTop = styled.div`
@@ -18,17 +18,10 @@ const EnvelopeTop = styled.div`
   border-right: 50px solid transparent;
 `;
 
-const EnvelopeBody = styled.div`
-  border-radius: 1px;
-  background: url(${noteImg});
-  margin-bottom: 20px;
-
-  position: relative;
+const EnvelopeBody = styled(Paper)`
   height: 200px;
   padding: 5px;
   font-size: 20px;
-
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
 const EnvelopeText = styled.p`

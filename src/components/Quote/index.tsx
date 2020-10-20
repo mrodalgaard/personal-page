@@ -9,6 +9,7 @@ const Container = styled.div`
   border-left: 5px solid ${AppColors.grey};
   padding-left: 10px;
   user-select: none;
+  transition: color 0.5s ease;
 
   &:hover {
     color: ${AppColors.secondary};

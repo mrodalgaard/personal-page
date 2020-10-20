@@ -1,23 +1,12 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import styled from 'styled-components';
-import noteImg from '../../assets/img/note.jpg';
 import analytics, { LogEvent } from '../../util/analytics';
 import Age from '../Age';
 import AppContext from '../App/AppContext';
 import Link from '../Link';
 import Quote from '../Quote';
 import { IQuote } from '../Quote/Quotes';
-
-const Container = styled.div`
-  position: relative;
-  background: url(${noteImg});
-  border-radius: 1px;
-  margin-bottom: 20px;
-  padding: 20px;
-
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-`;
+import { Paper } from '../Shared/Paper';
 
 interface IProps {
   initialQuote?: IQuote;
@@ -35,7 +24,7 @@ const Letter = ({ initialQuote }: IProps) => {
   };
 
   return (
-    <Container>
+    <Paper>
       <p>
         Dear{' '}
         <Link
@@ -100,7 +89,7 @@ const Letter = ({ initialQuote }: IProps) => {
         Giant racing bike and an Omega Seamaster on his wrist.
       </p>
       <Quote color={color} initialQuote={initialQuote} />
-    </Container>
+    </Paper>
   );
 };
 

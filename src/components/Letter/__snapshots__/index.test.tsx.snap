@@ -18,7 +18,7 @@ exports[`Letter renders 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-ifAKCX",
             "isStatic": false,
-            "lastClassName": "gVpznY",
+            "lastClassName": "iSHUUy",
             "rules": Array [
               "
   position: relative;
@@ -29,7 +29,14 @@ exports[`Letter renders 1`] = `
   margin-bottom: 20px;
   padding: 20px;
 
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.5s ease;
+
+  &:hover {
+    box-shadow: 0 9px 12px 1px rgba(0, 0, 0, 0.14),
+      0 3px 16px 2px rgba(0, 0, 0, 0.12), 0 5px 6px -3px rgba(0, 0, 0, 0.2);
+  }
 ",
             ],
           },
@@ -46,7 +53,7 @@ exports[`Letter renders 1`] = `
       forwardedRef={null}
     >
       <div
-        className="sc-ifAKCX gVpznY"
+        className="sc-ifAKCX iSHUUy"
       >
         <p>
           Dear
@@ -514,7 +521,7 @@ exports[`Letter renders 1`] = `
                   "componentStyle": ComponentStyle {
                     "componentId": "sc-htpNat",
                     "isStatic": false,
-                    "lastClassName": "eECofK",
+                    "lastClassName": "bVTWVt",
                     "rules": Array [
                       "
   border-left: 5px solid ",
@@ -522,6 +529,7 @@ exports[`Letter renders 1`] = `
                       ";
   padding-left: 10px;
   user-select: none;
+  transition: color 0.5s ease;
 
   &:hover {
     color: ",
@@ -546,7 +554,7 @@ exports[`Letter renders 1`] = `
               onClick={[Function]}
             >
               <div
-                className="sc-htpNat eECofK"
+                className="sc-htpNat bVTWVt"
                 onClick={[Function]}
               >
                 <i>
