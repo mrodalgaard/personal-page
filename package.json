@@ -3,6 +3,13 @@
   "version": "2.1.0",
   "license": "MIT",
   "homepage": ".",
+  "author": {
+    "name": "Martin Rodalgaard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrodalgaard/Personal-Page.git"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
