@@ -14,15 +14,21 @@ interface IProps {
   href: string;
   icon: IconProp;
   logEvent?: LogEvent;
+  ariaLabel: string;
 }
 
-const SocialLink = ({ color, href, icon, logEvent }: IProps) => {
+const SocialLink = ({ color, href, icon, logEvent, ariaLabel }: IProps) => {
   const onClick = () => {
     logEvent && analytics.logEvent(logEvent);
   };
 
   return (
-    <StyledLink href={href} color={color} onClick={onClick}>
+    <StyledLink
+      href={href}
+      color={color}
+      onClick={onClick}
+      ariaLabel={ariaLabel}
+    >
       <FontAwesomeIcon icon={icon} />
     </StyledLink>
   );

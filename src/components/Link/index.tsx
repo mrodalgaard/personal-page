@@ -18,15 +18,24 @@ interface IProps {
   className?: any;
   color?: string;
   href: string;
+  ariaLabel?: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Link = ({ children, className, color, href, onClick }: IProps) => {
+const Link = ({
+  children,
+  className,
+  color,
+  href,
+  onClick,
+  ariaLabel,
+}: IProps) => {
   return (
     <StyledLink
       className={className}
       color={color}
       href={href}
+      aria-label={ariaLabel}
       onClick={onClick}
     >
       {children}

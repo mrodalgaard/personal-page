@@ -28,7 +28,7 @@ const MailLink = ({ color, href }: IProps) => {
     analytics.logEvent(LogEvent.MailClick);
   };
 
-  return <Link color={color} href={href} onClick={onClick} />;
+  return <Link color={color} href={href} onClick={onClick} aria-label="mail" />;
 };
 
 export default MailLink;

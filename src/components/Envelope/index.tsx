@@ -24,7 +24,7 @@ const EnvelopeBody = styled(Paper)`
   font-size: 20px;
 `;
 
-const EnvelopeText = styled.p`
+const EnvelopeText = styled.header`
   width: 50%;
   height: 60px;
   font-weight: bold;
@@ -48,24 +48,28 @@ const Envelope = () => {
           icon={faFacebookF}
           color={color}
           logEvent={LogEvent.FacebookLink}
+          ariaLabel="facebook"
         />
         <SocialLink
           href="https://linkedin.com/in/mrodalgaard"
           icon={faLinkedin}
           color={color}
           logEvent={LogEvent.LinkedInLink}
+          ariaLabel="linkedin"
         />
         <SocialLink
           href="https://github.com/mrodalgaard"
           icon={faGithub}
           color={color}
           logEvent={LogEvent.GithubLink}
+          ariaLabel="github"
         />
         <SocialLink
           href="https://twitter.com/mrodalgaard"
           icon={faTwitter}
           color={color}
           logEvent={LogEvent.TwitterLink}
+          ariaLabel="twitter"
         />
         <MailLink href="mailto:mrodalgaard@gmail.com" color={color} />
         <EnvelopeText>
