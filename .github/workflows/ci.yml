@@ -47,5 +47,7 @@ jobs:
           name: web
           path: build
 
-      - name: Run lighthouse
-        run: npx @lhci/cli autorun
+      - name: Install and run Lighthouse
+        run: |
+          yarn global add @lhci/cli
+          lhci autorun
