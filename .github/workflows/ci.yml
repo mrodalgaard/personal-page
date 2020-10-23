@@ -38,13 +38,14 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: Download Artifact
         uses: actions/download-artifact@v1
         with:
           name: web
-
-      - name: Move Artifact
-        run: mv web build
+          path: build
 
       - name: Run lighthouse
         run: npx @lhci/cli autorun
