@@ -9,8 +9,8 @@ on:
 
 jobs:
   build:
+    name: Build & Test
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -32,3 +32,19 @@ jobs:
         with:
           name: web
           path: build
+
+  lighthouse:
+    name: Lighthouse
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: web
+
+      - name: Move Artifact
+        run: mv web build
+
+      - name: Run lighthouse
+        run: npx @lhci/cli autorun
