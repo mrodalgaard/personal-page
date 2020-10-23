@@ -2,6 +2,7 @@
 
 exports[`MailLink renders 1`] = `
 <styled.a
+  aria-label="mail"
   href="#"
   onClick={[Function]}
 />

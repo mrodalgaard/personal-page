@@ -93,6 +93,7 @@ exports[`Envelope renders 1`] = `
         className="sc-bwzfXH sc-EHOje gbUbBD"
       >
         <SocialLink
+          ariaLabel="facebook"
           color="#000000"
           href="https://facebook.com/mrodalgaard"
           icon={
@@ -111,11 +112,13 @@ exports[`Envelope renders 1`] = `
           logEvent="facebook_link"
         >
           <Styled(Link)
+            ariaLabel="facebook"
             color="#000000"
             href="https://facebook.com/mrodalgaard"
             onClick={[Function]}
           >
             <StyledComponent
+              ariaLabel="facebook"
               color="#000000"
               forwardedComponent={
                 Object {
@@ -146,18 +149,21 @@ exports[`Envelope renders 1`] = `
               onClick={[Function]}
             >
               <Link
+                ariaLabel="facebook"
                 className="sc-bxivhb hPjXXs"
                 color="#000000"
                 href="https://facebook.com/mrodalgaard"
                 onClick={[Function]}
               >
                 <styled.a
+                  aria-label="facebook"
                   className="sc-bxivhb hPjXXs"
                   color="#000000"
                   href="https://facebook.com/mrodalgaard"
                   onClick={[Function]}
                 >
                   <StyledComponent
+                    aria-label="facebook"
                     className="sc-bxivhb hPjXXs"
                     color="#000000"
                     forwardedComponent={
@@ -200,6 +206,7 @@ exports[`Envelope renders 1`] = `
                     onClick={[Function]}
                   >
                     <a
+                      aria-label="facebook"
                       className="sc-htpNat gsusHb sc-bxivhb hPjXXs"
                       color="#000000"
                       href="https://facebook.com/mrodalgaard"
@@ -262,6 +269,7 @@ exports[`Envelope renders 1`] = `
           </Styled(Link)>
         </SocialLink>
         <SocialLink
+          ariaLabel="linkedin"
           color="#000000"
           href="https://linkedin.com/in/mrodalgaard"
           icon={
@@ -280,11 +288,13 @@ exports[`Envelope renders 1`] = `
           logEvent="linkedin_link"
         >
           <Styled(Link)
+            ariaLabel="linkedin"
             color="#000000"
             href="https://linkedin.com/in/mrodalgaard"
             onClick={[Function]}
           >
             <StyledComponent
+              ariaLabel="linkedin"
               color="#000000"
               forwardedComponent={
                 Object {
@@ -315,18 +325,21 @@ exports[`Envelope renders 1`] = `
               onClick={[Function]}
             >
               <Link
+                ariaLabel="linkedin"
                 className="sc-bxivhb hPjXXs"
                 color="#000000"
                 href="https://linkedin.com/in/mrodalgaard"
                 onClick={[Function]}
               >
                 <styled.a
+                  aria-label="linkedin"
                   className="sc-bxivhb hPjXXs"
                   color="#000000"
                   href="https://linkedin.com/in/mrodalgaard"
                   onClick={[Function]}
                 >
                   <StyledComponent
+                    aria-label="linkedin"
                     className="sc-bxivhb hPjXXs"
                     color="#000000"
                     forwardedComponent={
@@ -369,6 +382,7 @@ exports[`Envelope renders 1`] = `
                     onClick={[Function]}
                   >
                     <a
+                      aria-label="linkedin"
                       className="sc-htpNat gsusHb sc-bxivhb hPjXXs"
                       color="#000000"
                       href="https://linkedin.com/in/mrodalgaard"
@@ -431,6 +445,7 @@ exports[`Envelope renders 1`] = `
           </Styled(Link)>
         </SocialLink>
         <SocialLink
+          ariaLabel="github"
           color="#000000"
           href="https://github.com/mrodalgaard"
           icon={
@@ -449,11 +464,13 @@ exports[`Envelope renders 1`] = `
           logEvent="github_link"
         >
           <Styled(Link)
+            ariaLabel="github"
             color="#000000"
             href="https://github.com/mrodalgaard"
             onClick={[Function]}
           >
             <StyledComponent
+              ariaLabel="github"
               color="#000000"
               forwardedComponent={
                 Object {
@@ -484,18 +501,21 @@ exports[`Envelope renders 1`] = `
               onClick={[Function]}
             >
               <Link
+                ariaLabel="github"
                 className="sc-bxivhb hPjXXs"
                 color="#000000"
                 href="https://github.com/mrodalgaard"
                 onClick={[Function]}
               >
                 <styled.a
+                  aria-label="github"
                   className="sc-bxivhb hPjXXs"
                   color="#000000"
                   href="https://github.com/mrodalgaard"
                   onClick={[Function]}
                 >
                   <StyledComponent
+                    aria-label="github"
                     className="sc-bxivhb hPjXXs"
                     color="#000000"
                     forwardedComponent={
@@ -538,6 +558,7 @@ exports[`Envelope renders 1`] = `
                     onClick={[Function]}
                   >
                     <a
+                      aria-label="github"
                       className="sc-htpNat gsusHb sc-bxivhb hPjXXs"
                       color="#000000"
                       href="https://github.com/mrodalgaard"
@@ -600,6 +621,7 @@ exports[`Envelope renders 1`] = `
           </Styled(Link)>
         </SocialLink>
         <SocialLink
+          ariaLabel="twitter"
           color="#000000"
           href="https://twitter.com/mrodalgaard"
           icon={
@@ -618,11 +640,13 @@ exports[`Envelope renders 1`] = `
           logEvent="twitterLink"
         >
           <Styled(Link)
+            ariaLabel="twitter"
             color="#000000"
             href="https://twitter.com/mrodalgaard"
             onClick={[Function]}
           >
             <StyledComponent
+              ariaLabel="twitter"
               color="#000000"
               forwardedComponent={
                 Object {
@@ -653,18 +677,21 @@ exports[`Envelope renders 1`] = `
               onClick={[Function]}
             >
               <Link
+                ariaLabel="twitter"
                 className="sc-bxivhb hPjXXs"
                 color="#000000"
                 href="https://twitter.com/mrodalgaard"
                 onClick={[Function]}
               >
                 <styled.a
+                  aria-label="twitter"
                   className="sc-bxivhb hPjXXs"
                   color="#000000"
                   href="https://twitter.com/mrodalgaard"
                   onClick={[Function]}
                 >
                   <StyledComponent
+                    aria-label="twitter"
                     className="sc-bxivhb hPjXXs"
                     color="#000000"
                     forwardedComponent={
@@ -707,6 +734,7 @@ exports[`Envelope renders 1`] = `
                     onClick={[Function]}
                   >
                     <a
+                      aria-label="twitter"
                       className="sc-htpNat gsusHb sc-bxivhb hPjXXs"
                       color="#000000"
                       href="https://twitter.com/mrodalgaard"
@@ -773,11 +801,13 @@ exports[`Envelope renders 1`] = `
           href="mailto:mrodalgaard@gmail.com"
         >
           <styled.a
+            aria-label="mail"
             color="#000000"
             href="mailto:mrodalgaard@gmail.com"
             onClick={[Function]}
           >
             <StyledComponent
+              aria-label="mail"
               color="#000000"
               forwardedComponent={
                 Object {
@@ -820,6 +850,7 @@ exports[`Envelope renders 1`] = `
               onClick={[Function]}
             >
               <a
+                aria-label="mail"
                 className="sc-bdVaJa NOaSb"
                 color="#000000"
                 href="mailto:mrodalgaard@gmail.com"
@@ -828,7 +859,7 @@ exports[`Envelope renders 1`] = `
             </StyledComponent>
           </styled.a>
         </MailLink>
-        <styled.p>
+        <styled.header>
           <StyledComponent
             forwardedComponent={
               Object {
@@ -852,11 +883,11 @@ exports[`Envelope renders 1`] = `
 ",
                   ],
                 },
-                "displayName": "styled.p",
+                "displayName": "styled.header",
                 "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "sc-bZQynM",
-                "target": "p",
+                "target": "header",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
@@ -864,7 +895,7 @@ exports[`Envelope renders 1`] = `
             }
             forwardedRef={null}
           >
-            <p
+            <header
               className="sc-bZQynM hVGslQ"
             >
               Martin Rodalgaard
@@ -872,9 +903,9 @@ exports[`Envelope renders 1`] = `
               Aarhus
               <br />
               Denmark
-            </p>
+            </header>
           </StyledComponent>
-        </styled.p>
+        </styled.header>
       </div>
     </StyledComponent>
   </Styled(styled.div)>
