@@ -27,13 +27,18 @@ const EnvelopeBody = styled(Paper)`
 const EnvelopeText = styled.header`
   width: 50%;
   height: 60px;
-  font-weight: bold;
   margin: auto;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+
+  h1,
+  h2 {
+    font-size: 20px;
+    line-height: 8px;
+  }
 `;
 
 const Envelope = () => {
@@ -73,11 +78,9 @@ const Envelope = () => {
         />
         <MailLink href="mailto:mrodalgaard@gmail.com" color={color} />
         <EnvelopeText>
-          Martin Rodalgaard
-          <br />
-          Aarhus
-          <br />
-          Denmark
+          <h1>Martin Rodalgaard</h1>
+          <h2>Aarhus</h2>
+          <h2>Denmark</h2>
         </EnvelopeText>
       </EnvelopeBody>
     </>

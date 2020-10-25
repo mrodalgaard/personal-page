@@ -868,18 +868,23 @@ exports[`Envelope renders 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bZQynM",
                   "isStatic": false,
-                  "lastClassName": "hVGslQ",
+                  "lastClassName": "kIIomU",
                   "rules": Array [
                     "
   width: 50%;
   height: 60px;
-  font-weight: bold;
   margin: auto;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+
+  h1,
+  h2 {
+    font-size: 20px;
+    line-height: 8px;
+  }
 ",
                   ],
                 },
@@ -896,13 +901,17 @@ exports[`Envelope renders 1`] = `
             forwardedRef={null}
           >
             <header
-              className="sc-bZQynM hVGslQ"
+              className="sc-bZQynM kIIomU"
             >
-              Martin Rodalgaard
-              <br />
-              Aarhus
-              <br />
-              Denmark
+              <h1>
+                Martin Rodalgaard
+              </h1>
+              <h2>
+                Aarhus
+              </h2>
+              <h2>
+                Denmark
+              </h2>
             </header>
           </StyledComponent>
         </styled.header>
