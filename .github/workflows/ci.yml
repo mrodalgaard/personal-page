@@ -47,6 +47,11 @@ jobs:
           name: web
           path: build
 
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
       - name: Install and run Lighthouse
         run: |
           npm install -g @lhci/cli@0.5.x
