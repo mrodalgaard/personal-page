@@ -1,8 +1,9 @@
 {
   "name": "personal-page",
+  "description": "Martin Rodalgaard, an engineer from Aarhus, Denmark",
   "version": "2.1.0",
   "license": "MIT",
-  "homepage": ".",
+  "homepage": "https://martin.rodalgaard.dk",
   "author": {
     "name": "Martin Rodalgaard"
   },
