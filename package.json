@@ -29,7 +29,8 @@
     "react-lazy-images": "^1.1.0",
     "react-scripts": "3.3.0",
     "styled-components": "^4.2.0",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "use-persisted-reducer": "^2.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",

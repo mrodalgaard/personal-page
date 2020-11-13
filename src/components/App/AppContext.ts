@@ -10,7 +10,7 @@ export interface IAppState {
 }
 
 export const initialState: IAppState = {
-  background: AppBackground.default,
+  background: AppBackground.greyscale,
   color: AppColors.primary,
 };
 

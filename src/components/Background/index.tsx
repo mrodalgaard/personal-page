@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import {
   ImageProps,
   LazyImage,
@@ -55,6 +54,24 @@ const ImgFadeOut = styled(Img)`
 const Background = () => {
   const { background } = useContext(AppContext);
 
+  const firstUpdate = useRef(true);
+
+  // Use update flag to accommodate for first greyscale background fade in
+  useEffect(() => {
+    const timeoutId = window.setTimeout(
+      () => (firstUpdate.current = false),
+      500
+    );
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  // Do not render background on phone size screens
+  if (window.innerWidth < 500) {
+    return null;
+  }
+
   const placeholder = ({
     imageProps,
     ref,
@@ -62,17 +79,15 @@ const Background = () => {
     <ImgFadeIn ref={ref} src={backgroundLowImg} alt={imageProps.alt} />
   );
 
-  // Do not render background on phone size screens
-  if (window.innerWidth < 500) {
-    return null;
-  }
-
   const actualFadeIn = ({ imageProps }: { imageProps: ImageProps }) => (
     <ImgFadeIn {...imageProps} />
   );
 
   const actualFadeOut = ({ imageProps }: { imageProps: ImageProps }) => (
-    <ImgFadeOut hidden={background === AppBackground.default} {...imageProps} />
+    <ImgFadeOut
+      hidden={firstUpdate.current && background === AppBackground.greyscale}
+      {...imageProps}
+    />
   );
 
   return (
