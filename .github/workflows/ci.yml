@@ -2,10 +2,9 @@ name: CI
 
 on:
   push:
-    branches:
-      - develop
-      - feature/*
-      - hotfix/*
+    branches-ignore:
+      - master
+  pull_request:
 
 jobs:
   build:
