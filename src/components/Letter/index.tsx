@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import analytics, { LogEvent } from '../../util/analytics';
 import Age from '../Age';
 import AppContext from '../App/AppContext';

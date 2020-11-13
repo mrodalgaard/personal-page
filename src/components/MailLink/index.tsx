@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import mailGreyImg from '../../assets/img/mail-grey.png';
 import mailImg from '../../assets/img/mail.png';

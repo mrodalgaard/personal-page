@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import * as React from 'react';
+import React from 'react';
 import Background from '.';
 import { AppBackground } from '../../util/constants';
 import AppContext, { initialState } from '../App/AppContext';

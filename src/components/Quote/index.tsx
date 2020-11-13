@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import analytics, { LogEvent } from '../../util/analytics';
 import { AppColors } from '../../util/theme';

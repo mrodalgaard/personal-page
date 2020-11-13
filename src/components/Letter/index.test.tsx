@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import * as React from 'react';
+import React from 'react';
 import Letter from '.';
 import AppContext, { initialState } from '../App/AppContext';
 import { IQuote } from '../Quote/Quotes';
