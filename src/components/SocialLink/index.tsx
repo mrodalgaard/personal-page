@@ -14,7 +14,7 @@ interface IProps {
   href: string;
   icon: IconProp;
   logEvent?: LogEvent;
-  ariaLabel: string;
+  ariaLabel?: string;
 }
 
 const SocialLink = ({ color, href, icon, logEvent, ariaLabel }: IProps) => {

@@ -1,30 +1,17 @@
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import React from 'react';
 import Background from '.';
 import { AppBackground } from '../../util/constants';
 import AppContext, { initialState } from '../App/AppContext';
 
 describe('Background', () => {
-  const windowIntersectionObserver = window.IntersectionObserver;
-
-  beforeAll(() => {
-    // Mock IntersectionObserver used by LazyImage
-    window.IntersectionObserver = jest.fn(() => ({
-      observe: jest.fn,
-    })) as any;
-  });
-
-  afterAll(() => {
-    window.IntersectionObserver = windowIntersectionObserver;
-  });
-
   it('renders', () => {
-    const wrapper = mount(
+    const { container } = render(
       <AppContext.Provider value={initialState}>
         <Background />
       </AppContext.Provider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('renders using other background', () => {
@@ -33,11 +20,11 @@ describe('Background', () => {
       background: AppBackground.greyscale,
     };
 
-    const wrapper = mount(
+    const { container } = render(
       <AppContext.Provider value={initialStateMock}>
         <Background />
       </AppContext.Provider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,8 +1,8 @@
-import { mount } from 'enzyme';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { IQuote } from 'components/Quote/useQuote';
 import React from 'react';
 import Letter from '.';
 import AppContext, { initialState } from '../App/AppContext';
-import { IQuote } from '../Quote/Quotes';
 
 describe('Letter', () => {
   const quote: IQuote = {
@@ -11,12 +11,12 @@ describe('Letter', () => {
   };
 
   it('renders', () => {
-    const wrapper = mount(
+    const { container } = render(
       <AppContext.Provider value={initialState}>
         <Letter initialQuote={quote} />
       </AppContext.Provider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('can click color link', () => {
@@ -24,7 +24,7 @@ describe('Letter', () => {
     const toggleColor = jest.fn();
     const initialStateMock = { ...initialState, toggleBackground, toggleColor };
 
-    const wrapper = mount(
+    render(
       <AppContext.Provider value={initialStateMock}>
         <Letter initialQuote={quote} />
       </AppContext.Provider>
@@ -32,10 +32,7 @@ describe('Letter', () => {
     expect(toggleBackground.mock.calls.length).toBe(0);
     expect(toggleColor.mock.calls.length).toBe(0);
 
-    wrapper
-      .find('Link')
-      .last()
-      .simulate('click');
+    fireEvent.click(screen.getByText('colors'));
 
     expect(toggleBackground.mock.calls.length).toBe(1);
     expect(toggleColor.mock.calls.length).toBe(1);

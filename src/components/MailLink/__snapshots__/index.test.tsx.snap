@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MailLink renders 1`] = `
-<styled.a
+.c0 {
+  background-image: url(mail.png);
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
+  float: right;
+}
+
+.c0:hover {
+  background-image: url(mail.png);
+}
+
+<a
   aria-label="mail"
+  class="c0"
   href="#"
-  onClick={[Function]}
 />
 `;

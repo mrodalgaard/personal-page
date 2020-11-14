@@ -1,15 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Quote renders 1`] = `
-<styled.div
-  onClick={[Function]}
+.c0 {
+  border-left: 5px solid #333333;
+  padding-left: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.c0:hover {
+  color: #c9282d;
+  cursor: pointer;
+}
+
+.c1 {
+  text-align: right;
+  color: #000000;
+}
+
+<div
+  class="c0"
 >
   <i>
     "Text"
   </i>
-  <styled.p>
+  <p
+    class="c1"
+  >
     - 
     Author
-  </styled.p>
-</styled.div>
+  </p>
+</div>
 `;
