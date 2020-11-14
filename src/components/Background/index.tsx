@@ -23,7 +23,7 @@ const Img = styled.img`
   animation-fill-mode: both;
 `;
 
-const ImgFadeIn = styled(Img)`
+const ImgFadeIn = styled(Img as any)`
   animation-name: fadeIn;
 
   @keyframes fadeIn {
@@ -37,7 +37,7 @@ const ImgFadeIn = styled(Img)`
   }
 `;
 
-const ImgFadeOut = styled(Img)`
+const ImgFadeOut = styled(Img as any)`
   animation-name: fadeOut;
 
   @keyframes fadeOut {
