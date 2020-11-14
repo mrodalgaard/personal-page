@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
+import AppContext, { initialState } from 'components/App/AppContext';
 import React from 'react';
+import { AppBackground } from 'util/constants';
 import Background from '.';
-import { AppBackground } from '../../util/constants';
-import AppContext, { initialState } from '../App/AppContext';
 
 describe('Background', () => {
   it('renders', () => {

@@ -1,13 +1,15 @@
+import mailGreyImg from 'assets/img/mail-grey.png';
+import mailImg from 'assets/img/mail.png';
 import React from 'react';
 import styled from 'styled-components';
-import mailGreyImg from '../../assets/img/mail-grey.png';
-import mailImg from '../../assets/img/mail.png';
-import analytics, { LogEvent } from '../../util/analytics';
-import { AppColors } from '../../util/theme';
+import analytics, { LogEvent } from 'util/analytics';
+import { AppColors } from 'util/theme';
 
 const Link = styled.a`
-  background-image: url(${(props) =>
-    props.color === AppColors.primary ? mailGreyImg : mailImg});
+  ${({ color }) =>
+    color === AppColors.primary
+      ? `background-image: url(${mailGreyImg})`
+      : `background-image: url(${mailImg})`};
   background-size: 64px 64px;
   width: 64px;
   height: 64px;

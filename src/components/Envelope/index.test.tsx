@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
+import AppContext, { initialState } from 'components/App/AppContext';
 import React from 'react';
 import Envelope from '.';
-import AppContext, { initialState } from '../App/AppContext';
 
 describe('Envelope', () => {
   it('renders', () => {

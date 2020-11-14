@@ -1,8 +1,8 @@
+import Background from 'components/Background';
+import Envelope from 'components/Envelope';
+import Letter from 'components/Letter';
 import React from 'react';
 import styled from 'styled-components';
-import Background from '../Background';
-import Envelope from '../Envelope';
-import Letter from '../Letter';
 import AppProvider from './AppProvider';
 
 const Content = styled.div`

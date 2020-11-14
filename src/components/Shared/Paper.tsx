@@ -1,5 +1,5 @@
+import noteImg from 'assets/img/note.jpg';
 import styled from 'styled-components';
-import noteImg from '../../assets/img/note.jpg';
 
 export const Paper = styled.div`
   position: relative;

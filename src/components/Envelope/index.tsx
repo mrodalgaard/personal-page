@@ -2,14 +2,14 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
+import AppContext from 'components/App/AppContext';
+import MailLink from 'components/MailLink';
+import { Paper } from 'components/Shared/Paper';
+import SocialLink from 'components/SocialLink';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { LogEvent } from '../../util/analytics';
-import { AppColors } from '../../util/theme';
-import AppContext from '../App/AppContext';
-import MailLink from '../MailLink';
-import { Paper } from '../Shared/Paper';
-import SocialLink from '../SocialLink';
+import { LogEvent } from 'util/analytics';
+import { AppColors } from 'util/theme';
 
 const EnvelopeTop = styled.div`
   border-bottom: 60px solid ${AppColors.grey};

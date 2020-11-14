@@ -1,11 +1,11 @@
+import Age from 'components/Age';
+import AppContext from 'components/App/AppContext';
+import Link from 'components/Link';
+import Quote from 'components/Quote';
+import { IQuote } from 'components/Quote/useQuote';
+import { Paper } from 'components/Shared/Paper';
 import React, { useContext } from 'react';
-import analytics, { LogEvent } from '../../util/analytics';
-import Age from '../Age';
-import AppContext from '../App/AppContext';
-import Link from '../Link';
-import Quote from '../Quote';
-import { IQuote } from '../Quote/useQuote';
-import { Paper } from '../Shared/Paper';
+import analytics, { LogEvent } from 'util/analytics';
 
 interface IProps {
   initialQuote?: IQuote;

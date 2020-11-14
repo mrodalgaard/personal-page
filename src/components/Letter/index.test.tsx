@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import AppContext, { initialState } from 'components/App/AppContext';
 import { IQuote } from 'components/Quote/useQuote';
 import React from 'react';
 import Letter from '.';
-import AppContext, { initialState } from '../App/AppContext';
 
 describe('Letter', () => {
   const quote: IQuote = {
