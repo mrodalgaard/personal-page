@@ -1,4 +1,4 @@
-import { IAppState } from '../components/App/AppContext';
+import { IAppState } from 'components/App/AppContext';
 import { ActionType, IAction } from './actions';
 
 const reducer = (state: IAppState, action: IAction) => {

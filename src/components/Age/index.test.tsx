@@ -1,13 +1,13 @@
-import { mount } from 'enzyme';
+import { act, render, screen } from '@testing-library/react';
 import React from 'react';
-import { act } from 'react-dom/test-utils';
 import Age from '.';
 
 describe('Age', () => {
   it('renders', () => {
-    const wrapper = mount(<Age birthday="02-06-2000" updateInterval={1000} />);
-    expect(wrapper.text()).toBe('0');
-    expect(wrapper).toMatchSnapshot();
+    const { container } = render(
+      <Age birthday="02-06-2000" updateInterval={1000} />
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('renders final result', () => {
@@ -17,14 +17,23 @@ describe('Age', () => {
 
     jest.useFakeTimers();
 
-    const wrapper = mount(<Age birthday={tenYearsAgo} updateInterval={1} />);
-    expect(wrapper.text()).toBe('0');
+    render(<Age birthday={tenYearsAgo} updateInterval={1} />);
+    expect(screen.queryByText('0')).toBeInTheDocument();
 
     act(() => {
-      jest.runTimersToTime(20);
+      jest.advanceTimersByTime(1);
     });
 
-    expect(wrapper.update().text()).toBe('10');
-    wrapper.unmount();
+    expect(screen.queryByText('0')).not.toBeInTheDocument();
+    expect(screen.queryByText('10')).not.toBeInTheDocument();
+
+    act(() => {
+      jest.advanceTimersByTime(20);
+    });
+
+    expect(screen.queryByText('10')).toBeInTheDocument();
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 });

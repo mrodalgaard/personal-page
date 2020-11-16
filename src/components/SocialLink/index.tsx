@@ -1,9 +1,9 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'components/Link';
 import React from 'react';
 import styled from 'styled-components';
-import analytics, { LogEvent } from '../../util/analytics';
-import Link from '../Link';
+import analytics, { LogEvent } from 'util/analytics';
 
 const StyledLink = styled(Link)`
   padding: 2px;
@@ -14,7 +14,7 @@ interface IProps {
   href: string;
   icon: IconProp;
   logEvent?: LogEvent;
-  ariaLabel: string;
+  ariaLabel?: string;
 }
 
 const SocialLink = ({ color, href, icon, logEvent, ariaLabel }: IProps) => {

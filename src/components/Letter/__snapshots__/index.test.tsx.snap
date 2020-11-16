@@ -1,614 +1,156 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Letter renders 1`] = `
-<Letter
-  initialQuote={
-    Object {
-      "author": "Author",
-      "text": "Text",
-    }
-  }
->
-  <styled.div>
-    <StyledComponent
-      forwardedComponent={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "sc-ifAKCX",
-            "isStatic": false,
-            "lastClassName": "iSHUUy",
-            "rules": Array [
-              "
+.c2 {
+  width: 20px;
+  display: inline-block;
+}
+
+.c1 {
+  color: #000000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.c1:hover {
+  color: #c9282d;
+}
+
+.c3 {
+  border-left: 5px solid #333333;
+  padding-left: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.c3:hover {
+  color: #c9282d;
+  cursor: pointer;
+}
+
+.c4 {
+  text-align: right;
+  color: #000000;
+}
+
+.c0 {
   position: relative;
-  background: url(",
-              "note.jpg",
-              ");
+  background: url(note.jpg);
   border-radius: 1px;
   margin-bottom: 20px;
   padding: 20px;
-
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+  -webkit-transition: box-shadow 0.5s ease;
   transition: box-shadow 0.5s ease;
+}
 
-  &:hover {
-    box-shadow: 0 9px 12px 1px rgba(0, 0, 0, 0.14),
-      0 3px 16px 2px rgba(0, 0, 0, 0.12), 0 5px 6px -3px rgba(0, 0, 0, 0.2);
-  }
-",
-            ],
-          },
-          "displayName": "styled.div",
-          "foldedComponentIds": Array [],
-          "render": [Function],
-          "styledComponentId": "sc-ifAKCX",
-          "target": "div",
-          "toString": [Function],
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-        }
-      }
-      forwardedRef={null}
+.c0:hover {
+  box-shadow: 0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12),0 5px 6px -3px rgba(0,0,0,0.2);
+}
+
+<div
+  class="c0"
+>
+  <p>
+    Dear
+     
+    <a
+      class="c1"
+      color="#000000"
+      href="https://whatsmybrowser.org/"
     >
-      <div
-        className="sc-ifAKCX iSHUUy"
-      >
-        <p>
-          Dear
-           
-          <Link
-            color="#000000"
-            href="https://whatsmybrowser.org/"
-            onClick={[Function]}
-          >
-            <styled.a
-              color="#000000"
-              href="https://whatsmybrowser.org/"
-              onClick={[Function]}
-            >
-              <StyledComponent
-                color="#000000"
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
-                      "isStatic": false,
-                      "lastClassName": "bQBBwn",
-                      "rules": Array [
-                        "
-  color: ",
-                        [Function],
-                        ";
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.5s ease;
-
-  &:hover {
-    color: ",
-                        "#c9282d",
-                        ";
-  }
-",
-                      ],
-                    },
-                    "displayName": "styled.a",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
-                    "target": "a",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                href="https://whatsmybrowser.org/"
-                onClick={[Function]}
-              >
-                <a
-                  className="sc-bwzfXH bQBBwn"
-                  color="#000000"
-                  href="https://whatsmybrowser.org/"
-                  onClick={[Function]}
-                >
-                  Reader
-                </a>
-              </StyledComponent>
-            </styled.a>
-          </Link>
-          ,
-        </p>
-        <p>
-          <Link
-            color="#000000"
-            href="https://facebook.com/mrodalgaard"
-            onClick={[Function]}
-          >
-            <styled.a
-              color="#000000"
-              href="https://facebook.com/mrodalgaard"
-              onClick={[Function]}
-            >
-              <StyledComponent
-                color="#000000"
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
-                      "isStatic": false,
-                      "lastClassName": "bQBBwn",
-                      "rules": Array [
-                        "
-  color: ",
-                        [Function],
-                        ";
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.5s ease;
-
-  &:hover {
-    color: ",
-                        "#c9282d",
-                        ";
-  }
-",
-                      ],
-                    },
-                    "displayName": "styled.a",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
-                    "target": "a",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                href="https://facebook.com/mrodalgaard"
-                onClick={[Function]}
-              >
-                <a
-                  className="sc-bwzfXH bQBBwn"
-                  color="#000000"
-                  href="https://facebook.com/mrodalgaard"
-                  onClick={[Function]}
-                >
-                  Martin Rodalgaard
-                </a>
-              </StyledComponent>
-            </styled.a>
-          </Link>
-           
-          is a 
-          <Age
-            birthday="08-22-1986"
-            updateInterval={100}
-          >
-            <styled.span>
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-bdVaJa",
-                      "isStatic": false,
-                      "lastClassName": "gEHCiL",
-                      "rules": Array [
-                        "
-  width: 20px;
-  display: inline-block;
-",
-                      ],
-                    },
-                    "displayName": "styled.span",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-bdVaJa",
-                    "target": "span",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-              >
-                <span
-                  className="sc-bdVaJa gEHCiL"
-                >
-                  0
-                </span>
-              </StyledComponent>
-            </styled.span>
-          </Age>
-           year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry and Thor.
-        </p>
-        <p>
-          He is educated in
-           
-          <Link
-            color="#000000"
-            href="https://linkedin.com/in/mrodalgaard"
-            onClick={[Function]}
-          >
-            <styled.a
-              color="#000000"
-              href="https://linkedin.com/in/mrodalgaard"
-              onClick={[Function]}
-            >
-              <StyledComponent
-                color="#000000"
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
-                      "isStatic": false,
-                      "lastClassName": "bQBBwn",
-                      "rules": Array [
-                        "
-  color: ",
-                        [Function],
-                        ";
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.5s ease;
-
-  &:hover {
-    color: ",
-                        "#c9282d",
-                        ";
-  }
-",
-                      ],
-                    },
-                    "displayName": "styled.a",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
-                    "target": "a",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                href="https://linkedin.com/in/mrodalgaard"
-                onClick={[Function]}
-              >
-                <a
-                  className="sc-bwzfXH bQBBwn"
-                  color="#000000"
-                  href="https://linkedin.com/in/mrodalgaard"
-                  onClick={[Function]}
-                >
-                  Electrical Engineering
-                </a>
-              </StyledComponent>
-            </styled.a>
-          </Link>
-           
-          specialised in Embedded Systems and
-           
-          <Link
-            color="#000000"
-            href="https://github.com/mrodalgaard"
-            onClick={[Function]}
-          >
-            <styled.a
-              color="#000000"
-              href="https://github.com/mrodalgaard"
-              onClick={[Function]}
-            >
-              <StyledComponent
-                color="#000000"
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
-                      "isStatic": false,
-                      "lastClassName": "bQBBwn",
-                      "rules": Array [
-                        "
-  color: ",
-                        [Function],
-                        ";
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.5s ease;
-
-  &:hover {
-    color: ",
-                        "#c9282d",
-                        ";
-  }
-",
-                      ],
-                    },
-                    "displayName": "styled.a",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
-                    "target": "a",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                href="https://github.com/mrodalgaard"
-                onClick={[Function]}
-              >
-                <a
-                  className="sc-bwzfXH bQBBwn"
-                  color="#000000"
-                  href="https://github.com/mrodalgaard"
-                  onClick={[Function]}
-                >
-                  Programming
-                </a>
-              </StyledComponent>
-            </styled.a>
-          </Link>
-          . He currently works at
-           
-          <Link
-            color="#000000"
-            href="https://trifork.com"
-            onClick={[Function]}
-          >
-            <styled.a
-              color="#000000"
-              href="https://trifork.com"
-              onClick={[Function]}
-            >
-              <StyledComponent
-                color="#000000"
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
-                      "isStatic": false,
-                      "lastClassName": "bQBBwn",
-                      "rules": Array [
-                        "
-  color: ",
-                        [Function],
-                        ";
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.5s ease;
-
-  &:hover {
-    color: ",
-                        "#c9282d",
-                        ";
-  }
-",
-                      ],
-                    },
-                    "displayName": "styled.a",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
-                    "target": "a",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                href="https://trifork.com"
-                onClick={[Function]}
-              >
-                <a
-                  className="sc-bwzfXH bQBBwn"
-                  color="#000000"
-                  href="https://trifork.com"
-                  onClick={[Function]}
-                >
-                  Trifork A/S
-                </a>
-              </StyledComponent>
-            </styled.a>
-          </Link>
-           
-          as a Software Pilot creating mobile and web apps for customers.
-        </p>
-        <p>
-          Martin loves
-           
-          <Link
-            color="#000000"
-            href="#"
-            onClick={[Function]}
-          >
-            <styled.a
-              color="#000000"
-              href="#"
-              onClick={[Function]}
-            >
-              <StyledComponent
-                color="#000000"
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-bwzfXH",
-                      "isStatic": false,
-                      "lastClassName": "bQBBwn",
-                      "rules": Array [
-                        "
-  color: ",
-                        [Function],
-                        ";
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.5s ease;
-
-  &:hover {
-    color: ",
-                        "#c9282d",
-                        ";
-  }
-",
-                      ],
-                    },
-                    "displayName": "styled.a",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-bwzfXH",
-                    "target": "a",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                href="#"
-                onClick={[Function]}
-              >
-                <a
-                  className="sc-bwzfXH bQBBwn"
-                  color="#000000"
-                  href="#"
-                  onClick={[Function]}
-                >
-                  colors
-                </a>
-              </StyledComponent>
-            </styled.a>
-          </Link>
-          , big city traveling, skiing, watching movie classics and reading biographies.
-        </p>
-        <p>
-          The gear he 
-          <u>
-            can
-          </u>
-           live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
-        </p>
-        <Quote
-          color="#000000"
-          initialQuote={
-            Object {
-              "author": "Author",
-              "text": "Text",
-            }
-          }
-        >
-          <styled.div
-            onClick={[Function]}
-          >
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "sc-htpNat",
-                    "isStatic": false,
-                    "lastClassName": "bVTWVt",
-                    "rules": Array [
-                      "
-  border-left: 5px solid ",
-                      "#333333",
-                      ";
-  padding-left: 10px;
-  user-select: none;
-  transition: color 0.5s ease;
-
-  &:hover {
-    color: ",
-                      "#c9282d",
-                      ";
-    cursor: pointer;
-  }
-",
-                    ],
-                  },
-                  "displayName": "styled.div",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "sc-htpNat",
-                  "target": "div",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
-              onClick={[Function]}
-            >
-              <div
-                className="sc-htpNat bVTWVt"
-                onClick={[Function]}
-              >
-                <i>
-                  "Text"
-                </i>
-                <styled.p
-                  color="#000000"
-                >
-                  <StyledComponent
-                    color="#000000"
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "sc-bxivhb",
-                          "isStatic": false,
-                          "lastClassName": "uGLDA",
-                          "rules": Array [
-                            "
-  text-align: right;
-  color: ",
-                            [Function],
-                            ";
-",
-                          ],
-                        },
-                        "displayName": "styled.p",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "sc-bxivhb",
-                        "target": "p",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <p
-                      className="sc-bxivhb uGLDA"
-                      color="#000000"
-                    >
-                      - 
-                      Author
-                    </p>
-                  </StyledComponent>
-                </styled.p>
-              </div>
-            </StyledComponent>
-          </styled.div>
-        </Quote>
-      </div>
-    </StyledComponent>
-  </styled.div>
-</Letter>
+      Reader
+    </a>
+    ,
+  </p>
+  <p>
+    <a
+      class="c1"
+      color="#000000"
+      href="https://facebook.com/mrodalgaard"
+    >
+      Martin Rodalgaard
+    </a>
+     
+    is a 
+    <span
+      class="c2"
+    >
+      0
+    </span>
+     year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry and Thor.
+  </p>
+  <p>
+    He is educated in
+     
+    <a
+      class="c1"
+      color="#000000"
+      href="https://linkedin.com/in/mrodalgaard"
+    >
+      Electrical Engineering
+    </a>
+     
+    specialised in Embedded Systems and
+     
+    <a
+      class="c1"
+      color="#000000"
+      href="https://github.com/mrodalgaard"
+    >
+      Programming
+    </a>
+    . He currently works at
+     
+    <a
+      class="c1"
+      color="#000000"
+      href="https://trifork.com"
+    >
+      Trifork A/S
+    </a>
+     
+    as a Software Pilot creating mobile and web apps for customers.
+  </p>
+  <p>
+    Martin loves
+     
+    <a
+      class="c1"
+      color="#000000"
+      href="#"
+    >
+      colors
+    </a>
+    , big city traveling, skiing, watching movie classics and reading biographies.
+  </p>
+  <p>
+    The gear he 
+    <u>
+      can
+    </u>
+     live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
+  </p>
+  <div
+    class="c3"
+  >
+    <i>
+      "Text"
+    </i>
+    <p
+      class="c4"
+      color="#000000"
+    >
+      - 
+      Author
+    </p>
+  </div>
+</div>
 `;

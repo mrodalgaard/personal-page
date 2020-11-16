@@ -1,3 +1,7 @@
+import backgroundColorsImg from 'assets/img/background-colors.jpg';
+import backgroundLowImg from 'assets/img/background-low.jpg';
+import backgroundImg from 'assets/img/background.jpg';
+import AppContext from 'components/App/AppContext';
 import React, { useContext, useEffect, useRef } from 'react';
 import {
   ImageProps,
@@ -6,11 +10,7 @@ import {
   RefArg,
 } from 'react-lazy-images';
 import styled from 'styled-components';
-import backgroundColorsImg from '../../assets/img/background-colors.jpg';
-import backgroundLowImg from '../../assets/img/background-low.jpg';
-import backgroundImg from '../../assets/img/background.jpg';
-import { AppBackground } from '../../util/constants';
-import AppContext from '../App/AppContext';
+import { AppBackground } from 'util/constants';
 
 const Img = styled.img`
   height: 100%;
@@ -23,7 +23,7 @@ const Img = styled.img`
   animation-fill-mode: both;
 `;
 
-const ImgFadeIn = styled(Img)`
+const ImgFadeIn = styled(Img as any)`
   animation-name: fadeIn;
 
   @keyframes fadeIn {
@@ -37,7 +37,7 @@ const ImgFadeIn = styled(Img)`
   }
 `;
 
-const ImgFadeOut = styled(Img)`
+const ImgFadeOut = styled(Img as any)`
   animation-name: fadeOut;
 
   @keyframes fadeOut {

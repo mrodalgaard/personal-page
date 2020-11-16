@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getAge from '../../util/getAge';
+import getAge from 'util/getAge';
 
 interface IProps {
   birthday: string;

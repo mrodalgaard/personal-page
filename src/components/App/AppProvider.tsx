@@ -1,9 +1,9 @@
 import React, { ReactNode, useReducer } from 'react';
+import { ActionType } from 'store/actions';
+import reducer from 'store/reducer';
 import createPersistedReducer from 'use-persisted-reducer';
-import { ActionType } from '../../store/actions';
-import reducer from '../../store/reducer';
-import { AppBackground, LOCALSTORAGE_KEY } from '../../util/constants';
-import { AppColors } from '../../util/theme';
+import { AppBackground, LOCALSTORAGE_KEY } from 'util/constants';
+import { AppColors } from 'util/theme';
 import AppContext, { initialState } from './AppContext';
 
 const usePersistedReducer: typeof useReducer = createPersistedReducer(

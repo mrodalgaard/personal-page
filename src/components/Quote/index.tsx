@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import analytics, { LogEvent } from '../../util/analytics';
-import { AppColors } from '../../util/theme';
+import analytics, { LogEvent } from 'util/analytics';
+import { AppColors } from 'util/theme';
 import useQuote, { IQuote } from './useQuote';
 
 const Container = styled.div`

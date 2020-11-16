@@ -1,10 +1,10 @@
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import React from 'react';
 import MailLink from '.';
 
 describe('MailLink', () => {
   it('renders', () => {
-    const wrapper = shallow(<MailLink href="#" />);
-    expect(wrapper).toMatchSnapshot();
+    const { container } = render(<MailLink href="#" />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
