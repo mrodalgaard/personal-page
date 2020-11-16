@@ -1,7 +1,7 @@
-import { fireEvent, render, screen } from '@testing-library/react';
 import AppContext, { initialState } from 'components/App/AppContext';
 import { IQuote } from 'components/Quote/useQuote';
 import React from 'react';
+import { fireEvent, render, screen } from 'util/test-utils';
 import Letter from '.';
 
 describe('Letter', () => {

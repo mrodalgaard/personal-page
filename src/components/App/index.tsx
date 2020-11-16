@@ -2,7 +2,8 @@ import Background from 'components/Background';
 import Envelope from 'components/Envelope';
 import Letter from 'components/Letter';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import theme from 'util/theme';
 import AppProvider from './AppProvider';
 
 const Content = styled.div`
@@ -21,11 +22,13 @@ const Content = styled.div`
 const App = () => {
   return (
     <AppProvider>
-      <Background />
-      <Content>
-        <Envelope />
-        <Letter />
-      </Content>
+      <ThemeProvider theme={theme}>
+        <Background />
+        <Content>
+          <Envelope />
+          <Letter />
+        </Content>
+      </ThemeProvider>
     </AppProvider>
   );
 };

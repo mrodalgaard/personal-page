@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AppColors } from 'util/theme';
 
 const StyledLink = styled.a`
-  color: ${(props) => (props.color ? props.color : AppColors.primary)};
+  color: ${({ color, theme }) => (color ? color : theme.primary)};
   text-decoration: none;
   font-weight: bold;
   transition: color 0.5s ease;
 
   &:hover {
-    color: ${AppColors.secondary};
+    color: ${({ theme }) => theme.secondary};
   }
 `;
 

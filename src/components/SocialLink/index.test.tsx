@@ -1,6 +1,6 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
-import { render } from '@testing-library/react';
 import React from 'react';
+import { render } from 'util/test-utils';
 import SocialLink from '.';
 
 describe('SocialLink', () => {

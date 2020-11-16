@@ -3,11 +3,10 @@ import mailImg from 'assets/img/mail.png';
 import React from 'react';
 import styled from 'styled-components';
 import analytics, { LogEvent } from 'util/analytics';
-import { AppColors } from 'util/theme';
 
 const Link = styled.a`
-  ${({ color }) =>
-    color === AppColors.primary
+  ${({ color, theme }) =>
+    color === theme.primary
       ? `background-image: url(${mailGreyImg})`
       : `background-image: url(${mailImg})`};
   background-size: 64px 64px;
@@ -21,7 +20,7 @@ const Link = styled.a`
 `;
 
 interface IProps {
-  color?: AppColors;
+  color?: string;
   href: string;
 }
 

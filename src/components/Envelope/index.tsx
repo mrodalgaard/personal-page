@@ -9,10 +9,9 @@ import SocialLink from 'components/SocialLink';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { LogEvent } from 'util/analytics';
-import { AppColors } from 'util/theme';
 
 const EnvelopeTop = styled.div`
-  border-bottom: 60px solid ${AppColors.grey};
+  border-bottom: 60px solid ${(props) => props.theme.grey};
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
 `;
