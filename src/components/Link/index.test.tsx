@@ -1,10 +1,10 @@
-import { shallow } from 'enzyme';
-import * as React from 'react';
+import React from 'react';
+import { render } from 'util/test-utils';
 import Link from '.';
 
 describe('Link', () => {
   it('renders', () => {
-    const wrapper = shallow(<Link href="#">Mock</Link>);
-    expect(wrapper).toMatchSnapshot();
+    const { container } = render(<Link href="#">Mock</Link>);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

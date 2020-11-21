@@ -1,5 +1,8 @@
-import * as React from 'react';
-import { useContext } from 'react';
+import backgroundColorsImg from 'assets/img/background-colors.jpg';
+import backgroundLowImg from 'assets/img/background-low.jpg';
+import backgroundImg from 'assets/img/background.jpg';
+import AppContext from 'components/App/AppContext';
+import React, { useContext, useEffect, useRef } from 'react';
 import {
   ImageProps,
   LazyImage,
@@ -7,11 +10,7 @@ import {
   RefArg,
 } from 'react-lazy-images';
 import styled from 'styled-components';
-import backgroundColorsImg from '../../assets/img/background-colors.jpg';
-import backgroundLowImg from '../../assets/img/background-low.jpg';
-import backgroundImg from '../../assets/img/background.jpg';
-import { AppBackground } from '../../util/constants';
-import AppContext from '../App/AppContext';
+import { AppBackground } from 'util/constants';
 
 const Img = styled.img`
   height: 100%;
@@ -24,7 +23,7 @@ const Img = styled.img`
   animation-fill-mode: both;
 `;
 
-const ImgFadeIn = styled(Img)`
+const ImgFadeIn = styled(Img as any)`
   animation-name: fadeIn;
 
   @keyframes fadeIn {
@@ -38,7 +37,7 @@ const ImgFadeIn = styled(Img)`
   }
 `;
 
-const ImgFadeOut = styled(Img)`
+const ImgFadeOut = styled(Img as any)`
   animation-name: fadeOut;
 
   @keyframes fadeOut {
@@ -55,6 +54,24 @@ const ImgFadeOut = styled(Img)`
 const Background = () => {
   const { background } = useContext(AppContext);
 
+  const firstUpdate = useRef(true);
+
+  // Use update flag to accommodate for first greyscale background fade in
+  useEffect(() => {
+    const timeoutId = window.setTimeout(
+      () => (firstUpdate.current = false),
+      500
+    );
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  // Do not render background on phone size screens
+  if (window.innerWidth < 500) {
+    return null;
+  }
+
   const placeholder = ({
     imageProps,
     ref,
@@ -62,17 +79,15 @@ const Background = () => {
     <ImgFadeIn ref={ref} src={backgroundLowImg} alt={imageProps.alt} />
   );
 
-  // Do not render background on phone size screens
-  if (window.innerWidth < 500) {
-    return null;
-  }
-
   const actualFadeIn = ({ imageProps }: { imageProps: ImageProps }) => (
     <ImgFadeIn {...imageProps} />
   );
 
   const actualFadeOut = ({ imageProps }: { imageProps: ImageProps }) => (
-    <ImgFadeOut hidden={background === AppBackground.default} {...imageProps} />
+    <ImgFadeOut
+      hidden={firstUpdate.current && background === AppBackground.greyscale}
+      {...imageProps}
+    />
   );
 
   return (

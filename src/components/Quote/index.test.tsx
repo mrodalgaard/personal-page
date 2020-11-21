@@ -1,5 +1,5 @@
-import { shallow } from 'enzyme';
-import * as React from 'react';
+import React from 'react';
+import { fireEvent, render, screen } from 'util/test-utils';
 import Quote from '.';
 import { IQuote } from './useQuote';
 
@@ -8,17 +8,17 @@ describe('Quote', () => {
     author: 'Author',
     text: 'Text',
   };
-  const textOutput = 'Text- Author';
+  const text = '"Text"';
 
   it('renders', () => {
-    const wrapper = shallow(<Quote initialQuote={quote} />);
-    expect(wrapper).toMatchSnapshot();
+    const { container } = render(<Quote initialQuote={quote} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('can select a different quote', () => {
-    const wrapper = shallow(<Quote initialQuote={quote} />);
-    expect(wrapper.text().replace(/"/g, '')).toBe(textOutput);
-    wrapper.simulate('click');
-    expect(wrapper.text().replace(/"/g, '')).not.toBe(textOutput);
+    render(<Quote initialQuote={quote} />);
+    expect(screen.queryByText(text)).toBeInTheDocument();
+    fireEvent.click(screen.getByText(text));
+    expect(screen.queryByText(text)).not.toBeInTheDocument();
   });
 });

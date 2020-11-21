@@ -2,7 +2,6 @@
 export const LOCALSTORAGE_KEY = 'AppState';
 
 export enum AppBackground {
-  default,
   greyscale,
   colored,
 }

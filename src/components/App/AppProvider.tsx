@@ -1,34 +1,22 @@
-import * as React from 'react';
-import { ReactNode, useReducer } from 'react';
-import { ActionType } from '../../store/actions';
-import reducer from '../../store/reducer';
-import { AppBackground } from '../../util/constants';
-import Persist from '../../util/Persist';
-import { AppColors } from '../../util/theme';
+import React, { ReactNode, useReducer } from 'react';
+import { ActionType } from 'store/actions';
+import reducer from 'store/reducer';
+import createPersistedReducer from 'use-persisted-reducer';
+import { AppBackground, LOCALSTORAGE_KEY } from 'util/constants';
+import theme from 'util/theme';
 import AppContext, { initialState } from './AppContext';
+
+const usePersistedReducer: typeof useReducer = createPersistedReducer(
+  LOCALSTORAGE_KEY
+);
 
 interface IProps {
   children: ReactNode;
 }
 
-const AppProvider = (props: IProps) => {
-  const { children } = props;
-
-  const persistedState = Persist.getPersistedState();
-
-  const [state, dispatch] = useReducer(
-    reducer,
-    persistedState ? persistedState : initialState
-  );
-
-  Persist.persistState({
-    ...state,
-    // Map greyscale background to default to accommodate for background fade in
-    background:
-      state.background === AppBackground.greyscale
-        ? AppBackground.default
-        : state.background,
-  });
+const AppProvider = ({ children }: IProps) => {
+  // Persist state to localstorage after reducer has been called
+  const [state, dispatch] = usePersistedReducer(reducer, initialState);
 
   // Inject dispatch actions into provider value
   const value = {
@@ -45,9 +33,7 @@ const AppProvider = (props: IProps) => {
     toggleColor: () => {
       dispatch({
         payload:
-          state.color === AppColors.primary
-            ? AppColors.secondary
-            : AppColors.primary,
+          state.color === theme.primary ? theme.secondary : theme.primary,
         type: ActionType.UPDATE_COLOR,
       });
     },

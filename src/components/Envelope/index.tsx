@@ -2,18 +2,16 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
-import * as React from 'react';
-import { useContext } from 'react';
+import AppContext from 'components/App/AppContext';
+import MailLink from 'components/MailLink';
+import { Paper } from 'components/Shared/Paper';
+import SocialLink from 'components/SocialLink';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { LogEvent } from '../../util/analytics';
-import { AppColors } from '../../util/theme';
-import AppContext from '../App/AppContext';
-import MailLink from '../MailLink';
-import { Paper } from '../Shared/Paper';
-import SocialLink from '../SocialLink';
+import { LogEvent } from 'util/analytics';
 
 const EnvelopeTop = styled.div`
-  border-bottom: 60px solid ${AppColors.grey};
+  border-bottom: 60px solid ${(props) => props.theme.grey};
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
 `;
@@ -24,16 +22,21 @@ const EnvelopeBody = styled(Paper)`
   font-size: 20px;
 `;
 
-const EnvelopeText = styled.p`
+const EnvelopeText = styled.header`
   width: 50%;
   height: 60px;
-  font-weight: bold;
   margin: auto;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+
+  h1,
+  h2 {
+    font-size: 20px;
+    line-height: 8px;
+  }
 `;
 
 const Envelope = () => {
@@ -48,32 +51,34 @@ const Envelope = () => {
           icon={faFacebookF}
           color={color}
           logEvent={LogEvent.FacebookLink}
+          ariaLabel="facebook"
         />
         <SocialLink
           href="https://linkedin.com/in/mrodalgaard"
           icon={faLinkedin}
           color={color}
           logEvent={LogEvent.LinkedInLink}
+          ariaLabel="linkedin"
         />
         <SocialLink
           href="https://github.com/mrodalgaard"
           icon={faGithub}
           color={color}
           logEvent={LogEvent.GithubLink}
+          ariaLabel="github"
         />
         <SocialLink
           href="https://twitter.com/mrodalgaard"
           icon={faTwitter}
           color={color}
           logEvent={LogEvent.TwitterLink}
+          ariaLabel="twitter"
         />
         <MailLink href="mailto:mrodalgaard@gmail.com" color={color} />
         <EnvelopeText>
-          Martin Rodalgaard
-          <br />
-          Aarhus
-          <br />
-          Denmark
+          <h1>Martin Rodalgaard</h1>
+          <h2>Aarhus</h2>
+          <h2>Denmark</h2>
         </EnvelopeText>
       </EnvelopeBody>
     </>

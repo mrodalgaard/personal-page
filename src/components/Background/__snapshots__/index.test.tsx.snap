@@ -1,335 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Background renders 1`] = `
-<Background>
-  <LazyImage
-    actual={[Function]}
-    alt="Background"
-    placeholder={[Function]}
-    src="background.jpg"
-  >
-    <LazyImageFull
-      alt="Background"
-      src="background.jpg"
-    >
-      <InView
-        onChange={[Function]}
-        rootMargin="50px 0px"
-        threshold={0.01}
-        triggerOnce={false}
-      >
-        <Styled(styled.img)
-          alt="Background"
-          src="background-low.jpg"
-        >
-          <StyledComponent
-            alt="Background"
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "eCBjaF",
-                  "rules": Array [
-                    "
+.c0 {
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: -1;
   object-fit: cover;
-
+  -webkit-animation-duration: 4s;
   animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-",
-                    "
+}
+
+.c1 {
+  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+}
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-",
-                  ],
-                },
-                "displayName": "Styled(styled.img)",
-                "foldedComponentIds": Array [
-                  "sc-bdVaJa",
-                ],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "img",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={[Function]}
-            src="background-low.jpg"
-          >
-            <img
-              alt="Background"
-              className="sc-bdVaJa sc-bwzfXH eCBjaF"
-              src="background-low.jpg"
-            />
-          </StyledComponent>
-        </Styled(styled.img)>
-      </InView>
-    </LazyImageFull>
-  </LazyImage>
-  <LazyImage
-    actual={[Function]}
-    alt="Background Color"
-    placeholder={[Function]}
-    src="background-colors.jpg"
-  >
-    <LazyImageFull
-      alt="Background Color"
-      src="background-colors.jpg"
-    >
-      <InView
-        onChange={[Function]}
-        rootMargin="50px 0px"
-        threshold={0.01}
-        triggerOnce={false}
-      >
-        <Styled(styled.img)
-          alt="Background Color"
-          src="background-low.jpg"
-        >
-          <StyledComponent
-            alt="Background Color"
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "eCBjaF",
-                  "rules": Array [
-                    "
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: -1;
-  object-fit: cover;
-
-  animation-duration: 4s;
-  animation-fill-mode: both;
-",
-                    "
-  animation-name: fadeIn;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-",
-                  ],
-                },
-                "displayName": "Styled(styled.img)",
-                "foldedComponentIds": Array [
-                  "sc-bdVaJa",
-                ],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "img",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={[Function]}
-            src="background-low.jpg"
-          >
-            <img
-              alt="Background Color"
-              className="sc-bdVaJa sc-bwzfXH eCBjaF"
-              src="background-low.jpg"
-            />
-          </StyledComponent>
-        </Styled(styled.img)>
-      </InView>
-    </LazyImageFull>
-  </LazyImage>
-</Background>
+<img
+  alt="Background"
+  class="c0 c1"
+  src="background-low.jpg"
+/>
 `;
 
 exports[`Background renders using other background 1`] = `
-<Background>
-  <LazyImage
-    actual={[Function]}
-    alt="Background"
-    placeholder={[Function]}
-    src="background.jpg"
-  >
-    <LazyImageFull
-      alt="Background"
-      src="background.jpg"
-    >
-      <InView
-        onChange={[Function]}
-        rootMargin="50px 0px"
-        threshold={0.01}
-        triggerOnce={false}
-      >
-        <Styled(styled.img)
-          alt="Background"
-          src="background-low.jpg"
-        >
-          <StyledComponent
-            alt="Background"
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "eCBjaF",
-                  "rules": Array [
-                    "
+.c0 {
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: -1;
   object-fit: cover;
-
+  -webkit-animation-duration: 4s;
   animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-",
-                    "
+}
+
+.c1 {
+  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+}
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-",
-                  ],
-                },
-                "displayName": "Styled(styled.img)",
-                "foldedComponentIds": Array [
-                  "sc-bdVaJa",
-                ],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "img",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={[Function]}
-            src="background-low.jpg"
-          >
-            <img
-              alt="Background"
-              className="sc-bdVaJa sc-bwzfXH eCBjaF"
-              src="background-low.jpg"
-            />
-          </StyledComponent>
-        </Styled(styled.img)>
-      </InView>
-    </LazyImageFull>
-  </LazyImage>
-  <LazyImage
-    actual={[Function]}
-    alt="Background Color"
-    placeholder={[Function]}
-    src="background-colors.jpg"
-  >
-    <LazyImageFull
-      alt="Background Color"
-      src="background-colors.jpg"
-    >
-      <InView
-        onChange={[Function]}
-        rootMargin="50px 0px"
-        threshold={0.01}
-        triggerOnce={false}
-      >
-        <Styled(styled.img)
-          alt="Background Color"
-          src="background-low.jpg"
-        >
-          <StyledComponent
-            alt="Background Color"
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "eCBjaF",
-                  "rules": Array [
-                    "
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: -1;
-  object-fit: cover;
-
-  animation-duration: 4s;
-  animation-fill-mode: both;
-",
-                    "
-  animation-name: fadeIn;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-",
-                  ],
-                },
-                "displayName": "Styled(styled.img)",
-                "foldedComponentIds": Array [
-                  "sc-bdVaJa",
-                ],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "img",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={[Function]}
-            src="background-low.jpg"
-          >
-            <img
-              alt="Background Color"
-              className="sc-bdVaJa sc-bwzfXH eCBjaF"
-              src="background-low.jpg"
-            />
-          </StyledComponent>
-        </Styled(styled.img)>
-      </InView>
-    </LazyImageFull>
-  </LazyImage>
-</Background>
+<img
+  alt="Background"
+  class="c0 c1"
+  src="background-low.jpg"
+/>
 `;

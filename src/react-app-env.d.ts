@@ -1,9 +1,10 @@
 /// <reference types="react-scripts" />
 
-// IntersectionObserver is not defined
-export {};
-declare global {
-  interface Window {
-    IntersectionObserver: typeof IntersectionObserver;
-  }
+import theme from 'util/theme';
+
+// Strongly typed theme provider
+type CustomTheme = typeof theme;
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends CustomTheme {}
 }

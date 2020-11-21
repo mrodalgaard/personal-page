@@ -1,24 +1,23 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import analytics, { LogEvent } from '../../util/analytics';
-import { AppColors } from '../../util/theme';
+import analytics, { LogEvent } from 'util/analytics';
 import useQuote, { IQuote } from './useQuote';
 
 const Container = styled.div`
-  border-left: 5px solid ${AppColors.grey};
+  border-left: 5px solid ${({ theme }) => theme.grey};
   padding-left: 10px;
   user-select: none;
   transition: color 0.5s ease;
 
   &:hover {
-    color: ${AppColors.secondary};
+    color: ${({ theme }) => theme.secondary};
     cursor: pointer;
   }
 `;
 
 const AuthorText = styled.p`
   text-align: right;
-  color: ${(props) => (props.color ? props.color : AppColors.primary)};
+  color: ${({ color, theme }) => (color ? color : theme.primary)};
 `;
 
 interface IProps {
