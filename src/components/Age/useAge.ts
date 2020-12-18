@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import getAge from 'util/getAge';
 
 interface IProps {
@@ -6,12 +6,12 @@ interface IProps {
   updateInterval: number;
 }
 
-const DEFAULT_AGE = 0;
+const DEFAULT_AGE = 30;
 
 const useAge = ({ birthday, updateInterval }: IProps) => {
-  const [age, updateAge] = useState(DEFAULT_AGE);
+  const [age, updateAge] = useState(0);
 
-  const actualAge = getAge(birthday) || DEFAULT_AGE;
+  const actualAge = useMemo(() => getAge(birthday) || DEFAULT_AGE, [birthday]);
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
