@@ -43,7 +43,7 @@ const Letter = ({ initialQuote }: IProps) => {
         >
           Martin Rodalgaard
         </Link>{' '}
-        is a <Age birthday="08-22-1986" updateInterval={100} /> year old
+        is a <Age birthday="1986-08-22" updateInterval={100} /> year old
         engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke
         and children Gry and Thor.
       </p>

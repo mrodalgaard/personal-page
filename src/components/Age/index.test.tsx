@@ -5,7 +5,7 @@ import Age from '.';
 describe('Age', () => {
   it('renders', () => {
     const { container } = render(
-      <Age birthday="02-06-2000" updateInterval={1000} />
+      <Age birthday="2000-06-02" updateInterval={1000} />
     );
     expect(container.firstChild).toMatchSnapshot();
   });
