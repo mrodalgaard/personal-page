@@ -1,10 +1,9 @@
 import { useMemo } from 'react';
+import { DEFAULT_AGE } from 'util/constants';
 
 interface IProps {
   birthday: string;
 }
-
-const DEFAULT_AGE = 30;
 
 const useAge = ({ birthday }: IProps) => {
   return useMemo(() => {

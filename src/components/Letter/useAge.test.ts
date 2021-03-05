@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { renderHook } from '@testing-library/react-hooks';
+import { DEFAULT_AGE } from 'util/constants';
 import useAge from './useAge';
 
 describe('useAge', () => {
@@ -14,8 +15,6 @@ describe('useAge', () => {
   });
 
   it('handles invalid inputs', () => {
-    const DEFAULT_AGE = 30;
-
     let age = renderHook(() => useAge({ birthday: '55-55-2010' }));
     expect(age.result.current).toBe(DEFAULT_AGE);
 
