@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 const StyledLink = styled.a`
   color: ${({ color, theme }) => (color ? color : theme.primary)};
-  text-decoration: none;
-  font-weight: bold;
   transition: color 0.5s ease;
 
   &:hover {
