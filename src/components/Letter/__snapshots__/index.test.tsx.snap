@@ -1,37 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Letter renders 1`] = `
-.c1 {
-  color: #000000;
-  -webkit-transition: color 0.5s ease;
-  transition: color 0.5s ease;
-}
-
-.c1:hover {
-  color: #c9282d;
-}
-
-.c2 {
-  border-left: 5px solid #333333;
-  padding-left: 10px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: color 0.5s ease;
-  transition: color 0.5s ease;
-}
-
-.c2:hover {
-  color: #c9282d;
-  cursor: pointer;
-}
-
-.c3 {
-  text-align: right;
-  color: #000000;
-}
-
 .c0 {
   position: relative;
   background: url(note.jpg);
@@ -48,94 +17,59 @@ exports[`Letter renders 1`] = `
   box-shadow: 0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12),0 5px 6px -3px rgba(0,0,0,0.2);
 }
 
+.c1 {
+  opacity: 0.1;
+}
+
 <div
   class="c0"
 >
   <p>
-    Dear
-     
-    <a
+    
+    <span
       class="c1"
-      color="#000000"
-      href="https://whatsmybrowser.org/"
+      opacity="0.1"
     >
-      Reader
-    </a>
-    ,
+      Dear Reader,
+    </span>
   </p>
   <p>
-    <a
+    <span
       class="c1"
-      color="#000000"
-      href="https://facebook.com/mrodalgaard"
+      opacity="0.1"
     >
-      Martin Rodalgaard
-    </a>
-     
-    is a 
-    34
-     year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry & Thor.
+      Martin Rodalgaard is a 34 year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry & Thor.
+    </span>
   </p>
   <p>
-    He is educated in
-     
-    <a
+    <span
       class="c1"
-      color="#000000"
-      href="https://linkedin.com/in/mrodalgaard"
+      opacity="0.1"
     >
-      Electrical Engineering
-    </a>
-     
-    specialised in Embedded Systems and
-     
-    <a
-      class="c1"
-      color="#000000"
-      href="https://github.com/mrodalgaard"
-    >
-      Programming
-    </a>
-    . He currently works at
-     
-    <a
-      class="c1"
-      color="#000000"
-      href="https://trifork.com"
-    >
-      Trifork A/S
-    </a>
-     
-    as a Software Pilot creating mobile and web apps for customers.
+      He is educated in Electrical Engineering specialised in Embedded Systems and Programming. He currently works at Trifork A/S as a Software Pilot creating mobile and web apps for customers.
+    </span>
   </p>
   <p>
-    Martin loves
-     
-    <a
+    <span
       class="c1"
-      color="#000000"
-      href="#"
+      opacity="0.1"
     >
-      colors
-    </a>
-    , big city traveling, skiing, watching movie classics and reading biographies.
+      Martin loves colors, big city traveling, skiing, watching movie classics and reading biographies.
+    </span>
   </p>
   <p>
-    The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
-  </p>
-  <div
-    class="c2"
-  >
-    <i>
-      "Text"
-    </i>
-    <p
-      class="c3"
-      color="#000000"
+    <span
+      class="c1"
+      opacity="0.1"
     >
-      - 
-      Author
-    </p>
-  </div>
+      The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
+    </span>
+  </p>
+  <p>
+    <span
+      class="c1"
+      opacity="0.1"
+    />
+  </p>
 </div>
 `;
