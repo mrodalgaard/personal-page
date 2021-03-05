@@ -1,16 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Letter renders 1`] = `
-.c2 {
-  width: 20px;
-  display: inline-block;
-}
-
 .c1 {
   color: #000000;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-weight: bold;
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
@@ -19,7 +11,7 @@ exports[`Letter renders 1`] = `
   color: #c9282d;
 }
 
-.c3 {
+.c2 {
   border-left: 5px solid #333333;
   padding-left: 10px;
   -webkit-user-select: none;
@@ -30,12 +22,12 @@ exports[`Letter renders 1`] = `
   transition: color 0.5s ease;
 }
 
-.c3:hover {
+.c2:hover {
   color: #c9282d;
   cursor: pointer;
 }
 
-.c4 {
+.c3 {
   text-align: right;
   color: #000000;
 }
@@ -43,6 +35,7 @@ exports[`Letter renders 1`] = `
 .c0 {
   position: relative;
   background: url(note.jpg);
+  line-height: 20px;
   border-radius: 1px;
   margin-bottom: 20px;
   padding: 20px;
@@ -80,12 +73,8 @@ exports[`Letter renders 1`] = `
     </a>
      
     is a 
-    <span
-      class="c2"
-    >
-      0
-    </span>
-     year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry and Thor.
+    34
+     year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry & Thor.
   </p>
   <p>
     He is educated in
@@ -132,20 +121,16 @@ exports[`Letter renders 1`] = `
     , big city traveling, skiing, watching movie classics and reading biographies.
   </p>
   <p>
-    The gear he 
-    <u>
-      can
-    </u>
-     live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
+    The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
   </p>
   <div
-    class="c3"
+    class="c2"
   >
     <i>
       "Text"
     </i>
     <p
-      class="c4"
+      class="c3"
       color="#000000"
     >
       - 

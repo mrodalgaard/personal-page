@@ -9,10 +9,11 @@ import analytics, { LogEvent } from 'util/analytics';
 import useAge from './useAge';
 
 interface IProps {
+  animate?: boolean;
   initialQuote?: IQuote;
 }
 
-const Letter = ({ initialQuote }: IProps) => {
+const Letter = ({ animate = true, initialQuote }: IProps) => {
   const { color, toggleBackground, toggleColor } = useContext(AppContext);
 
   const age = useAge({ birthday: '1986-08-22' });
@@ -27,7 +28,7 @@ const Letter = ({ initialQuote }: IProps) => {
 
   return (
     <Paper>
-      <Typewriter>
+      <Typewriter delay={animate ? undefined : 0}>
         <p>
           Dear{' '}
           <Link
