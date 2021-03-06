@@ -1,8 +1,20 @@
-import React, { ReactNode, useEffect, useMemo, useState } from 'react';
+import PlayButton from 'components/PlayButton';
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 
 const Untyped = styled.span<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
+`;
+
+const TypewriterWrapper = styled.div`
+  display: contents;
 `;
 
 interface IProps {
@@ -16,6 +28,11 @@ interface TypeIndex {
   lineIndex: number;
   characterIndex: number;
 }
+
+const initialTypeIndex: TypeIndex = {
+  lineIndex: 0,
+  characterIndex: 0,
+};
 
 // Recursive extract text from children of elements
 const extractTextFromElement = (element: ReactNode): any[] => {
@@ -32,9 +49,9 @@ const extractTextFromElement = (element: ReactNode): any[] => {
 
 const Typewriter = ({
   children,
-  delay = 30,
+  delay = 100,
   opacity = 0.1,
-  onDone = () => {},
+  onDone,
 }: IProps) => {
   // Extract text from children and join them into an array of lines/strings
   const lines = useMemo(
@@ -51,11 +68,19 @@ const Typewriter = ({
       </p>
     ))
   );
+
   // Keep track of which line and character should be typed next
-  const [typeIndex, setTypeIndex] = useState<TypeIndex>({
-    lineIndex: 0,
-    characterIndex: 0,
-  });
+  const [typeIndex, setTypeIndex] = useState(initialTypeIndex);
+
+  const interval = useRef<number | undefined>();
+
+  // Set output to children and clear state when done
+  const done = useCallback(() => {
+    clearInterval(interval.current);
+    interval.current = undefined;
+    setOutput(children);
+    onDone && onDone();
+  }, [children, onDone]);
 
   // Type character and set lines/children
   useEffect(() => {
@@ -89,25 +114,20 @@ const Typewriter = ({
   }, [lines, typeIndex, children, opacity]);
 
   useEffect(() => {
-    // Set output to children immediately if delay is zero
     if (delay === 0) {
-      onDone();
-      return setOutput(children);
+      return done();
     }
 
     // Increment line and character index at interval
-    const interval = setInterval(() => {
+    interval.current = setInterval(() => {
       setTypeIndex((typeIndex) => {
-        let lineIndex = typeIndex.lineIndex;
-        let characterIndex = typeIndex.characterIndex;
-
+        let { lineIndex, characterIndex } = typeIndex;
         const line = lines[typeIndex.lineIndex];
 
         // Determine if typing is done or line/character should be incremented
         if (typeIndex.characterIndex > line.length) {
           if (lines.length <= typeIndex.lineIndex + 1) {
-            clearInterval(interval);
-            onDone();
+            done();
           } else {
             lineIndex++;
             characterIndex = 0;
@@ -119,10 +139,17 @@ const Typewriter = ({
         return { lineIndex, characterIndex };
       });
     }, delay);
-    return () => clearInterval(interval);
-  }, [lines, children, delay, onDone]);
+    return () => done();
+  }, [lines, delay, done]);
 
-  return <>{output}</>;
+  const isTyping = interval.current !== undefined;
+
+  return (
+    <TypewriterWrapper onClick={() => done()}>
+      {isTyping && <PlayButton></PlayButton>}
+      {output}
+    </TypewriterWrapper>
+  );
 };
 
 export default Typewriter;

@@ -17,59 +17,106 @@ exports[`Letter renders 1`] = `
   box-shadow: 0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12),0 5px 6px -3px rgba(0,0,0,0.2);
 }
 
-.c1 {
+.c2 {
+  float: right;
+  cursor: pointer;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  -webkit-animation: cursor 0.5s linear infinite alternate;
+  animation: cursor 0.5s linear infinite alternate;
+}
+
+.c2:hover {
+  color: #c9282d;
+}
+
+.c2 {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  -webkit-transform: scale(var(--ggs,1));
+  -ms-transform: scale(var(--ggs,1));
+  transform: scale(var(--ggs,1));
+  width: 6px;
+  height: 10px;
+}
+
+.c2::before {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 0;
+  height: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid;
+}
+
+.c3 {
   opacity: 0.1;
+}
+
+.c1 {
+  display: contents;
 }
 
 <div
   class="c0"
 >
-  <p>
-    
-    <span
-      class="c1"
-      opacity="0.1"
-    >
-      Dear Reader,
-    </span>
-  </p>
-  <p>
-    <span
-      class="c1"
-      opacity="0.1"
-    >
-      Martin Rodalgaard is a 34 year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry & Thor.
-    </span>
-  </p>
-  <p>
-    <span
-      class="c1"
-      opacity="0.1"
-    >
-      He is educated in Electrical Engineering specialised in Embedded Systems and Programming. He currently works at Trifork A/S as a Software Pilot creating mobile and web apps for customers.
-    </span>
-  </p>
-  <p>
-    <span
-      class="c1"
-      opacity="0.1"
-    >
-      Martin loves colors, big city traveling, skiing, watching movie classics and reading biographies.
-    </span>
-  </p>
-  <p>
-    <span
-      class="c1"
-      opacity="0.1"
-    >
-      The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
-    </span>
-  </p>
-  <p>
-    <span
-      class="c1"
-      opacity="0.1"
+  <div
+    class="c1"
+  >
+    <i
+      class="c2"
     />
-  </p>
+    <p>
+      
+      <span
+        class="c3"
+        opacity="0.1"
+      >
+        Dear Reader,
+      </span>
+    </p>
+    <p>
+      <span
+        class="c3"
+        opacity="0.1"
+      >
+        Martin Rodalgaard is a 34 year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry & Thor.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c3"
+        opacity="0.1"
+      >
+        He is educated in Electrical Engineering specialised in Embedded Systems and Programming. He currently works at Trifork A/S as a Software Pilot creating mobile and web apps for customers.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c3"
+        opacity="0.1"
+      >
+        Martin loves colors, big city traveling, skiing, watching movie classics and reading biographies.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c3"
+        opacity="0.1"
+      >
+        The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c3"
+        opacity="0.1"
+      />
+    </p>
+  </div>
 </div>
 `;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayButton renders 1`] = `
+.c0 {
+  float: right;
+  cursor: pointer;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  -webkit-animation: cursor 0.5s linear infinite alternate;
+  animation: cursor 0.5s linear infinite alternate;
+}
+
+.c0:hover {
+  color: #c9282d;
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  -webkit-transform: scale(var(--ggs,1));
+  -ms-transform: scale(var(--ggs,1));
+  transform: scale(var(--ggs,1));
+  width: 6px;
+  height: 10px;
+}
+
+.c0::before {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 0;
+  height: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid;
+}
+
+<i
+  class="c0"
+/>
+`;

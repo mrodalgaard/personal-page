@@ -6,6 +6,7 @@ import { Paper } from 'components/Shared/Paper';
 import Typewriter from 'components/Typewriter';
 import React, { useContext } from 'react';
 import analytics, { LogEvent } from 'util/analytics';
+import { TYPEWRITER_DELAY } from 'util/constants';
 import useAge from './useAge';
 
 interface IProps {
@@ -28,7 +29,7 @@ const Letter = ({ animate = true, initialQuote }: IProps) => {
 
   return (
     <Paper>
-      <Typewriter delay={animate ? undefined : 0}>
+      <Typewriter delay={animate ? TYPEWRITER_DELAY : 0}>
         <p>
           Dear{' '}
           <Link
