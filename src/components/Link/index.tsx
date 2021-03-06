@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const StyledLink = styled.a`
   color: ${({ color, theme }) => (color ? color : theme.primary)};
+  text-decoration: underline;
+  cursor: pointer;
   transition: color 0.5s ease;
 
   &:hover {
@@ -14,7 +16,7 @@ interface IProps {
   children: React.ReactNode;
   className?: any;
   color?: string;
-  href: string;
+  href?: string;
   ariaLabel?: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }

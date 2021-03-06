@@ -7,7 +7,8 @@ import React, {
   useState,
 } from 'react';
 import styled from 'styled-components';
-import PlayButton from './PlayButton';
+import TypewriterButtons from './TypewriterButtons';
+import useSounds from './useSounds';
 
 const Untyped = styled.span<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
@@ -72,7 +73,13 @@ const Typewriter = ({
   // Keep track of which line and character should be typed next
   const [typeIndex, setTypeIndex] = useState(initialTypeIndex);
 
+  const [volume, setVolume] = useState(false);
+
   const interval = useRef<number | undefined>();
+
+  const { playTypeSound, stopTypeSound } = useSounds();
+
+  const isTyping = interval.current !== undefined;
 
   // Set output to children and clear state when done
   const done = useCallback(() => {
@@ -142,11 +149,22 @@ const Typewriter = ({
     return () => done();
   }, [lines, delay, done]);
 
-  const isTyping = interval.current !== undefined;
+  useEffect(() => {
+    if (volume && isTyping) {
+      playTypeSound();
+    } else {
+      stopTypeSound();
+    }
+  }, [volume, isTyping, playTypeSound, stopTypeSound]);
 
   return (
     <TypewriterWrapper onClick={() => done()}>
-      {isTyping && <PlayButton></PlayButton>}
+      {isTyping && (
+        <TypewriterButtons
+          volume={volume}
+          onClickVolume={(volume: boolean) => setVolume(volume)}
+        ></TypewriterButtons>
+      )}
       {output}
     </TypewriterWrapper>
   );

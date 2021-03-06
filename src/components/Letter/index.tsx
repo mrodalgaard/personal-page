@@ -81,7 +81,7 @@ const Letter = ({ animate = true, initialQuote }: IProps) => {
         </p>
         <p>
           Martin loves{' '}
-          <Link href="#" onClick={onColorsClick} color={color}>
+          <Link onClick={onColorsClick} color={color}>
             colors
           </Link>
           , big city traveling, skiing, watching movie classics and reading
