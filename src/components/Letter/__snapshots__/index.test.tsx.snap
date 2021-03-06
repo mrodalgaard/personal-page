@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Letter renders 1`] = `
+.c3 {
+  color: #000000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.c3:hover {
+  color: #c9282d;
+}
+
 .c0 {
   position: relative;
   background: url(note.jpg);
@@ -19,42 +32,21 @@ exports[`Letter renders 1`] = `
 
 .c2 {
   float: right;
-  cursor: pointer;
-  -webkit-transition: color 0.5s ease;
-  transition: color 0.5s ease;
-  -webkit-animation: cursor 0.5s linear infinite alternate;
-  animation: cursor 0.5s linear infinite alternate;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2:hover {
-  color: #c9282d;
+.c4 {
+  font-size: 12px;
+  padding-left: 6px;
+  -webkit-animation: blink 0.5s linear infinite alternate;
+  animation: blink 0.5s linear infinite alternate;
 }
 
-.c2 {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  -webkit-transform: scale(var(--ggs,1));
-  -ms-transform: scale(var(--ggs,1));
-  transform: scale(var(--ggs,1));
-  width: 6px;
-  height: 10px;
-}
-
-.c2::before {
-  content: '';
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  width: 0;
-  height: 10px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 6px solid;
-}
-
-.c3 {
-  opacity: 0.1;
+.c5 {
+  opacity: 0.06;
 }
 
 .c1 {
@@ -67,54 +59,93 @@ exports[`Letter renders 1`] = `
   <div
     class="c1"
   >
-    <i
+    <div
       class="c2"
-    />
+    >
+      <a
+        class="c3"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-volume-mute fa-w-16 "
+          data-icon="volume-mute"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M215.03 71.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c15.03 15.03 40.97 4.47 40.97-16.97V88.02c0-21.46-25.96-31.98-40.97-16.97zM461.64 256l45.64-45.64c6.3-6.3 6.3-16.52 0-22.82l-22.82-22.82c-6.3-6.3-16.52-6.3-22.82 0L416 210.36l-45.64-45.64c-6.3-6.3-16.52-6.3-22.82 0l-22.82 22.82c-6.3 6.3-6.3 16.52 0 22.82L370.36 256l-45.63 45.63c-6.3 6.3-6.3 16.52 0 22.82l22.82 22.82c6.3 6.3 16.52 6.3 22.82 0L416 301.64l45.64 45.64c6.3 6.3 16.52 6.3 22.82 0l22.82-22.82c6.3-6.3 6.3-16.52 0-22.82L461.64 256z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+      <a
+        class="c3 c4"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-play fa-w-14 "
+          data-icon="play"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </div>
     <p>
       
       <span
-        class="c3"
-        opacity="0.1"
+        class="c5"
+        opacity="0.06"
       >
         Dear Reader,
       </span>
     </p>
     <p>
       <span
-        class="c3"
-        opacity="0.1"
+        class="c5"
+        opacity="0.06"
       >
         Martin Rodalgaard is a 34 year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry & Thor.
       </span>
     </p>
     <p>
       <span
-        class="c3"
-        opacity="0.1"
+        class="c5"
+        opacity="0.06"
       >
         He is educated in Electrical Engineering specialised in Embedded Systems and Programming. He currently works at Trifork A/S as a Software Pilot creating mobile and web apps for customers.
       </span>
     </p>
     <p>
       <span
-        class="c3"
-        opacity="0.1"
+        class="c5"
+        opacity="0.06"
       >
         Martin loves colors, big city traveling, skiing, watching movie classics and reading biographies.
       </span>
     </p>
     <p>
       <span
-        class="c3"
-        opacity="0.1"
+        class="c5"
+        opacity="0.06"
       >
         The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
       </span>
     </p>
     <p>
       <span
-        class="c3"
-        opacity="0.1"
+        class="c5"
+        opacity="0.06"
       />
     </p>
   </div>

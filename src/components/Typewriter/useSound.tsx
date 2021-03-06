@@ -18,6 +18,7 @@ const useSound = ({ isTyping }: IProps) => {
     typeSoundAudio.pause();
   }, [typeSoundAudio]);
 
+  // Determine if sound should play or not
   useEffect(() => {
     if (sound && isTyping) {
       playTypeSound();
@@ -26,6 +27,7 @@ const useSound = ({ isTyping }: IProps) => {
     }
   }, [sound, isTyping, playTypeSound, stopTypeSound]);
 
+  // Stop all sounds on cleanup
   useEffect(() => {
     return () => {
       stopTypeSound();
