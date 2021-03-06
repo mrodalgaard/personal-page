@@ -8,6 +8,10 @@ const useSound = ({ isTyping }: IProps) => {
   const [sound, setSound] = useState(false);
 
   const typeSoundAudio = useMemo(() => new Audio('/sounds/type.mp3'), []);
+  const carriageSoundAudio = useMemo(
+    () => new Audio('/sounds/carriage.wav'),
+    []
+  );
 
   const playTypeSound = useCallback(() => {
     typeSoundAudio.loop = true;
@@ -18,7 +22,15 @@ const useSound = ({ isTyping }: IProps) => {
     typeSoundAudio.pause();
   }, [typeSoundAudio]);
 
-  // Determine if sound should play or not
+  const playCarriageSound = useCallback(() => {
+    carriageSoundAudio.play();
+  }, [carriageSoundAudio]);
+
+  const stopCarriageSound = useCallback(() => {
+    carriageSoundAudio.pause();
+  }, [carriageSoundAudio]);
+
+  // Determine if typing sound should play or not
   useEffect(() => {
     if (sound && isTyping) {
       playTypeSound();
@@ -27,12 +39,22 @@ const useSound = ({ isTyping }: IProps) => {
     }
   }, [sound, isTyping, playTypeSound, stopTypeSound]);
 
+  // Determine if carriage sound should play or not
+  useEffect(() => {
+    if (sound && !isTyping) {
+      playCarriageSound();
+    } else {
+      stopCarriageSound();
+    }
+  }, [sound, isTyping, playCarriageSound, stopCarriageSound]);
+
   // Stop all sounds on cleanup
   useEffect(() => {
     return () => {
       stopTypeSound();
+      stopCarriageSound();
     };
-  }, [stopTypeSound]);
+  }, [stopTypeSound, stopCarriageSound]);
 
   const toggleSound = () => {
     setSound((sound) => !sound);
