@@ -1,4 +1,3 @@
-import PlayButton from 'components/PlayButton';
 import React, {
   ReactNode,
   useCallback,
@@ -8,6 +7,7 @@ import React, {
   useState,
 } from 'react';
 import styled from 'styled-components';
+import PlayButton from './PlayButton';
 
 const Untyped = styled.span<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
@@ -50,7 +50,7 @@ const extractTextFromElement = (element: ReactNode): any[] => {
 const Typewriter = ({
   children,
   delay = 100,
-  opacity = 0.1,
+  opacity = 0.06,
   onDone,
 }: IProps) => {
   // Extract text from children and join them into an array of lines/strings
