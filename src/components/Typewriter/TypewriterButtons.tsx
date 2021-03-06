@@ -28,20 +28,23 @@ const PlayLink = styled(Link)`
 `;
 
 interface IProps {
-  volume?: boolean;
-  onClickVolume?: (volume: boolean) => void;
+  sound?: boolean;
+  onSoundClick?: () => void;
 }
 
-const TypewriterButtons = ({ volume = false, onClickVolume }: IProps) => {
+const TypewriterButtons = ({
+  sound = false,
+  onSoundClick = () => {},
+}: IProps) => {
   return (
     <TypewriterButtonsWrapper>
       <Link
         onClick={(event: React.MouseEvent<HTMLElement>) => {
           event.stopPropagation();
-          onClickVolume && onClickVolume(!volume);
+          onSoundClick();
         }}
       >
-        {volume ? (
+        {sound ? (
           <FontAwesomeIcon icon={faVolumeUp} />
         ) : (
           <FontAwesomeIcon icon={faVolumeMute} />
