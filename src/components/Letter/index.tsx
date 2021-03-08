@@ -19,9 +19,7 @@ const Letter = ({ animate = true, initialQuote }: IProps) => {
 
   const age = useAge({ birthday: '1986-08-22' });
 
-  const onColorsClick = (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault();
-
+  const onColorsClick = () => {
     toggleBackground && toggleBackground();
     toggleColor && toggleColor();
     analytics.logEvent(LogEvent.ColorClick);
