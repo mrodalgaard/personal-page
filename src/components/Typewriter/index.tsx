@@ -83,6 +83,7 @@ const Typewriter = ({
   const done = useCallback(() => {
     clearInterval(interval.current);
     interval.current = undefined;
+    setTypeIndex({ lineIndex: children.length - 1, characterIndex: 0 });
     setOutput(children);
     onDone && onDone();
   }, [children, onDone]);
