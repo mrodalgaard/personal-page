@@ -75,20 +75,20 @@ const Letter = ({ animate = true, initialQuote }: IProps) => {
           >
             Trifork A/S
           </Link>{' '}
-          as a Software Pilot creating mobile and web apps for customers.
+          creating exciting mobile and web app solutions for customers.
         </p>
         <p>
           Martin loves{' '}
           <Link onClick={onColorsClick} color={color}>
             colors
           </Link>
-          , big city traveling, skiing, watching movie classics and reading
-          biographies.
+          , big city traveling, running, skiing, watching movie classics and
+          reading biographies.
         </p>
         <p>
           The gear he can live without (but doesn&#39;t want to) includes his
-          16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted
-          Giant racing bike and an Omega Seamaster on his wrist.
+          16" MacBook Pro, iPhone 12 Pro, an old Canon camera, a converted Giant
+          racing bike and an Omega Seamaster on his wrist.
         </p>
 
         <Quote color={color} initialQuote={initialQuote} />

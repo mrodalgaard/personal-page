@@ -125,7 +125,7 @@ exports[`Letter renders 1`] = `
         class="c5"
         opacity="0.06"
       >
-        He is educated in Electrical Engineering specialised in Embedded Systems and Programming. He currently works at Trifork A/S as a Software Pilot creating mobile and web apps for customers.
+        He is educated in Electrical Engineering specialised in Embedded Systems and Programming. He currently works at Trifork A/S creating exciting mobile and web app solutions for customers.
       </span>
     </p>
     <p>
@@ -133,7 +133,7 @@ exports[`Letter renders 1`] = `
         class="c5"
         opacity="0.06"
       >
-        Martin loves colors, big city traveling, skiing, watching movie classics and reading biographies.
+        Martin loves colors, big city traveling, running, skiing, watching movie classics and reading biographies.
       </span>
     </p>
     <p>
@@ -141,7 +141,7 @@ exports[`Letter renders 1`] = `
         class="c5"
         opacity="0.06"
       >
-        The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
+        The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, iPhone 12 Pro, an old Canon camera, a converted Giant racing bike and an Omega Seamaster on his wrist.
       </span>
     </p>
     <p>
