@@ -2,15 +2,18 @@
 
 exports[`MailLink renders 1`] = `
 .c0 {
-  background-image: url(mail.png);
+  background: url(mail.png);
   background-size: 64px 64px;
   width: 64px;
   height: 64px;
   float: right;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .c0:hover {
-  background-image: url(mail.png);
+  -webkit-filter: none;
+  filter: none;
 }
 
 <a

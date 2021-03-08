@@ -8,3 +8,6 @@ import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils';
 
 // Mock IntersectionObserver used by LazyImage
 mockAllIsIntersecting(true);
+
+// Mock media element pause
+window.HTMLMediaElement.prototype.pause = () => {};

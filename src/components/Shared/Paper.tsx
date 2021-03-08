@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const Paper = styled.div`
   position: relative;
   background: url(${noteImg});
+  line-height: 20px;
   border-radius: 1px;
   margin-bottom: 20px;
   padding: 20px;

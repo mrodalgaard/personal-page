@@ -26,7 +26,7 @@ describe('Letter', () => {
 
     render(
       <AppContext.Provider value={initialStateMock}>
-        <Letter initialQuote={quote} />
+        <Letter animate={false} initialQuote={quote} />
       </AppContext.Provider>
     );
     expect(toggleBackground.mock.calls.length).toBe(0);

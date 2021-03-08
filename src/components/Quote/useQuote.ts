@@ -47,6 +47,10 @@ const quotes: IQuote[] = [
     author: 'Dr. Seuss',
     text: "Don't cry because it's over, smile because it happened.",
   },
+  {
+    author: 'C.S. Lewis',
+    text: 'Two of a trade never agree.',
+  },
 ];
 
 interface IProps {

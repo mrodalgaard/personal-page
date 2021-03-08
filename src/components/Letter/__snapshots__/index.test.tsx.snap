@@ -1,48 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Letter renders 1`] = `
-.c2 {
-  width: 20px;
-  display: inline-block;
-}
-
-.c1 {
-  color: #000000;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-weight: bold;
-  -webkit-transition: color 0.5s ease;
-  transition: color 0.5s ease;
-}
-
-.c1:hover {
-  color: #c9282d;
-}
-
 .c3 {
-  border-left: 5px solid #333333;
-  padding-left: 10px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  color: #000000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
 
 .c3:hover {
   color: #c9282d;
-  cursor: pointer;
-}
-
-.c4 {
-  text-align: right;
-  color: #000000;
 }
 
 .c0 {
   position: relative;
   background: url(note.jpg);
+  line-height: 20px;
   border-radius: 1px;
   margin-bottom: 20px;
   padding: 20px;
@@ -55,101 +30,125 @@ exports[`Letter renders 1`] = `
   box-shadow: 0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12),0 5px 6px -3px rgba(0,0,0,0.2);
 }
 
+.c2 {
+  float: right;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  font-size: 12px;
+  padding-left: 6px;
+  -webkit-animation: blink 0.5s linear infinite alternate;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+.c5 {
+  opacity: 0.06;
+}
+
+.c1 {
+  display: contents;
+}
+
 <div
   class="c0"
 >
-  <p>
-    Dear
-     
-    <a
-      class="c1"
-      color="#000000"
-      href="https://whatsmybrowser.org/"
-    >
-      Reader
-    </a>
-    ,
-  </p>
-  <p>
-    <a
-      class="c1"
-      color="#000000"
-      href="https://facebook.com/mrodalgaard"
-    >
-      Martin Rodalgaard
-    </a>
-     
-    is a 
-    <span
+  <div
+    class="c1"
+  >
+    <div
       class="c2"
     >
-      0
-    </span>
-     year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry and Thor.
-  </p>
-  <p>
-    He is educated in
-     
-    <a
-      class="c1"
-      color="#000000"
-      href="https://linkedin.com/in/mrodalgaard"
-    >
-      Electrical Engineering
-    </a>
-     
-    specialised in Embedded Systems and
-     
-    <a
-      class="c1"
-      color="#000000"
-      href="https://github.com/mrodalgaard"
-    >
-      Programming
-    </a>
-    . He currently works at
-     
-    <a
-      class="c1"
-      color="#000000"
-      href="https://trifork.com"
-    >
-      Trifork A/S
-    </a>
-     
-    as a Software Pilot creating mobile and web apps for customers.
-  </p>
-  <p>
-    Martin loves
-     
-    <a
-      class="c1"
-      color="#000000"
-      href="#"
-    >
-      colors
-    </a>
-    , big city traveling, skiing, watching movie classics and reading biographies.
-  </p>
-  <p>
-    The gear he 
-    <u>
-      can
-    </u>
-     live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
-  </p>
-  <div
-    class="c3"
-  >
-    <i>
-      "Text"
-    </i>
-    <p
-      class="c4"
-      color="#000000"
-    >
-      - 
-      Author
+      <a
+        aria-label="volume"
+        class="c3"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-volume-mute fa-w-16 "
+          data-icon="volume-mute"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M215.03 71.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c15.03 15.03 40.97 4.47 40.97-16.97V88.02c0-21.46-25.96-31.98-40.97-16.97zM461.64 256l45.64-45.64c6.3-6.3 6.3-16.52 0-22.82l-22.82-22.82c-6.3-6.3-16.52-6.3-22.82 0L416 210.36l-45.64-45.64c-6.3-6.3-16.52-6.3-22.82 0l-22.82 22.82c-6.3 6.3-6.3 16.52 0 22.82L370.36 256l-45.63 45.63c-6.3 6.3-6.3 16.52 0 22.82l22.82 22.82c6.3 6.3 16.52 6.3 22.82 0L416 301.64l45.64 45.64c6.3 6.3 16.52 6.3 22.82 0l22.82-22.82c6.3-6.3 6.3-16.52 0-22.82L461.64 256z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+      <a
+        aria-label="play"
+        class="c3 c4"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-play fa-w-14 "
+          data-icon="play"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </div>
+    <p>
+      
+      <span
+        class="c5"
+        opacity="0.06"
+      >
+        Dear Reader,
+      </span>
+    </p>
+    <p>
+      <span
+        class="c5"
+        opacity="0.06"
+      >
+        Martin Rodalgaard is a 34 year old engineer living in Aarhus, Denmark, with his wonderful girlfriend Rikke and children Gry & Thor.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c5"
+        opacity="0.06"
+      >
+        He is educated in Electrical Engineering specialised in Embedded Systems and Programming. He currently works at Trifork A/S as a Software Pilot creating mobile and web apps for customers.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c5"
+        opacity="0.06"
+      >
+        Martin loves colors, big city traveling, skiing, watching movie classics and reading biographies.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c5"
+        opacity="0.06"
+      >
+        The gear he can live without (but doesn't want to) includes his 16" MacBook Pro, a broken iPhone X, an old Canon 550D, a converted Giant racing bike and an Omega Seamaster on his wrist.
+      </span>
+    </p>
+    <p>
+      <span
+        class="c5"
+        opacity="0.06"
+      />
     </p>
   </div>
 </div>
