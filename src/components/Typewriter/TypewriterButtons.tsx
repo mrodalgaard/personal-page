@@ -43,6 +43,7 @@ const TypewriterButtons = ({
           event.stopPropagation();
           onSoundClick();
         }}
+        ariaLabel="volume"
       >
         {sound ? (
           <FontAwesomeIcon icon={faVolumeUp} />
@@ -50,7 +51,7 @@ const TypewriterButtons = ({
           <FontAwesomeIcon icon={faVolumeMute} />
         )}
       </Link>
-      <PlayLink>
+      <PlayLink ariaLabel="play">
         <FontAwesomeIcon icon={faPlay} />
       </PlayLink>
     </TypewriterButtonsWrapper>
