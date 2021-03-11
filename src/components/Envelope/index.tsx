@@ -17,20 +17,23 @@ const EnvelopeTop = styled.div`
 `;
 
 const EnvelopeBody = styled(Paper)`
+  display: flex;
+  flex-direction: column;
   height: 200px;
   padding: 5px;
-  font-size: 20px;
+`;
+
+const EnvelopeBodyTop = styled.div`
+  display: flex;
+  align-items: end;
+
+  *:last-child {
+    margin-left: auto;
+  }
 `;
 
 const EnvelopeText = styled.header`
-  width: 50%;
-  height: 60px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  align-self: center;
 
   h1,
   h2 {
@@ -45,36 +48,40 @@ const Envelope = () => {
   return (
     <>
       <EnvelopeTop />
+
       <EnvelopeBody>
-        <SocialLink
-          href="https://facebook.com/mrodalgaard"
-          icon={faFacebookF}
-          color={color}
-          logEvent={LogEvent.FacebookLink}
-          ariaLabel="facebook"
-        />
-        <SocialLink
-          href="https://linkedin.com/in/mrodalgaard"
-          icon={faLinkedin}
-          color={color}
-          logEvent={LogEvent.LinkedInLink}
-          ariaLabel="linkedin"
-        />
-        <SocialLink
-          href="https://github.com/mrodalgaard"
-          icon={faGithub}
-          color={color}
-          logEvent={LogEvent.GithubLink}
-          ariaLabel="github"
-        />
-        <SocialLink
-          href="https://twitter.com/mrodalgaard"
-          icon={faTwitter}
-          color={color}
-          logEvent={LogEvent.TwitterLink}
-          ariaLabel="twitter"
-        />
-        <MailLink href="mailto:mrodalgaard@gmail.com" color={color} />
+        <EnvelopeBodyTop>
+          <SocialLink
+            href="https://facebook.com/mrodalgaard"
+            icon={faFacebookF}
+            color={color}
+            logEvent={LogEvent.FacebookLink}
+            ariaLabel="facebook"
+          />
+          <SocialLink
+            href="https://linkedin.com/in/mrodalgaard"
+            icon={faLinkedin}
+            color={color}
+            logEvent={LogEvent.LinkedInLink}
+            ariaLabel="linkedin"
+          />
+          <SocialLink
+            href="https://github.com/mrodalgaard"
+            icon={faGithub}
+            color={color}
+            logEvent={LogEvent.GithubLink}
+            ariaLabel="github"
+          />
+          <SocialLink
+            href="https://twitter.com/mrodalgaard"
+            icon={faTwitter}
+            color={color}
+            logEvent={LogEvent.TwitterLink}
+            ariaLabel="twitter"
+          />
+          <MailLink href="mailto:mrodalgaard@gmail.com" color={color} />
+        </EnvelopeBodyTop>
+
         <EnvelopeText>
           <h1>Martin Rodalgaard</h1>
           <h2>Aarhus</h2>
