@@ -8,8 +8,8 @@ const Link = styled.a`
   background-size: 64px 64px;
   width: 64px;
   height: 64px;
-  float: right;
-  filter: ${({ theme }) => (theme.primary ? 'grayscale(1)' : 'none')};
+  filter: ${({ color, theme }) =>
+    color === theme.primary ? 'grayscale(1)' : 'none'};
 
   &:hover {
     filter: none;
