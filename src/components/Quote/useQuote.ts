@@ -51,6 +51,10 @@ const quotes: IQuote[] = [
     author: 'C.S. Lewis',
     text: 'Two of a trade never agree.',
   },
+  {
+    author: 'Salvador Dali',
+    text: 'Have no fear of perfection - you’ll never reach it.',
+  },
 ];
 
 interface IProps {
