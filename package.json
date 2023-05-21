@@ -17,6 +17,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "echo true",
+    "test:ci": "echo true",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
