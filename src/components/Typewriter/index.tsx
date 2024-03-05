@@ -46,6 +46,8 @@ export const Typewriter = ({
   opacity?: number;
   onDone?: () => void;
 }) => {
+  const [isTyping, setIsTyping] = useState(true);
+
   // Ensure that react node children is an array
   const children = useMemo(() => (Array.isArray(innerChildren) ? innerChildren : [innerChildren]), [innerChildren]);
 
@@ -69,14 +71,13 @@ export const Typewriter = ({
 
   const interval = useRef<NodeJS.Timeout | undefined>();
 
-  const isTyping = interval.current !== undefined;
-
   const [sound, toggleSound] = useSound({ isTyping });
 
   // Set output to children and clear state when done
   const done = useCallback(() => {
     clearInterval(interval.current);
     interval.current = undefined;
+    setIsTyping(false);
     setTypeIndex({ lineIndex: children.length - 1, characterIndex: 0 });
     setOutput(children);
     onDone && onDone();
@@ -114,7 +115,7 @@ export const Typewriter = ({
   }, [lines, typeIndex, children, opacity]);
 
   useEffect(() => {
-    if (delay === 0) {
+    if (delay === 0 || !isTyping) {
       return done();
     }
 
@@ -140,7 +141,7 @@ export const Typewriter = ({
       });
     }, delay);
     return () => clearInterval(interval.current);
-  }, [lines, delay, done]);
+  }, [lines, delay, done, isTyping]);
 
   return (
     <TypewriterWrapper onClick={done}>

@@ -8,7 +8,7 @@ export const Letter = ({ children, animate = true }: { children: React.ReactNode
       <Paper>
         <Typewriter delay={animate ? undefined : 0}>{children}</Typewriter>
       </Paper>
-      <DraggableIcon position="top-left" />
+      <DraggableIcon position="top-right" />
     </Draggable>
   );
 };

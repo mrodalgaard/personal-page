@@ -21,7 +21,7 @@ export const Envelope = ({ children }: { children?: React.ReactNode }) => {
       <EnvelopeFlap />
       <EnvelopeBody>
         {children}
-        <DraggableIcon position="bottom-left" />
+        <DraggableIcon position="bottom-right" />
       </EnvelopeBody>
     </Draggable>
   );

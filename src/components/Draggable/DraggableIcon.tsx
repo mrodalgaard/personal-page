@@ -9,6 +9,8 @@ const StyledIcon = styled(Icon)<{ $position: Position }>`
   cursor: move;
   opacity: 0.2;
 
+  color: ${({ theme }) => theme.colors.text};
+
   ${({ $position }) => {
     switch ($position) {
       case 'top-left':
