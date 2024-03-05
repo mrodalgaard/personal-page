@@ -1,3 +1,4 @@
+import { Draggable, DraggableIcon } from 'components/Draggable';
 import { Paper } from 'components/Paper';
 import styled from 'styled-components';
 
@@ -16,9 +17,12 @@ const EnvelopeBody = styled(Paper)`
 
 export const Envelope = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <>
+    <Draggable>
       <EnvelopeFlap />
-      <EnvelopeBody>{children}</EnvelopeBody>
-    </>
+      <EnvelopeBody>
+        {children}
+        <DraggableIcon position="bottom-left" />
+      </EnvelopeBody>
+    </Draggable>
   );
 };
