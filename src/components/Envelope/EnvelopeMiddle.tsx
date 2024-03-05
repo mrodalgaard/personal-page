@@ -9,10 +9,10 @@ const Heading = styled.h2`
   line-height: 1.5rem;
 `;
 
-export default function EnvelopeMiddle({ children }: { children?: React.ReactNode }) {
+export const EnvelopeMiddle = ({ children }: { children?: React.ReactNode }) => {
   return (
     <Container>
       <Heading>{children}</Heading>
     </Container>
   );
-}
+};

@@ -1,17 +1,17 @@
-import Age from 'components/Age';
-import Background from 'components/Background';
-import Envelope, { EnvelopeMiddle, EnvelopeTop } from 'components/Envelope';
-import Icon from 'components/Icon';
-import Letter from 'components/Letter';
-import Link from 'components/Link';
-import MailLink from 'components/MailLink';
-import Quote from 'components/Quote';
-import RightSideContent from 'components/RightSideContent';
-import ThemeButton from 'components/ThemeButton';
+import { Age } from 'components/Age';
+import { Background } from 'components/Background';
+import { Envelope, EnvelopeMiddle, EnvelopeTop } from 'components/Envelope';
+import { Icon } from 'components/Icon';
+import { Letter } from 'components/Letter';
+import { Link } from 'components/Link';
+import { MailLink } from 'components/MailLink';
+import { Quote } from 'components/Quote';
+import { RightSideContent } from 'components/RightSideContent';
+import { ThemeButton } from 'components/ThemeButton';
 import { useAppContext } from 'contexts/AppContext';
 import { AnalyticsEvent } from 'utils/analytics';
 
-function App() {
+export const App = () => {
   const { toggleColorized } = useAppContext();
 
   return (
@@ -34,12 +34,8 @@ function App() {
             >
               <Icon type="github" />
             </Link>
-            <Link
-              href="https://twitter.com/mrodalgaard"
-              analyticsEvent={AnalyticsEvent.TwitterIconLink}
-              ariaLabel="Twitter"
-            >
-              <Icon type="twitter" />
+            <Link href="https://x.com/mrodalgaard" analyticsEvent={AnalyticsEvent.XIconLink} ariaLabel="X">
+              <Icon type="x" />
             </Link>
             <ThemeButton />
             <MailLink href="mailto:mrodalgaard@gmail.com" />
@@ -62,14 +58,14 @@ function App() {
             ,
           </p>
           <p>
-            <Link href="https://twitter.com/mrodalgaard" analyticsEvent={AnalyticsEvent.TwitterLink}>
-              Martin Rodalgaard
+            <Link href="https://x.com/mrodalgaard" analyticsEvent={AnalyticsEvent.XLink}>
+              Martin Rodalgaard Størup
             </Link>{' '}
-            is a <Age birthday="1986-08-22"></Age> year old engineer living in Aarhus, Denmark, with his wonderful
-            girlfriend Rikke and children Gry &amp; Thor.
+            is <Age birthday="1986-08-22">&nbsp;&nbsp;</Age> years and living in Aarhus, Denmark, with his lovely wife
+            Rikke and wonderful children Gry &amp; Thor.
           </p>
           <p>
-            He is educated in{' '}
+            He has an education in{' '}
             <Link href="https://linkedin.com/in/mrodalgaard" analyticsEvent={AnalyticsEvent.LinkedInLink}>
               Electrical Engineering
             </Link>{' '}
@@ -91,7 +87,7 @@ function App() {
             , big city traveling, running, skiing, watching movie classics and reading biographies.
           </p>
           <p>
-            The gear he can live without (but doesn&#39;t want to) includes his 16&quot; MacBook Pro, iPhone 12 Pro, an
+            The gear he <i>can</i> live without (but doesn&#39;t want to) includes his 16&quot; MacBook Pro, iPhone, an
             old Canon camera, a converted Giant racing bike and an Omega Seamaster on his wrist.
           </p>
 
@@ -100,6 +96,4 @@ function App() {
       </RightSideContent>
     </>
   );
-}
-
-export default App;
+};

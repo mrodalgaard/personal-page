@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const EnvelopeTop = styled.div`
+export const EnvelopeTop = styled.div`
   display: flex;
   place-items: start;
   gap: 4px;
@@ -9,5 +9,3 @@ const EnvelopeTop = styled.div`
     margin-left: auto;
   }
 `;
-
-export default EnvelopeTop;

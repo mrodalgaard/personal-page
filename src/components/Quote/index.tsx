@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { AnalyticsEvent, logEvent } from 'utils/analytics';
-import useQuote, { IQuote } from './useQuote';
+import { IQuote, useQuote } from './useQuote';
 
 const QuoteFigure = styled.div`
   border-left: 5px solid ${({ theme }) => theme.colors.primary};
@@ -38,7 +38,7 @@ const Author = styled.cite`
   }
 `;
 
-export default function Quote({ initialQuote }: { initialQuote?: IQuote }) {
+export const Quote = ({ initialQuote }: { initialQuote?: IQuote }) => {
   const [quote, nextQuote] = useQuote({ initialQuote });
 
   const onClick = () => {
@@ -54,4 +54,4 @@ export default function Quote({ initialQuote }: { initialQuote?: IQuote }) {
       </figcaption>
     </QuoteFigure>
   );
-}
+};

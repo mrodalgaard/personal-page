@@ -1,7 +1,5 @@
-import Paper from 'components/Paper';
+import { Paper } from 'components/Paper';
 import styled from 'styled-components';
-import EnvelopeMiddle from './EnvelopeMiddle';
-import EnvelopeTop from './EnvelopeTop';
 
 const EnvelopeFlap = styled.div`
   border-bottom: 60px solid ${({ theme }) => theme.colors.primary};
@@ -16,13 +14,11 @@ const EnvelopeBody = styled(Paper)`
   padding: 5px;
 `;
 
-export { EnvelopeTop, EnvelopeMiddle };
-
-export default function Envelope({ children }: { children?: React.ReactNode }) {
+export const Envelope = ({ children }: { children?: React.ReactNode }) => {
   return (
     <>
       <EnvelopeFlap />
       <EnvelopeBody>{children}</EnvelopeBody>
     </>
   );
-}
+};

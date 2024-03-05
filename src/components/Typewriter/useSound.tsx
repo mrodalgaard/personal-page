@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-export default function useSound({ isTyping }: { isTyping: boolean }) {
+export const useSound = ({ isTyping }: { isTyping: boolean }) => {
   const [sound, setSound] = useState(false);
 
   const typeSoundAudio = useMemo(() => (typeof Audio !== 'undefined' ? new Audio('/sounds/type.mp3') : undefined), []);
@@ -57,4 +57,4 @@ export default function useSound({ isTyping }: { isTyping: boolean }) {
   };
 
   return [sound, toggleSound] as const;
-}
+};

@@ -1,10 +1,10 @@
-import { CSSProperties } from 'react';
-import { GitHub, Linkedin, Moon, Play, Sun, Twitter, Volume, Volume1 } from 'react-feather';
+import { SiGithub, SiLinkedin, SiX } from '@icons-pack/react-simple-icons';
+import { Moon, Play, Sun, Volume, Volume1 } from 'react-feather';
 
 enum IconType {
   linkedIn = 'linkedIn',
   github = 'github',
-  twitter = 'twitter',
+  x = 'x',
 
   play = 'play',
   sound = 'sound',
@@ -14,27 +14,25 @@ enum IconType {
   dark = 'dark',
 }
 
-export default function Icon({ type }: { type: keyof typeof IconType }) {
-  const style: CSSProperties = { fill: 'currentcolor' };
-
+export const Icon = ({ type }: { type: keyof typeof IconType }) => {
   switch (type) {
     case IconType.linkedIn:
-      return <Linkedin style={style} />;
+      return <SiLinkedin />;
     case IconType.github:
-      return <GitHub style={style} />;
-    case IconType.twitter:
-      return <Twitter style={style} />;
+      return <SiGithub />;
+    case IconType.x:
+      return <SiX />;
     case IconType.play:
-      return <Play style={style} />;
+      return <Play />;
     case IconType.sound:
-      return <Volume1 style={style} />;
+      return <Volume1 />;
     case IconType.mute:
-      return <Volume style={style} />;
+      return <Volume />;
     case IconType.light:
-      return <Sun style={style} />;
+      return <Sun />;
     case IconType.dark:
-      return <Moon style={style} />;
+      return <Moon />;
     default:
-      return <></>;
+      return null;
   }
-}
+};

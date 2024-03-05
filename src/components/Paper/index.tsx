@@ -37,6 +37,6 @@ const StyledPaper = styled.div`
   }
 `;
 
-export default function Paper({ children, className }: { children: React.ReactNode; className?: string }) {
+export const Paper = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return <StyledPaper className={className}>{children}</StyledPaper>;
-}
+};

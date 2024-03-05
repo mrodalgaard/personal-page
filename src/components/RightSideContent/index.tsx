@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const RightSideContent = styled.main`
+export const RightSideContent = styled.main`
   margin: 20px;
 
   @media (min-width: 550px) {
@@ -12,5 +12,3 @@ const RightSideContent = styled.main`
     margin-right: 15%;
   }
 `;
-
-export default RightSideContent;

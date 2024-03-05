@@ -1,9 +1,9 @@
-import Icon from 'components/Icon';
-import Link from 'components/Link';
+import { Icon } from 'components/Icon';
+import { Link } from 'components/Link';
 import { useAppContext } from 'contexts/AppContext';
 import { AnalyticsEvent, logEvent } from 'utils/analytics';
 
-export default function ThemeButton() {
+export const ThemeButton = () => {
   const { theme, toggleTheme } = useAppContext();
 
   const localOnClick = () => {
@@ -16,4 +16,4 @@ export default function ThemeButton() {
       {theme === 'dark' ? <Icon type="dark" /> : <Icon type="light" />}
     </Link>
   );
-}
+};

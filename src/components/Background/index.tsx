@@ -1,11 +1,11 @@
 import backgroundImageColors from 'assets/img/background-colors.jpg';
 import backgroundImage from 'assets/img/background.jpg';
 import { useAppContext } from 'contexts/AppContext';
+import { PHONE_SIZE_PX } from 'contexts/ThemeContext';
 import { useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import styled from 'styled-components';
-import { PHONE_SIZE_PX } from 'utils/constants';
-import usePrevious from './usePrevious';
+import { usePrevious } from './usePrevious';
 
 const Img = styled(LazyLoadImage)`
   height: 100%;
@@ -47,7 +47,7 @@ const ImgFadeOut = styled(Img)`
   }
 `;
 
-const Background = () => {
+export const Background = () => {
   const { colorized } = useAppContext();
   const prevColorized = usePrevious(colorized);
   const [show, setShow] = useState(false);
@@ -73,5 +73,3 @@ const Background = () => {
     </>
   );
 };
-
-export default Background;

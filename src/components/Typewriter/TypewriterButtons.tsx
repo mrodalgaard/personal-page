@@ -1,5 +1,5 @@
-import Icon from 'components/Icon';
-import Link from 'components/Link';
+import { Icon } from 'components/Icon';
+import { Link } from 'components/Link';
 import { MouseEvent } from 'react';
 import styled from 'styled-components';
 
@@ -24,13 +24,13 @@ const PlayLink = styled(Link)`
   }
 `;
 
-export default function TypewriterButtons({
+export const TypewriterButtons = ({
   sound = false,
   onSoundClick = () => {},
 }: {
   sound?: boolean;
   onSoundClick?: () => void;
-}) {
+}) => {
   return (
     <TypewriterButtonsWrapper>
       <Link
@@ -47,4 +47,4 @@ export default function TypewriterButtons({
       </PlayLink>
     </TypewriterButtonsWrapper>
   );
-}
+};

@@ -17,7 +17,7 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function Link({
+export const Link = ({
   children,
   className,
   href,
@@ -31,7 +31,7 @@ export default function Link({
   ariaLabel?: string;
   analyticsEvent?: AnalyticsEvent;
   onClick?: (event: MouseEvent<HTMLElement>) => void;
-}) {
+}) => {
   const localOnClick = (event: MouseEvent<HTMLElement>) => {
     analyticsEvent && logEvent(analyticsEvent);
     onClick && onClick(event);
@@ -42,4 +42,4 @@ export default function Link({
       {children}
     </StyledLink>
   );
-}
+};

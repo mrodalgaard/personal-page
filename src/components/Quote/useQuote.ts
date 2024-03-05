@@ -52,7 +52,7 @@ const quotes: IQuote[] = [
   },
 ];
 
-export default function useQuote({ initialQuote }: { initialQuote?: IQuote }): [IQuote, () => void] {
+export const useQuote = ({ initialQuote }: { initialQuote?: IQuote }): [IQuote, () => void] => {
   const getRandomNumber = (max: number) => {
     return Math.floor(Math.random() * (max + 1));
   };
@@ -72,4 +72,4 @@ export default function useQuote({ initialQuote }: { initialQuote?: IQuote }): [
   };
 
   return [quote, nextQuote];
-}
+};

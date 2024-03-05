@@ -15,10 +15,10 @@ const Link = styled.a`
   }
 `;
 
-export default function MailLink({ href }: { href: string }) {
+export const MailLink = ({ href }: { href: string }) => {
   const onClick = () => {
     logEvent(AnalyticsEvent.MailClick);
   };
 
   return <Link href={href} onClick={onClick} aria-label="Mail" />;
-}
+};

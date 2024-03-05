@@ -1,8 +1,8 @@
 import { Children, ReactNode, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { TYPEWRITER_DELAY, TYPEWRITER_OPACITY } from 'utils/constants';
-import TypewriterButtons from './TypewriterButtons';
-import useSound from './useSound';
+import { TypewriterButtons } from './TypewriterButtons';
+import { TYPEWRITER_DELAY, TYPEWRITER_OPACITY } from './constants';
+import { useSound } from './useSound';
 
 const Untyped = styled.span<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
@@ -35,8 +35,8 @@ const extractTextFromElement = (element: ReactNode | HTMLCollection): NestedArra
   }
 };
 
-export default function Typewriter({
-  children: _children,
+export const Typewriter = ({
+  children: innerChildren,
   delay = TYPEWRITER_DELAY,
   opacity = TYPEWRITER_OPACITY,
   onDone,
@@ -45,9 +45,9 @@ export default function Typewriter({
   delay?: number;
   opacity?: number;
   onDone?: () => void;
-}) {
+}) => {
   // Ensure that react node children is an array
-  const children = useMemo(() => (Array.isArray(_children) ? _children : [_children]), [_children]);
+  const children = useMemo(() => (Array.isArray(innerChildren) ? innerChildren : [innerChildren]), [innerChildren]);
 
   // Extract text from children and join them into an array of lines/strings
   const lines = useMemo(
@@ -139,8 +139,7 @@ export default function Typewriter({
         return { lineIndex, characterIndex };
       });
     }, delay);
-    // TODO: Typewriter keeps going after completion
-    // return () => done();
+    return () => clearInterval(interval.current);
   }, [lines, delay, done]);
 
   return (
@@ -149,4 +148,4 @@ export default function Typewriter({
       {output}
     </TypewriterWrapper>
   );
-}
+};

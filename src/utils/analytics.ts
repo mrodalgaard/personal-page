@@ -1,6 +1,6 @@
 import { logEvent as firebaseLogEvent, getAnalytics, isSupported } from 'firebase/analytics';
 import { Metric } from 'web-vitals';
-import firebaseApp from './firebase';
+import { firebase } from './firebase';
 
 export enum AnalyticsEvent {
   ColorClick = 'color_click',
@@ -11,8 +11,8 @@ export enum AnalyticsEvent {
   WhoAmILink = 'who_am_i_link',
   LinkedInLink = 'linkedin_link',
   LinkedInIconLink = 'linkedin_icon_link',
-  TwitterLink = 'twitter_link',
-  TwitterIconLink = 'twitter_icon_link',
+  XLink = 'x_link',
+  XIconLink = 'x_icon_link',
   GithubLink = 'github_link',
   GithubIconLink = 'github_icon_link',
   WorkLink = 'work_link',
@@ -24,7 +24,7 @@ type Parameters = { [key: string]: unknown };
 
 const logEventToFirebase = async (event: AnalyticsEvent, parameters?: Parameters) => {
   if (await isSupported()) {
-    firebaseLogEvent(getAnalytics(firebaseApp), event, parameters);
+    firebaseLogEvent(getAnalytics(firebase), event, parameters);
   }
 };
 
