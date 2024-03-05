@@ -1,32 +1,24 @@
-import mailImg from 'assets/img/mail.png';
-import React from 'react';
+import mailImage from 'assets/img/mail.png';
 import styled from 'styled-components';
-import analytics, { LogEvent } from 'util/analytics';
+import { AnalyticsEvent, logEvent } from 'utils/analytics';
 
 const Link = styled.a`
-  background: url(${mailImg});
+  display: block;
+  background: url(${mailImage});
   background-size: 64px 64px;
   width: 64px;
   height: 64px;
-  filter: ${({ color, theme }) =>
-    color === theme.primary ? 'grayscale(1)' : 'none'};
+  filter: ${({ theme }) => (theme.colorized ? 'none' : 'grayscale(1)')};
 
   &:hover {
     filter: none;
   }
 `;
 
-interface IProps {
-  color?: string;
-  href: string;
-}
-
-const MailLink = ({ color, href }: IProps) => {
+export default function MailLink({ href }: { href: string }) {
   const onClick = () => {
-    analytics.logEvent(LogEvent.MailClick);
+    logEvent(AnalyticsEvent.MailClick);
   };
 
-  return <Link color={color} href={href} onClick={onClick} aria-label="mail" />;
-};
-
-export default MailLink;
+  return <Link href={href} onClick={onClick} aria-label="Mail" />;
+}

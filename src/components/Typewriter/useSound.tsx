@@ -1,33 +1,29 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-interface IProps {
-  isTyping: boolean;
-}
-
-const useSound = ({ isTyping }: IProps) => {
+export default function useSound({ isTyping }: { isTyping: boolean }) {
   const [sound, setSound] = useState(false);
 
-  const typeSoundAudio = useMemo(() => new Audio('/sounds/type.mp3'), []);
+  const typeSoundAudio = useMemo(() => (typeof Audio !== 'undefined' ? new Audio('/sounds/type.mp3') : undefined), []);
   const carriageSoundAudio = useMemo(
-    () => new Audio('/sounds/carriage.wav'),
+    () => (typeof Audio !== 'undefined' ? new Audio('/sounds/carriage.wav') : undefined),
     []
   );
 
   const playTypeSound = useCallback(() => {
-    typeSoundAudio.loop = true;
-    typeSoundAudio.play();
+    typeSoundAudio && (typeSoundAudio.loop = true);
+    typeSoundAudio?.play();
   }, [typeSoundAudio]);
 
   const stopTypeSound = useCallback(() => {
-    typeSoundAudio.pause();
+    typeSoundAudio?.pause();
   }, [typeSoundAudio]);
 
   const playCarriageSound = useCallback(() => {
-    carriageSoundAudio.play();
+    carriageSoundAudio?.play();
   }, [carriageSoundAudio]);
 
   const stopCarriageSound = useCallback(() => {
-    carriageSoundAudio.pause();
+    carriageSoundAudio?.pause();
   }, [carriageSoundAudio]);
 
   // Determine if typing sound should play or not
@@ -61,6 +57,4 @@ const useSound = ({ isTyping }: IProps) => {
   };
 
   return [sound, toggleSound] as const;
-};
-
-export default useSound;
+}

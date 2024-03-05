@@ -1,29 +1,25 @@
-import backgroundColorsImg from 'assets/img/background-colors.jpg';
-import backgroundLowImg from 'assets/img/background-low.jpg';
-import backgroundImg from 'assets/img/background.jpg';
-import AppContext from 'components/App/AppContext';
-import React, { useContext, useEffect, useRef } from 'react';
-import {
-  ImageProps,
-  LazyImage,
-  LazyImageRenderPropArgs,
-  RefArg,
-} from 'react-lazy-images';
+import backgroundImageColors from 'assets/img/background-colors.jpg';
+import backgroundImage from 'assets/img/background.jpg';
+import { useAppContext } from 'contexts/AppContext';
+import { useEffect, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import styled from 'styled-components';
-import { AppBackground } from 'util/constants';
+import { PHONE_SIZE_PX } from 'utils/constants';
+import usePrevious from './usePrevious';
 
-const Img = styled.img`
+const Img = styled(LazyLoadImage)`
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: -1;
   object-fit: cover;
+  -webkit-user-drag: none;
 
   animation-duration: 4s;
   animation-fill-mode: both;
 `;
 
-const ImgFadeIn = styled(Img as any)`
+const ImgFadeIn = styled(Img)`
   animation-name: fadeIn;
 
   @keyframes fadeIn {
@@ -37,7 +33,7 @@ const ImgFadeIn = styled(Img as any)`
   }
 `;
 
-const ImgFadeOut = styled(Img as any)`
+const ImgFadeOut = styled(Img)`
   animation-name: fadeOut;
 
   @keyframes fadeOut {
@@ -52,60 +48,28 @@ const ImgFadeOut = styled(Img as any)`
 `;
 
 const Background = () => {
-  const { background } = useContext(AppContext);
+  const { colorized } = useAppContext();
+  const prevColorized = usePrevious(colorized);
+  const [show, setShow] = useState(false);
 
-  const firstUpdate = useRef(true);
-
-  // Use update flag to accommodate for first greyscale background fade in
+  // Do not render background on phone sizes or server side
   useEffect(() => {
-    const timeoutId = window.setTimeout(
-      () => (firstUpdate.current = false),
-      500
-    );
-    return () => {
-      clearTimeout(timeoutId);
-    };
+    setShow(window.innerWidth > PHONE_SIZE_PX);
   }, []);
-
-  // Do not render background on phone size screens
-  if (window.innerWidth < 500) {
-    return null;
-  }
-
-  const placeholder = ({
-    imageProps,
-    ref,
-  }: LazyImageRenderPropArgs & RefArg) => (
-    <ImgFadeIn ref={ref} src={backgroundLowImg} alt={imageProps.alt} />
-  );
-
-  const actualFadeIn = ({ imageProps }: { imageProps: ImageProps }) => (
-    <ImgFadeIn {...imageProps} />
-  );
-
-  const actualFadeOut = ({ imageProps }: { imageProps: ImageProps }) => (
-    <ImgFadeOut
-      hidden={firstUpdate.current && background === AppBackground.greyscale}
-      {...imageProps}
-    />
-  );
 
   return (
     <>
-      <LazyImage
-        src={backgroundImg}
-        placeholder={placeholder}
-        actual={actualFadeIn}
-        alt="Background"
-      />
-      <LazyImage
-        src={backgroundColorsImg}
-        placeholder={placeholder}
-        actual={
-          background === AppBackground.colored ? actualFadeIn : actualFadeOut
-        }
-        alt="Background Color"
-      />
+      {show && <ImgFadeIn src={colorized ? backgroundImageColors : backgroundImage} aria-hidden sizes="100vw 100vw" />}
+      {show && prevColorized !== undefined && colorized !== prevColorized && (
+        <ImgFadeOut
+          // Key is needed to force react to rerender img instead of just
+          // replacing src and thereby skipping animation.
+          key={+colorized}
+          src={colorized ? backgroundImage : backgroundImageColors}
+          aria-hidden
+          sizes="100vw 100vw"
+        />
+      )}
     </>
   );
 };

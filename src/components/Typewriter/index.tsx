@@ -1,12 +1,6 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { Children, ReactNode, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { TYPEWRITER_DELAY, TYPEWRITER_OPACITY } from 'utils/constants';
 import TypewriterButtons from './TypewriterButtons';
 import useSound from './useSound';
 
@@ -18,13 +12,6 @@ const TypewriterWrapper = styled.div`
   display: contents;
 `;
 
-interface IProps {
-  children: ReactNode[];
-  delay?: number;
-  opacity?: number;
-  onDone?: () => void;
-}
-
 interface TypeIndex {
   lineIndex: number;
   characterIndex: number;
@@ -35,29 +22,36 @@ const initialTypeIndex: TypeIndex = {
   characterIndex: 0,
 };
 
-// Recursive extract text from children of elements
-const extractTextFromElement = (element: ReactNode): any[] => {
-  if (React.isValidElement<Element>(element)) {
-    return React.Children.map(element.props.children ?? [], (child) =>
-      extractTextFromElement(child)
-    );
+type NestedArray<T> = Array<T> | Array<NestedArray<T>>;
+
+// Recursive extract text from children of element
+const extractTextFromElement = (element: ReactNode | HTMLCollection): NestedArray<string> => {
+  if (isValidElement<Element>(element)) {
+    return Children.map(element.props.children ?? [], (child) => extractTextFromElement(child));
   } else if (Array.isArray(element)) {
     return element.map((el) => extractTextFromElement(el));
   } else {
-    return [element ?? ''];
+    return [element?.toString() ?? ''];
   }
 };
 
-const Typewriter = ({
-  children,
-  delay = 100,
-  opacity = 0.06,
+export default function Typewriter({
+  children: _children,
+  delay = TYPEWRITER_DELAY,
+  opacity = TYPEWRITER_OPACITY,
   onDone,
-}: IProps) => {
+}: {
+  children: ReactNode;
+  delay?: number;
+  opacity?: number;
+  onDone?: () => void;
+}) {
+  // Ensure that react node children is an array
+  const children = useMemo(() => (Array.isArray(_children) ? _children : [_children]), [_children]);
+
   // Extract text from children and join them into an array of lines/strings
   const lines = useMemo(
-    () =>
-      extractTextFromElement(children).map((line: string[]) => line.join('')),
+    () => extractTextFromElement(children).map((line) => (Array.isArray(line) ? line.join('') : line)),
     [children]
   );
 
@@ -73,7 +67,7 @@ const Typewriter = ({
   // Keep track of which line and character should be typed next
   const [typeIndex, setTypeIndex] = useState(initialTypeIndex);
 
-  const interval = useRef<number | undefined>();
+  const interval = useRef<NodeJS.Timeout | undefined>();
 
   const isTyping = interval.current !== undefined;
 
@@ -145,20 +139,14 @@ const Typewriter = ({
         return { lineIndex, characterIndex };
       });
     }, delay);
-    return () => done();
+    // TODO: Typewriter keeps going after completion
+    // return () => done();
   }, [lines, delay, done]);
 
   return (
-    <TypewriterWrapper onClick={() => done()}>
-      {isTyping && (
-        <TypewriterButtons
-          sound={sound}
-          onSoundClick={() => toggleSound()}
-        ></TypewriterButtons>
-      )}
+    <TypewriterWrapper onClick={done}>
+      {isTyping && <TypewriterButtons sound={sound} onSoundClick={toggleSound}></TypewriterButtons>}
       {output}
     </TypewriterWrapper>
   );
-};
-
-export default Typewriter;
+}

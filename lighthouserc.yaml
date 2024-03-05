@@ -1,8 +1,8 @@
 ci:
   collect:
-    staticDistDir: './build'
+    staticDistDir: ./dist
     settings:
-      emulatedFormFactor: 'desktop'
+      emulatedFormFactor: desktop
 
   upload:
-    target: 'temporary-public-storage'
+    target: temporary-public-storage

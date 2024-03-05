@@ -1,9 +1,6 @@
-import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay';
-import { faVolumeMute } from '@fortawesome/free-solid-svg-icons/faVolumeMute';
-import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from 'components/Icon';
 import Link from 'components/Link';
-import React from 'react';
+import { MouseEvent } from 'react';
 import styled from 'styled-components';
 
 const TypewriterButtonsWrapper = styled.div`
@@ -27,35 +24,27 @@ const PlayLink = styled(Link)`
   }
 `;
 
-interface IProps {
-  sound?: boolean;
-  onSoundClick?: () => void;
-}
-
-const TypewriterButtons = ({
+export default function TypewriterButtons({
   sound = false,
   onSoundClick = () => {},
-}: IProps) => {
+}: {
+  sound?: boolean;
+  onSoundClick?: () => void;
+}) {
   return (
     <TypewriterButtonsWrapper>
       <Link
-        onClick={(event: React.MouseEvent<HTMLElement>) => {
+        onClick={(event: MouseEvent<HTMLElement>) => {
           event.stopPropagation();
           onSoundClick();
         }}
-        ariaLabel="volume"
+        ariaLabel={sound ? 'Sound' : 'Mute'}
       >
-        {sound ? (
-          <FontAwesomeIcon icon={faVolumeUp} />
-        ) : (
-          <FontAwesomeIcon icon={faVolumeMute} />
-        )}
+        {sound ? <Icon type="sound" /> : <Icon type="mute" />}
       </Link>
-      <PlayLink ariaLabel="play">
-        <FontAwesomeIcon icon={faPlay} />
+      <PlayLink ariaLabel="Play">
+        <Icon type="play" />
       </PlayLink>
     </TypewriterButtonsWrapper>
   );
-};
-
-export default TypewriterButtons;
+}

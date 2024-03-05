@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: web
-          path: build
+          path: dist
 
   lighthouse:
     name: Lighthouse
@@ -43,7 +43,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: web
-          path: build
+          path: dist
 
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
