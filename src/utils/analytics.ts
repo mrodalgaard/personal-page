@@ -20,13 +20,15 @@ export enum AnalyticsEvent {
   WebVitals = 'web_vitals',
 }
 
-const logEventToFirebase = async (event: AnalyticsEvent, parameters?: { [key: string]: any }) => {
+type Parameters = { [key: string]: unknown };
+
+const logEventToFirebase = async (event: AnalyticsEvent, parameters?: Parameters) => {
   if (await isSupported()) {
     firebaseLogEvent(getAnalytics(firebaseApp), event, parameters);
   }
 };
 
-const logEvent = async (event: AnalyticsEvent, parameters?: { [key: string]: any }) => {
+const logEvent = async (event: AnalyticsEvent, parameters?: Parameters) => {
   logEventToFirebase(event, parameters);
 };
 
