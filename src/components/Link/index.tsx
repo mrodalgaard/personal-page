@@ -1,45 +1,49 @@
-import React from 'react';
+import { useSounds } from 'hooks/useSounds';
+import { MouseEvent } from 'react';
 import styled from 'styled-components';
+import { AnalyticsEvent, logEvent } from 'utils/analytics';
 
 const StyledLink = styled.a`
-  color: ${({ color, theme }) => (color ? color : theme.primary)};
+  color: ${({ theme }) => (theme.colorized ? theme.colors.secondary : theme.colors.text)};
   text-decoration: underline;
   cursor: pointer;
-  transition: color 0.5s ease;
+  transition: color 0.5s ease, transform 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.colors.secondary};
+  }
+
+  &:active {
+    transform: scale(0.85);
   }
 `;
 
-interface IProps {
-  children: React.ReactNode;
-  className?: any;
-  color?: string;
-  href?: string;
-  ariaLabel?: string;
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-}
-
-const Link = ({
+export const Link = ({
   children,
   className,
-  color,
   href,
-  onClick,
   ariaLabel,
-}: IProps) => {
+  analyticsEvent,
+  onClick,
+}: {
+  children?: React.ReactNode;
+  className?: string;
+  href?: string;
+  ariaLabel?: string;
+  analyticsEvent?: AnalyticsEvent;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
+}) => {
+  const { playButtonSound } = useSounds();
+
+  const localOnClick = (event: MouseEvent<HTMLElement>) => {
+    playButtonSound();
+    analyticsEvent && logEvent(analyticsEvent);
+    onClick && onClick(event);
+  };
+
   return (
-    <StyledLink
-      className={className}
-      color={color}
-      href={href}
-      aria-label={ariaLabel}
-      onClick={onClick}
-    >
+    <StyledLink className={className} href={href} aria-label={ariaLabel} onClick={localOnClick}>
       {children}
     </StyledLink>
   );
 };
-
-export default Link;

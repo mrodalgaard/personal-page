@@ -8,8 +8,7 @@ export interface IQuote {
 const quotes: IQuote[] = [
   {
     author: 'Steve Jobs',
-    text:
-      "You can't just ask customers what they want and then try to give that to them. By the time you get it built, they'll want something new.",
+    text: "You can't just ask customers what they want and then try to give that to them. By the time you get it built, they'll want something new.",
   },
   {
     author: 'Bill Gates',
@@ -17,18 +16,15 @@ const quotes: IQuote[] = [
   },
   {
     author: 'Albert Einstein',
-    text:
-      'Life is like riding a bicycle. To keep your balance you must keep moving.',
+    text: 'Life is like riding a bicycle. To keep your balance you must keep moving.',
   },
   {
     author: 'Thomas Edison',
-    text:
-      'Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.',
+    text: 'Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.',
   },
   {
     author: 'Pablo Picasso',
-    text:
-      'Every child is an artist. The problem is how to remain an artist once we grow up.',
+    text: 'Every child is an artist. The problem is how to remain an artist once we grow up.',
   },
   {
     author: 'Pablo Picasso',
@@ -40,8 +36,7 @@ const quotes: IQuote[] = [
   },
   {
     author: 'Confucius',
-    text:
-      'Give a man a fish and he will eat for a day. Teach a man to fish and he will eat for a lifetime.',
+    text: 'Give a man a fish and he will eat for a day. Teach a man to fish and he will eat for a lifetime.',
   },
   {
     author: 'Dr. Seuss',
@@ -51,13 +46,13 @@ const quotes: IQuote[] = [
     author: 'C.S. Lewis',
     text: 'Two of a trade never agree.',
   },
+  {
+    author: 'Salvador Dali',
+    text: 'Have no fear of perfection - you’ll never reach it.',
+  },
 ];
 
-interface IProps {
-  initialQuote?: IQuote;
-}
-
-const useQuote = ({ initialQuote }: IProps): [IQuote, () => void] => {
+export const useQuote = ({ initialQuote }: { initialQuote?: IQuote }) => {
   const getRandomNumber = (max: number) => {
     return Math.floor(Math.random() * (max + 1));
   };
@@ -76,7 +71,5 @@ const useQuote = ({ initialQuote }: IProps): [IQuote, () => void] => {
     setQuote(getNewRandomQuote(quote));
   };
 
-  return [quote, nextQuote];
+  return [quote, nextQuote] as const;
 };
-
-export default useQuote;

@@ -1,44 +1,57 @@
-import React from 'react';
 import styled from 'styled-components';
-import analytics, { LogEvent } from 'util/analytics';
-import useQuote, { IQuote } from './useQuote';
+import { AnalyticsEvent, logEvent } from 'utils/analytics';
+import { IQuote, useQuote } from './useQuote';
 
-const Container = styled.div`
-  border-left: 5px solid ${({ theme }) => theme.grey};
+const QuoteFigure = styled.div`
+  border-left: 5px solid ${({ theme }) => theme.colors.primary};
   padding-left: 10px;
   user-select: none;
   transition: color 0.5s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.colors.secondary};
     cursor: pointer;
   }
 `;
 
-const AuthorText = styled.p`
-  text-align: right;
-  color: ${({ color, theme }) => (color ? color : theme.primary)};
+const QuoteContent = styled.blockquote`
+  margin: 0;
+  font-style: italic;
+
+  &::before {
+    content: '“';
+  }
+
+  &::after {
+    content: '”';
+  }
 `;
 
-interface IProps {
-  color?: string;
-  initialQuote?: IQuote;
-}
+const Author = styled.cite`
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  color: ${({ theme }) => (theme.colorized ? theme.colors.secondary : theme.colors.text)};
 
-const Quote = ({ color, initialQuote }: IProps) => {
+  &::before {
+    content: '—';
+  }
+`;
+
+export const Quote = ({ initialQuote }: { initialQuote?: IQuote }) => {
   const [quote, nextQuote] = useQuote({ initialQuote });
 
   const onClick = () => {
     nextQuote();
-    analytics.logEvent(LogEvent.QuoteClick);
+    logEvent(AnalyticsEvent.QuoteClick);
   };
 
   return (
-    <Container onClick={onClick}>
-      <i>{`"${quote.text}"`}</i>
-      <AuthorText color={color}>- {quote.author}</AuthorText>
-    </Container>
+    <QuoteFigure onClick={onClick}>
+      <QuoteContent>{quote.text}</QuoteContent>
+      <figcaption>
+        <Author>{quote.author}</Author>
+      </figcaption>
+    </QuoteFigure>
   );
 };
-
-export default Quote;

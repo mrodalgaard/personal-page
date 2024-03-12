@@ -1,14 +1,7 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { useSounds } from 'hooks/useSounds';
+import { Children, ReactNode, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import TypewriterButtons from './TypewriterButtons';
-import useSound from './useSound';
+import { TYPEWRITER_DELAY, TYPEWRITER_OPACITY } from './constants';
 
 const Untyped = styled.span<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
@@ -17,13 +10,6 @@ const Untyped = styled.span<{ opacity: number }>`
 const TypewriterWrapper = styled.div`
   display: contents;
 `;
-
-interface IProps {
-  children: ReactNode[];
-  delay?: number;
-  opacity?: number;
-  onDone?: () => void;
-}
 
 interface TypeIndex {
   lineIndex: number;
@@ -35,29 +21,38 @@ const initialTypeIndex: TypeIndex = {
   characterIndex: 0,
 };
 
-// Recursive extract text from children of elements
-const extractTextFromElement = (element: ReactNode): any[] => {
-  if (React.isValidElement<Element>(element)) {
-    return React.Children.map(element.props.children ?? [], (child) =>
-      extractTextFromElement(child)
-    );
+type NestedArray<T> = Array<T> | Array<NestedArray<T>>;
+
+// Recursive extract text from children of element
+const extractTextFromElement = (element: ReactNode | HTMLCollection): NestedArray<string> => {
+  if (isValidElement<Element>(element)) {
+    return Children.map(element.props.children ?? [], (child) => extractTextFromElement(child));
   } else if (Array.isArray(element)) {
     return element.map((el) => extractTextFromElement(el));
   } else {
-    return [element ?? ''];
+    return [element?.toString() ?? ''];
   }
 };
 
-const Typewriter = ({
-  children,
-  delay = 100,
-  opacity = 0.06,
-  onDone,
-}: IProps) => {
+export const Typewriter = ({
+  children: innerChildren,
+  delay = TYPEWRITER_DELAY,
+  opacity = TYPEWRITER_OPACITY,
+}: {
+  children: ReactNode;
+  delay?: number;
+  opacity?: number;
+}) => {
+  const { playTypingSounds, stopTypingSounds, playCarriageSound } = useSounds();
+
+  const [isTyping, setIsTyping] = useState(true);
+
+  // Ensure that react node children is an array
+  const children = useMemo(() => (Array.isArray(innerChildren) ? innerChildren : [innerChildren]), [innerChildren]);
+
   // Extract text from children and join them into an array of lines/strings
   const lines = useMemo(
-    () =>
-      extractTextFromElement(children).map((line: string[]) => line.join('')),
+    () => extractTextFromElement(children).map((line) => (Array.isArray(line) ? line.join('') : line)),
     [children]
   );
 
@@ -73,20 +68,20 @@ const Typewriter = ({
   // Keep track of which line and character should be typed next
   const [typeIndex, setTypeIndex] = useState(initialTypeIndex);
 
-  const interval = useRef<number | undefined>();
-
-  const isTyping = interval.current !== undefined;
-
-  const [sound, toggleSound] = useSound({ isTyping });
+  const interval = useRef<NodeJS.Timeout | undefined>();
 
   // Set output to children and clear state when done
   const done = useCallback(() => {
+    if (!isTyping) return;
+
     clearInterval(interval.current);
     interval.current = undefined;
+    setIsTyping(false);
     setTypeIndex({ lineIndex: children.length - 1, characterIndex: 0 });
     setOutput(children);
-    onDone && onDone();
-  }, [children, onDone]);
+    stopTypingSounds();
+    playCarriageSound();
+  }, [children, isTyping, stopTypingSounds, playCarriageSound]);
 
   // Type character and set lines/children
   useEffect(() => {
@@ -119,10 +114,13 @@ const Typewriter = ({
     });
   }, [lines, typeIndex, children, opacity]);
 
+  // Start typing at interval
   useEffect(() => {
-    if (delay === 0) {
+    if (delay === 0 || !isTyping) {
       return done();
     }
+
+    playTypingSounds();
 
     // Increment line and character index at interval
     interval.current = setInterval(() => {
@@ -145,20 +143,8 @@ const Typewriter = ({
         return { lineIndex, characterIndex };
       });
     }, delay);
-    return () => done();
-  }, [lines, delay, done]);
+    return () => clearInterval(interval.current);
+  }, [lines, delay, done, isTyping, playTypingSounds]);
 
-  return (
-    <TypewriterWrapper onClick={() => done()}>
-      {isTyping && (
-        <TypewriterButtons
-          sound={sound}
-          onSoundClick={() => toggleSound()}
-        ></TypewriterButtons>
-      )}
-      {output}
-    </TypewriterWrapper>
-  );
+  return <TypewriterWrapper onClick={done}>{output}</TypewriterWrapper>;
 };
-
-export default Typewriter;
