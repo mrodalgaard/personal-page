@@ -1,8 +1,7 @@
+import { useSounds } from 'hooks/useSounds';
 import { Children, ReactNode, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { TypewriterButtons } from './TypewriterButtons';
 import { TYPEWRITER_DELAY, TYPEWRITER_OPACITY } from './constants';
-import { useSound } from './useSound';
 
 const Untyped = styled.span<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
@@ -39,13 +38,13 @@ export const Typewriter = ({
   children: innerChildren,
   delay = TYPEWRITER_DELAY,
   opacity = TYPEWRITER_OPACITY,
-  onDone,
 }: {
   children: ReactNode;
   delay?: number;
   opacity?: number;
-  onDone?: () => void;
 }) => {
+  const { playTypingSounds, stopTypingSounds, playCarriageSound } = useSounds();
+
   const [isTyping, setIsTyping] = useState(true);
 
   // Ensure that react node children is an array
@@ -71,17 +70,18 @@ export const Typewriter = ({
 
   const interval = useRef<NodeJS.Timeout | undefined>();
 
-  const [sound, toggleSound] = useSound({ isTyping });
-
   // Set output to children and clear state when done
   const done = useCallback(() => {
+    if (!isTyping) return;
+
     clearInterval(interval.current);
     interval.current = undefined;
     setIsTyping(false);
     setTypeIndex({ lineIndex: children.length - 1, characterIndex: 0 });
     setOutput(children);
-    onDone && onDone();
-  }, [children, onDone]);
+    stopTypingSounds();
+    playCarriageSound();
+  }, [children, isTyping, stopTypingSounds, playCarriageSound]);
 
   // Type character and set lines/children
   useEffect(() => {
@@ -114,10 +114,13 @@ export const Typewriter = ({
     });
   }, [lines, typeIndex, children, opacity]);
 
+  // Start typing at interval
   useEffect(() => {
     if (delay === 0 || !isTyping) {
       return done();
     }
+
+    playTypingSounds();
 
     // Increment line and character index at interval
     interval.current = setInterval(() => {
@@ -141,12 +144,7 @@ export const Typewriter = ({
       });
     }, delay);
     return () => clearInterval(interval.current);
-  }, [lines, delay, done, isTyping]);
+  }, [lines, delay, done, isTyping, playTypingSounds]);
 
-  return (
-    <TypewriterWrapper onClick={done}>
-      {isTyping && <TypewriterButtons sound={sound} onSoundClick={toggleSound}></TypewriterButtons>}
-      {output}
-    </TypewriterWrapper>
-  );
+  return <TypewriterWrapper onClick={done}>{output}</TypewriterWrapper>;
 };

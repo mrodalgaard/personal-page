@@ -7,6 +7,7 @@ export enum AnalyticsEvent {
   QuoteClick = 'quote_click',
   MailClick = 'mail_click',
   ThemeClick = 'theme_click',
+  SoundClick = 'sound_click',
 
   WhoAmILink = 'who_am_i_link',
   LinkedInLink = 'linkedin_link',

@@ -28,17 +28,20 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
 
   const [colorized, setColorized] = useState(initialState.colorized);
   const [theme, setTheme] = useState(initialState.theme);
+  const [sound, setSound] = useState(initialState.sound);
 
   // Update persisted state to local storage when state changes
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ colorized, theme }));
-  }, [theme, colorized]);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ colorized, theme, sound }));
+  }, [theme, colorized, sound]);
 
   const value: IAppContext = {
     colorized,
     theme,
+    sound,
     toggleColorized: () => setColorized((colorized) => !colorized),
     toggleTheme: () => setTheme((theme) => (theme === 'dark' ? 'light' : 'dark')),
+    toggleSound: () => setSound((sound) => !sound),
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

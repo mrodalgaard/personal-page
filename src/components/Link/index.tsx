@@ -1,3 +1,4 @@
+import { useSounds } from 'hooks/useSounds';
 import { MouseEvent } from 'react';
 import styled from 'styled-components';
 import { AnalyticsEvent, logEvent } from 'utils/analytics';
@@ -25,14 +26,17 @@ export const Link = ({
   analyticsEvent,
   onClick,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   href?: string;
   ariaLabel?: string;
   analyticsEvent?: AnalyticsEvent;
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }) => {
+  const { playButtonSound } = useSounds();
+
   const localOnClick = (event: MouseEvent<HTMLElement>) => {
+    playButtonSound();
     analyticsEvent && logEvent(analyticsEvent);
     onClick && onClick(event);
   };

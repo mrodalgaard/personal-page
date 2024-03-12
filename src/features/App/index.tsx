@@ -7,6 +7,8 @@ import { Link } from 'components/Link';
 import { MailLink } from 'components/MailLink';
 import { Quote } from 'components/Quote';
 import { RightSideContent } from 'components/RightSideContent';
+import { SoundButton } from 'components/SoundButton';
+import { Spacer } from 'components/Spacer';
 import { ThemeButton } from 'components/ThemeButton';
 import { useAppContext } from 'contexts/AppContext';
 import { AnalyticsEvent } from 'utils/analytics';
@@ -27,6 +29,9 @@ export const App = () => {
             >
               <Icon type="linkedIn" />
             </Link>
+            <Link href="https://x.com/mrodalgaard" analyticsEvent={AnalyticsEvent.XIconLink} ariaLabel="X">
+              <Icon type="x" />
+            </Link>
             <Link
               href="https://github.com/mrodalgaard"
               analyticsEvent={AnalyticsEvent.GithubIconLink}
@@ -34,10 +39,9 @@ export const App = () => {
             >
               <Icon type="github" />
             </Link>
-            <Link href="https://x.com/mrodalgaard" analyticsEvent={AnalyticsEvent.XIconLink} ariaLabel="X">
-              <Icon type="x" />
-            </Link>
+            <Spacer />
             <ThemeButton />
+            <SoundButton />
             <MailLink href="mailto:mrodalgaard@gmail.com" />
           </EnvelopeTop>
 

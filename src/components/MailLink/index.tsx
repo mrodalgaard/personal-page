@@ -1,8 +1,9 @@
 import mailImage from 'assets/img/mail.png';
+import { Link } from 'components/Link';
 import styled from 'styled-components';
-import { AnalyticsEvent, logEvent } from 'utils/analytics';
+import { AnalyticsEvent } from 'utils/analytics';
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
   display: block;
   background: url(${mailImage});
   background-size: 64px 64px;
@@ -16,9 +17,5 @@ const Link = styled.a`
 `;
 
 export const MailLink = ({ href }: { href: string }) => {
-  const onClick = () => {
-    logEvent(AnalyticsEvent.MailClick);
-  };
-
-  return <Link href={href} onClick={onClick} aria-label="Mail" />;
+  return <StyledLink href={href} analyticsEvent={AnalyticsEvent.MailClick} aria-label="Mail" />;
 };

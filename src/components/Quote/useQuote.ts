@@ -52,7 +52,7 @@ const quotes: IQuote[] = [
   },
 ];
 
-export const useQuote = ({ initialQuote }: { initialQuote?: IQuote }): [IQuote, () => void] => {
+export const useQuote = ({ initialQuote }: { initialQuote?: IQuote }) => {
   const getRandomNumber = (max: number) => {
     return Math.floor(Math.random() * (max + 1));
   };
@@ -71,5 +71,5 @@ export const useQuote = ({ initialQuote }: { initialQuote?: IQuote }): [IQuote, 
     setQuote(getNewRandomQuote(quote));
   };
 
-  return [quote, nextQuote];
+  return [quote, nextQuote] as const;
 };
