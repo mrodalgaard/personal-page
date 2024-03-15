@@ -35,8 +35,6 @@ jobs:
         with:
           path: dist
 
-      - uses: actions/setup-node@v1
+      - uses: treosh/lighthouse-ci-action@v11
         with:
-          node-version: 10.x
-      - run: npm install -g @lhci/cli@0.5.x
-      - run: lhci autorun
+          configPath: "./lighthouserc.yaml"
