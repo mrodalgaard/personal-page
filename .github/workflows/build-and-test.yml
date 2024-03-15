@@ -1,0 +1,42 @@
+name: Test & Build
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    name: 🧪 Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: yarn
+      - run: yarn lint
+      - run: yarn test:ci
+
+  build:
+    name: 🛠️ Build
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: yarn
+      - run: yarn build
+      - uses: actions/upload-artifact@v4
+        with:
+          path: dist
+
+  lighthouse:
+    name: 💡 Lighthouse
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: npm install -g @lhci/cli@0.5.x
+      - run: lhci autorun
