@@ -42,7 +42,13 @@ export const Link = ({
   };
 
   return (
-    <StyledLink className={className} href={href} aria-label={ariaLabel} onClick={localOnClick}>
+    <StyledLink
+      role={href ? 'link' : 'button'}
+      className={className}
+      href={href}
+      aria-label={ariaLabel}
+      onClick={localOnClick}
+    >
       {children}
     </StyledLink>
   );

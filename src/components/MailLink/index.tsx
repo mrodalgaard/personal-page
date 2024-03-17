@@ -17,5 +17,5 @@ const StyledLink = styled(Link)`
 `;
 
 export const MailLink = ({ href }: { href: string }) => {
-  return <StyledLink href={href} analyticsEvent={AnalyticsEvent.MailClick} aria-label="Mail" />;
+  return <StyledLink href={href} analyticsEvent={AnalyticsEvent.MailClick} ariaLabel="Mail" />;
 };

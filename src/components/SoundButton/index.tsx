@@ -16,7 +16,7 @@ export const SoundButton = () => {
   };
 
   return (
-    <Link aria-label="Sound button" onClick={onClick} analyticsEvent={AnalyticsEvent.SoundClick}>
+    <Link onClick={onClick} analyticsEvent={AnalyticsEvent.SoundClick} ariaLabel="Sound button">
       {sound ? <Icon type="sound" /> : <Icon type="mute" />}
     </Link>
   );
