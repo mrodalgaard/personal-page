@@ -14,7 +14,7 @@ export const ThemeButton = () => {
   };
 
   return (
-    <Link aria-label="Theme button" onClick={onClick} analyticsEvent={AnalyticsEvent.ThemeClick}>
+    <Link onClick={onClick} analyticsEvent={AnalyticsEvent.ThemeClick} ariaLabel="Theme button">
       {theme === 'dark' ? <Icon type="dark" /> : <Icon type="light" />}
     </Link>
   );
