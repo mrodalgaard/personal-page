@@ -4,7 +4,7 @@ import { useAppContext } from 'contexts/AppContext';
 import { PHONE_SIZE_PX } from 'contexts/ThemeContext';
 import { useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { usePrevious } from './usePrevious';
 
 const Img = styled(LazyLoadImage)`
@@ -14,37 +14,24 @@ const Img = styled(LazyLoadImage)`
   z-index: -1;
   object-fit: cover;
   -webkit-user-drag: none;
+`;
 
-  animation-duration: 4s;
-  animation-fill-mode: both;
+const FadeInKeyframes = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 `;
 
 const ImgFadeIn = styled(Img)`
-  animation-name: fadeIn;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
+  animation: 4s both ${FadeInKeyframes};
 `;
 
 const ImgFadeOut = styled(Img)`
-  animation-name: fadeOut;
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-
-    to {
-      opacity: 0;
-    }
-  }
+  animation: 4s both reverse ${FadeInKeyframes};
 `;
 
 export const Background = () => {

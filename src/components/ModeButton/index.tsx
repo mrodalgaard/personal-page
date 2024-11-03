@@ -4,18 +4,18 @@ import { useAppContext } from 'contexts/AppContext';
 import { useSounds } from 'hooks/useSounds';
 import { AnalyticsEvent } from 'utils/analytics';
 
-export const ThemeButton = () => {
-  const { theme, toggleTheme } = useAppContext();
+export const ModeButton = () => {
+  const { mode, toggleMode } = useAppContext();
   const { playButtonSound } = useSounds();
 
   const onClick = () => {
-    toggleTheme();
+    toggleMode();
     playButtonSound();
   };
 
   return (
     <Link onClick={onClick} analyticsEvent={AnalyticsEvent.ThemeClick} ariaLabel="Theme button">
-      {theme === 'dark' ? <Icon type="dark" /> : <Icon type="light" />}
+      {mode === 'dark' ? <Icon type="dark" /> : <Icon type="light" />}
     </Link>
   );
 };

@@ -5,11 +5,11 @@ import { Icon } from 'components/Icon';
 import { Letter } from 'components/Letter';
 import { Link } from 'components/Link';
 import { MailLink } from 'components/MailLink';
+import { ModeButton } from 'components/ModeButton';
 import { Quote } from 'components/Quote';
 import { RightSideContent } from 'components/RightSideContent';
 import { SoundButton } from 'components/SoundButton';
 import { Spacer } from 'components/Spacer';
-import { ThemeButton } from 'components/ThemeButton';
 import { useAppContext } from 'contexts/AppContext';
 import { AnalyticsEvent } from 'utils/analytics';
 
@@ -40,7 +40,7 @@ export const App = () => {
               <Icon type="github" />
             </Link>
             <Spacer />
-            <ThemeButton />
+            <ModeButton />
             <SoundButton />
             <MailLink href="mailto:mrodalgaard@gmail.com" />
           </EnvelopeTop>

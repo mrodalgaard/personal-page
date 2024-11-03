@@ -16,8 +16,8 @@ const initializer = (initialState: IAppContext): IAppContext => {
 
   // Try to guess the users preferred color scheme
   if (typeof window !== 'undefined') {
-    const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    state.theme = themeQuery.matches ? 'dark' : 'light';
+    const schemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    state.mode = schemeQuery.matches ? 'dark' : 'light';
   }
 
   return state;
@@ -27,20 +27,20 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const initialState = useMemo(() => initializer(defaultValue), []);
 
   const [colorized, setColorized] = useState(initialState.colorized);
-  const [theme, setTheme] = useState(initialState.theme);
+  const [mode, setMode] = useState(initialState.mode);
   const [sound, setSound] = useState(initialState.sound);
 
   // Update persisted state to local storage when state changes
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ colorized, theme, sound }));
-  }, [theme, colorized, sound]);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ colorized, mode, sound }));
+  }, [mode, colorized, sound]);
 
   const value: IAppContext = {
     colorized,
-    theme,
+    mode,
     sound,
     toggleColorized: () => setColorized((colorized) => !colorized),
-    toggleTheme: () => setTheme((theme) => (theme === 'dark' ? 'light' : 'dark')),
+    toggleMode: () => setMode((mode) => (mode === 'dark' ? 'light' : 'dark')),
     toggleSound: () => setSound((sound) => !sound),
   };
 

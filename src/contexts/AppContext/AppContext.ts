@@ -1,21 +1,21 @@
-import { AppTheme } from 'contexts/ThemeContext';
+import { Mode } from 'contexts/ThemeContext';
 import { createContext } from 'react';
 
 export interface IAppContext {
   colorized: boolean;
-  theme: AppTheme;
+  mode: Mode;
   sound: boolean;
   toggleColorized: () => void;
-  toggleTheme: () => void;
+  toggleMode: () => void;
   toggleSound: () => void;
 }
 
 export const defaultValue: IAppContext = {
   colorized: false,
-  theme: 'light',
+  mode: 'light',
   sound: false,
   toggleColorized: () => {},
-  toggleTheme: () => {},
+  toggleMode: () => {},
   toggleSound: () => {},
 };
 

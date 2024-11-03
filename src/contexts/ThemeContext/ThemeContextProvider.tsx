@@ -52,10 +52,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const { colorized, theme } = useAppContext();
+  const { colorized, mode } = useAppContext();
 
   // Extend base theme with colorized state and light or dark mode
-  const themeExtended = { ...base, colorized, colors: theme === 'dark' ? dark : light };
+  const themeExtended = { ...base, colorized, colors: mode === 'dark' ? dark : light };
 
   return (
     <ThemeProvider theme={themeExtended}>
