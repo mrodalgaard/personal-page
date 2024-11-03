@@ -15,7 +15,9 @@ export const useSounds = () => {
   );
 
   const playButtonSound = useCallback(() => {
-    sound && buttonSoundAudio?.play();
+    if (sound) {
+      buttonSoundAudio?.play();
+    }
   }, [sound, buttonSoundAudio]);
 
   const stopButtonSound = useCallback(() => {
@@ -23,8 +25,12 @@ export const useSounds = () => {
   }, [buttonSoundAudio]);
 
   const playTypingSounds = useCallback(() => {
-    typeSoundAudio && (typeSoundAudio.loop = true);
-    sound && typeSoundAudio?.play();
+    if (typeSoundAudio) {
+      typeSoundAudio.loop = true;
+    }
+    if (sound) {
+      typeSoundAudio?.play();
+    }
   }, [sound, typeSoundAudio]);
 
   const stopTypingSounds = useCallback(() => {
@@ -32,7 +38,9 @@ export const useSounds = () => {
   }, [typeSoundAudio]);
 
   const playCarriageSound = useCallback(() => {
-    sound && carriageSoundAudio?.play();
+    if (sound) {
+      carriageSoundAudio?.play();
+    }
   }, [sound, carriageSoundAudio]);
 
   const stopCarriageSound = useCallback(() => {
@@ -47,7 +55,9 @@ export const useSounds = () => {
 
   // Stop all sounds when sound is toggled off
   useEffect(() => {
-    !sound && stopAllSounds();
+    if (!sound) {
+      stopAllSounds();
+    }
   }, [sound, stopAllSounds]);
 
   return {

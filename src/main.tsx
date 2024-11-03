@@ -1,11 +1,10 @@
 import { AppContextProvider } from 'contexts/AppContext';
 import { ThemeContextProvider } from 'contexts/ThemeContext';
 import { App } from 'features/App';
-import 'index.css';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { reportWebVitals } from 'reportWebVitals';
-import { logWebVitals } from 'utils/analytics';
+import 'reset.css';
+import { monitorPerformance } from 'utils/firebase';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,4 +16,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </StrictMode>
 );
 
-reportWebVitals(logWebVitals);
+monitorPerformance();

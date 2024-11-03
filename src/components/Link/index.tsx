@@ -37,8 +37,12 @@ export const Link = ({
 
   const localOnClick = (event: MouseEvent<HTMLElement>) => {
     playButtonSound();
-    analyticsEvent && logEvent(analyticsEvent);
-    onClick && onClick(event);
+    if (analyticsEvent) {
+      logEvent(analyticsEvent);
+    }
+    if (onClick) {
+      onClick(event);
+    }
   };
 
   return (

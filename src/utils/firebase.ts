@@ -1,4 +1,5 @@
 import { FirebaseOptions, initializeApp } from 'firebase/app';
+import { getPerformance } from 'firebase/performance';
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: 'AIzaSyDNryyus5vXPfJFbaObvRu1cSbMxWmEGuk',
@@ -12,3 +13,5 @@ const firebaseConfig: FirebaseOptions = {
 };
 
 export const firebase = initializeApp(firebaseConfig);
+
+export const monitorPerformance = () => getPerformance(firebase);
