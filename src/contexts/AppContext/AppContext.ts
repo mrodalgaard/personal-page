@@ -5,6 +5,7 @@ export interface IAppContext {
   colorized: boolean;
   mode: Mode;
   sound: boolean;
+  reducedMotion: boolean;
   toggleColorized: () => void;
   toggleMode: () => void;
   toggleSound: () => void;
@@ -14,6 +15,7 @@ export const defaultValue: IAppContext = {
   colorized: false,
   mode: 'light',
   sound: false,
+  reducedMotion: false,
   toggleColorized: () => {},
   toggleMode: () => {},
   toggleSound: () => {},

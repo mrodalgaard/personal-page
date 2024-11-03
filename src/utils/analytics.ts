@@ -5,7 +5,7 @@ export enum AnalyticsEvent {
   ColorClick = 'color_click',
   QuoteClick = 'quote_click',
   MailClick = 'mail_click',
-  ThemeClick = 'theme_click',
+  ModeClick = 'mode_click',
   SoundClick = 'sound_click',
 
   WhoAmILink = 'who_am_i_link',

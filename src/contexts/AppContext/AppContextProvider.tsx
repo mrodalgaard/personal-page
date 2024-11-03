@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { AppContext, IAppContext, defaultValue } from './AppContext';
 import { LOCAL_STORAGE_KEY } from './constants';
+import { useReducedMotion } from './useReducedMotion';
 
 const initializer = (initialState: IAppContext): IAppContext => {
   const state = { ...initialState };
@@ -30,6 +31,8 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [mode, setMode] = useState(initialState.mode);
   const [sound, setSound] = useState(initialState.sound);
 
+  const reducedMotion = useReducedMotion();
+
   // Update persisted state to local storage when state changes
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ colorized, mode, sound }));
@@ -39,6 +42,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     colorized,
     mode,
     sound,
+    reducedMotion,
     toggleColorized: () => setColorized((colorized) => !colorized),
     toggleMode: () => setMode((mode) => (mode === 'dark' ? 'light' : 'dark')),
     toggleSound: () => setSound((sound) => !sound),
