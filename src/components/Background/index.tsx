@@ -1,11 +1,19 @@
 import backgroundImageColors from 'assets/img/background-colors.jpg';
 import backgroundImage from 'assets/img/background.jpg';
 import { useAppContext } from 'contexts/AppContext';
-import { PHONE_SIZE_PX } from 'contexts/ThemeContext';
-import { useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import styled, { keyframes } from 'styled-components';
 import { usePrevious } from './usePrevious';
+
+const Container = styled.div`
+  height: 100%;
+  width: 100%;
+  display: none;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: block;
+  }
+`;
 
 const Img = styled(LazyLoadImage)`
   height: 100%;
@@ -37,17 +45,11 @@ const ImgFadeOut = styled(Img)`
 export const Background = () => {
   const { colorized } = useAppContext();
   const prevColorized = usePrevious(colorized);
-  const [show, setShow] = useState(false);
-
-  // Do not render background on phone sizes or server side
-  useEffect(() => {
-    setShow(window.innerWidth > PHONE_SIZE_PX);
-  }, []);
 
   return (
-    <>
-      {show && <ImgFadeIn src={colorized ? backgroundImageColors : backgroundImage} aria-hidden sizes="100vw 100vw" />}
-      {show && prevColorized !== undefined && colorized !== prevColorized && (
+    <Container>
+      {<ImgFadeIn src={colorized ? backgroundImageColors : backgroundImage} aria-hidden sizes="100vw 100vw" />}
+      {prevColorized !== undefined && colorized !== prevColorized && (
         <ImgFadeOut
           // Key is needed to force react to rerender img instead of just
           // replacing src and thereby skipping animation.
@@ -57,6 +59,6 @@ export const Background = () => {
           sizes="100vw 100vw"
         />
       )}
-    </>
+    </Container>
   );
 };

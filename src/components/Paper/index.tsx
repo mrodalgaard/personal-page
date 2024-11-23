@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledPaper = styled.div`
+export const Paper = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.colors.background};
   background-image: repeating-linear-gradient(
@@ -12,8 +12,8 @@ const StyledPaper = styled.div`
   );
   color: ${({ theme }) => theme.colors.text};
   border-radius: 1px;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+  padding: ${({ theme }) => theme.spacing(2)};
 
   cursor: ${({
       theme,
@@ -36,7 +36,3 @@ const StyledPaper = styled.div`
     margin-block-end: 1rem;
   }
 `;
-
-export const Paper = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  return <StyledPaper className={className}>{children}</StyledPaper>;
-};

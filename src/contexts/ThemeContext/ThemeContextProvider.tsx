@@ -1,7 +1,7 @@
 import { useAppContext } from 'contexts/AppContext';
 import { ReactNode } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { base, dark, light } from './themes';
+import { darkColors, lightColors, theme } from './theme';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -14,12 +14,13 @@ const GlobalStyle = createGlobalStyle`
     overflow: auto;
 
     // Custom font
-    font-family: "Cutive Mono", sans-serif;
+    font-family: ${({ theme }) => theme.font}, sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 
     // Set zig-zag background for image to fade into
-    background-color: #ccc;
+    background-color: ${({ theme }) => theme.colors.background};
     background-image: linear-gradient(135deg, #919191 25%, transparent 25%),
       linear-gradient(225deg, #919191 25%, transparent 25%), linear-gradient(45deg, #919191 25%, transparent 25%),
       linear-gradient(315deg, #919191 25%, #ccc 25%);
@@ -54,8 +55,8 @@ const GlobalStyle = createGlobalStyle`
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   const { colorized, mode } = useAppContext();
 
-  // Extend base theme with colorized state and light or dark mode
-  const themeExtended = { ...base, colorized, colors: mode === 'dark' ? dark : light };
+  // Extend base theme with colorized state and mode
+  const themeExtended = { ...theme, colorized, colors: mode === 'dark' ? darkColors : lightColors };
 
   return (
     <ThemeProvider theme={themeExtended}>

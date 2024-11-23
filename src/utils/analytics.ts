@@ -1,5 +1,6 @@
 import { logEvent as firebaseLogEvent, getAnalytics, isSupported, setUserProperties } from 'firebase/analytics';
 import { firebase } from './firebase';
+import { isDev } from './isDev';
 
 export enum AnalyticsEvent {
   ColorClick = 'color_click',
@@ -23,13 +24,13 @@ export enum AnalyticsEvent {
 type Parameters = { [key: string]: unknown };
 
 export const logEvent = async (event: AnalyticsEvent, parameters?: Parameters) => {
-  if (await isSupported()) {
+  if (!isDev && (await isSupported())) {
     firebaseLogEvent(getAnalytics(firebase), event, parameters);
   }
 };
 
 export const setUserProperty = async (name: AnalyticsEvent, value: unknown) => {
-  if (await isSupported()) {
+  if (!isDev && (await isSupported())) {
     setUserProperties(getAnalytics(firebase), { [name]: value });
   }
 };

@@ -6,9 +6,9 @@ import { AnalyticsEvent } from 'utils/analytics';
 const StyledLink = styled(Link)`
   display: block;
   background: url(${mailImage});
-  background-size: 64px 64px;
-  width: 64px;
-  height: 64px;
+  background-size: ${({ theme }) => theme.sizes.mail} ${({ theme }) => theme.sizes.mail};
+  width: ${({ theme }) => theme.sizes.mail};
+  height: ${({ theme }) => theme.sizes.mail};
   filter: ${({ theme }) => (theme.colorized ? 'none' : 'grayscale(1)')};
 
   &:hover {

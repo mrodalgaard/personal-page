@@ -5,14 +5,11 @@ enum IconType {
   linkedIn = 'linkedIn',
   github = 'github',
   x = 'x',
-
   play = 'play',
   sound = 'sound',
   mute = 'mute',
-
   light = 'light',
   dark = 'dark',
-
   move = 'move',
 }
 

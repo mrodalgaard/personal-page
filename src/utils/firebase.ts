@@ -1,5 +1,7 @@
+import { isSupported } from 'firebase/analytics';
 import { FirebaseOptions, initializeApp } from 'firebase/app';
 import { getPerformance } from 'firebase/performance';
+import { isDev } from './isDev';
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: 'AIzaSyDNryyus5vXPfJFbaObvRu1cSbMxWmEGuk',
@@ -14,4 +16,8 @@ const firebaseConfig: FirebaseOptions = {
 
 export const firebase = initializeApp(firebaseConfig);
 
-export const monitorPerformance = () => getPerformance(firebase);
+export const monitorPerformance = async () => {
+  if (!isDev && (await isSupported())) {
+    getPerformance(firebase);
+  }
+};

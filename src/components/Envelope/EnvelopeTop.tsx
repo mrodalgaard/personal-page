@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const EnvelopeTop = styled.div`
   display: flex;
   place-items: start;
-  gap: 4px;
+  gap: ${({ theme }) => theme.spacing(0.5)};
 
   *:last-child {
     margin-left: auto;

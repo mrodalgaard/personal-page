@@ -1,3 +1,4 @@
+import { Mode } from 'contexts/ThemeContext';
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { AppContext, IAppContext, defaultValue } from './AppContext';
 import { LOCAL_STORAGE_KEY } from './constants';
@@ -18,7 +19,7 @@ const initializer = (initialState: IAppContext): IAppContext => {
   // Try to guess the users preferred color scheme
   if (typeof window !== 'undefined') {
     const schemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    state.mode = schemeQuery.matches ? 'dark' : 'light';
+    state.mode = schemeQuery.matches ? Mode.dark : Mode.light;
   }
 
   return state;
@@ -44,7 +45,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     sound,
     reducedMotion,
     toggleColorized: () => setColorized((colorized) => !colorized),
-    toggleMode: () => setMode((mode) => (mode === 'dark' ? 'light' : 'dark')),
+    toggleMode: () => setMode((mode) => (mode === Mode.dark ? Mode.light : Mode.dark)),
     toggleSound: () => setSound((sound) => !sound),
   };
 

@@ -13,7 +13,7 @@ export interface IAppContext {
 
 export const defaultValue: IAppContext = {
   colorized: false,
-  mode: 'light',
+  mode: Mode.light,
   sound: false,
   reducedMotion: false,
   toggleColorized: () => {},

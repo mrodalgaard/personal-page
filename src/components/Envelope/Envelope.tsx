@@ -11,8 +11,8 @@ const EnvelopeFlap = styled.div`
 const EnvelopeBody = styled(Paper)`
   display: flex;
   flex-direction: column;
-  height: ${({ theme }) => theme.envelopeHeight}px;
-  padding: 5px;
+  height: ${({ theme }) => theme.sizes.envelope};
+  padding: ${({ theme }) => theme.spacing(0.5)};
 `;
 
 export const Envelope = ({ children }: { children?: React.ReactNode }) => {

@@ -3,8 +3,8 @@ import { AnalyticsEvent, logEvent } from 'utils/analytics';
 import { IQuote, useQuote } from './useQuote';
 
 const QuoteFigure = styled.div`
-  border-left: 5px solid ${({ theme }) => theme.colors.primary};
-  padding-left: 10px;
+  border-left: ${({ theme }) => theme.spacing(0.5)} solid ${({ theme }) => theme.colors.primary};
+  padding-left: ${({ theme }) => theme.spacing(1)};
   user-select: none;
   transition: color 0.5s ease;
 
@@ -30,7 +30,7 @@ const QuoteContent = styled.blockquote`
 const Author = styled.cite`
   display: block;
   text-align: right;
-  margin-top: 8px;
+  margin-top: ${({ theme }) => theme.spacing(1)};
   color: ${({ theme }) => (theme.colorized ? theme.colors.secondary : theme.colors.text)};
 
   &::before {
