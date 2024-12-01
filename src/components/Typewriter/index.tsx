@@ -2,6 +2,7 @@ import { useSounds } from 'hooks/useSounds';
 import { Children, ReactNode, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TYPEWRITER_DELAY, TYPEWRITER_OPACITY } from './constants';
+import { isArray } from './isArray';
 
 const Untyped = styled.span<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
@@ -16,18 +17,13 @@ interface TypeIndex {
   characterIndex: number;
 }
 
-const initialTypeIndex: TypeIndex = {
-  lineIndex: 0,
-  characterIndex: 0,
-};
-
 type NestedArray<T> = Array<T> | Array<NestedArray<T>>;
 
 // Recursive extract text from children of element
 const extractTextFromElement = (element: ReactNode | HTMLCollection): NestedArray<string> => {
   if (isValidElement<Element>(element)) {
     return Children.map(element.props.children ?? [], (child) => extractTextFromElement(child));
-  } else if (Array.isArray(element)) {
+  } else if (isArray(element)) {
     return element.map((el) => extractTextFromElement(el));
   } else {
     return [element?.toString() ?? ''];
@@ -48,11 +44,11 @@ export const Typewriter = ({
   const [isTyping, setIsTyping] = useState(true);
 
   // Ensure that react node children is an array
-  const children = useMemo(() => (Array.isArray(innerChildren) ? innerChildren : [innerChildren]), [innerChildren]);
+  const children = useMemo(() => (isArray(innerChildren) ? innerChildren : [innerChildren]), [innerChildren]);
 
   // Extract text from children and join them into an array of lines/strings
   const lines = useMemo(
-    () => extractTextFromElement(children).map((line) => (Array.isArray(line) ? line.join('') : line)),
+    () => extractTextFromElement(children).map((line) => (isArray(line) ? line.join('') : line)),
     [children]
   );
 
@@ -66,7 +62,10 @@ export const Typewriter = ({
   );
 
   // Keep track of which line and character should be typed next
-  const [typeIndex, setTypeIndex] = useState(initialTypeIndex);
+  const [typeIndex, setTypeIndex] = useState<TypeIndex>({
+    lineIndex: 0,
+    characterIndex: 0,
+  });
 
   const interval = useRef<NodeJS.Timeout | undefined>();
 
