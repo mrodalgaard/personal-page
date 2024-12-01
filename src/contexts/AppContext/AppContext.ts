@@ -1,7 +1,7 @@
 import { Mode } from 'contexts/ThemeContext';
 import { createContext } from 'react';
 
-export interface IAppContext {
+export interface AppContextType {
   colorized: boolean;
   mode: Mode;
   sound: boolean;
@@ -11,7 +11,7 @@ export interface IAppContext {
   toggleSound: () => void;
 }
 
-export const defaultValue: IAppContext = {
+export const defaultContext: AppContextType = {
   colorized: false,
   mode: Mode.light,
   sound: false,
@@ -21,4 +21,4 @@ export const defaultValue: IAppContext = {
   toggleSound: () => {},
 };
 
-export const AppContext = createContext<IAppContext>(defaultValue);
+export const AppContext = createContext<AppContextType>(defaultContext);

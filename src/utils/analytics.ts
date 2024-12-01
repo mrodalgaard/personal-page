@@ -18,6 +18,9 @@ export enum AnalyticsEvent {
   GithubIconLink = 'github_icon_link',
   WorkLink = 'work_link',
 
+  Mode = 'mode',
+  Colorized = 'colorized',
+  Sound = 'sound',
   WebVitals = 'web_vitals',
 }
 

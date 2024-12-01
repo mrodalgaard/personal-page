@@ -1,12 +1,13 @@
 import { Icon } from 'components/Icon';
 import { Link } from 'components/Link';
-import { useAppContext } from 'contexts/AppContext';
+import { AppContext } from 'contexts/AppContext';
+import { Mode } from 'contexts/ThemeContext';
 import { useSounds } from 'hooks/useSounds';
-import { MouseEvent, useCallback } from 'react';
+import { MouseEvent, useCallback, useContext } from 'react';
 import { AnalyticsEvent } from 'utils/analytics';
 
 export const ModeButton = () => {
-  const { mode, reducedMotion, toggleMode } = useAppContext();
+  const { mode, toggleMode, reducedMotion } = useContext(AppContext);
   const { playButtonSound } = useSounds();
 
   const toggleWithAnimation = useCallback(
@@ -36,9 +37,20 @@ export const ModeButton = () => {
     [toggleMode, reducedMotion, playButtonSound]
   );
 
+  const getIcon = (mode: Mode) => {
+    switch (mode) {
+      case Mode.system:
+        return <Icon type="system" />;
+      case Mode.light:
+        return <Icon type="light" />;
+      case Mode.dark:
+        return <Icon type="dark" />;
+    }
+  };
+
   return (
     <Link onClick={toggleWithAnimation} analyticsEvent={AnalyticsEvent.ModeClick} ariaLabel="Theme button">
-      {mode === 'dark' ? <Icon type="dark" /> : <Icon type="light" />}
+      {getIcon(mode)}
     </Link>
   );
 };

@@ -1,6 +1,7 @@
 import backgroundImageColors from 'assets/img/background-colors.jpg';
 import backgroundImage from 'assets/img/background.jpg';
-import { useAppContext } from 'contexts/AppContext';
+import { AppContext } from 'contexts/AppContext';
+import { useContext } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import styled, { keyframes } from 'styled-components';
 import { usePrevious } from './usePrevious';
@@ -43,7 +44,7 @@ const ImgFadeOut = styled(Img)`
 `;
 
 export const Background = () => {
-  const { colorized } = useAppContext();
+  const { colorized } = useContext(AppContext);
   const prevColorized = usePrevious(colorized);
 
   return (

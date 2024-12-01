@@ -1,6 +1,8 @@
-import { useAppContext } from 'contexts/AppContext';
-import { ReactNode } from 'react';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { AppContext } from 'contexts/AppContext';
+import { useMatchMedia } from 'hooks/useMatchMedia';
+import { ReactNode, useContext } from 'react';
+import { DefaultTheme, ThemeProvider, createGlobalStyle } from 'styled-components';
+import { Mode } from './Mode';
 import { darkColors, lightColors, theme } from './theme';
 
 const GlobalStyle = createGlobalStyle`
@@ -53,10 +55,17 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const { colorized, mode } = useAppContext();
+  const { colorized, mode } = useContext(AppContext);
+  const prefersDarkMode = useMatchMedia('(prefers-color-scheme: dark)');
+
+  // Set theme colors and try to guess the users preferred color scheme if mode is set to system
+  let colors: DefaultTheme['colors'] = mode === Mode.dark ? darkColors : lightColors;
+  if (prefersDarkMode && mode === Mode.system) {
+    colors = darkColors;
+  }
 
   // Extend base theme with colorized state and mode
-  const themeExtended = { ...theme, colorized, colors: mode === 'dark' ? darkColors : lightColors };
+  const themeExtended = { ...theme, colorized, colors };
 
   return (
     <ThemeProvider theme={themeExtended}>

@@ -10,11 +10,12 @@ import { Quote } from 'components/Quote';
 import { RightSideContent } from 'components/RightSideContent';
 import { SoundButton } from 'components/SoundButton';
 import { Spacer } from 'components/Spacer';
-import { useAppContext } from 'contexts/AppContext';
+import { AppContext } from 'contexts/AppContext';
+import { useContext } from 'react';
 import { AnalyticsEvent } from 'utils/analytics';
 
 export const App = () => {
-  const { toggleColorized } = useAppContext();
+  const { toggleColorized } = useContext(AppContext);
 
   return (
     <>

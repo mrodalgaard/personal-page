@@ -1,8 +1,8 @@
-import { useAppContext } from 'contexts/AppContext';
-import { useCallback, useEffect, useMemo } from 'react';
+import { AppContext } from 'contexts/AppContext';
+import { useCallback, useContext, useEffect, useMemo } from 'react';
 
 export const useSounds = () => {
-  const { sound } = useAppContext();
+  const { sound } = useContext(AppContext);
 
   const buttonSoundAudio = useMemo(
     () => (typeof Audio !== 'undefined' ? new Audio('/sounds/button.wav') : undefined),

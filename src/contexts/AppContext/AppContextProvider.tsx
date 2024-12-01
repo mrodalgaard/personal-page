@@ -1,53 +1,38 @@
-import { Mode } from 'contexts/ThemeContext';
-import { ReactNode, useEffect, useMemo, useState } from 'react';
-import { AppContext, IAppContext, defaultValue } from './AppContext';
-import { LOCAL_STORAGE_KEY } from './constants';
-import { useReducedMotion } from './useReducedMotion';
-
-const initializer = (initialState: IAppContext): IAppContext => {
-  const state = { ...initialState };
-
-  // Hydrate with persisted state from local storage
-  const localStorageState = localStorage?.getItem(LOCAL_STORAGE_KEY);
-  if (localStorageState) {
-    const parsedState = JSON.parse(localStorageState);
-    if (parsedState) {
-      return parsedState;
-    }
-  }
-
-  // Try to guess the users preferred color scheme
-  if (typeof window !== 'undefined') {
-    const schemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    state.mode = schemeQuery.matches ? Mode.dark : Mode.light;
-  }
-
-  return state;
-};
+import { useMatchMedia } from 'hooks/useMatchMedia';
+import { ReactNode, useEffect } from 'react';
+import { AnalyticsEvent, setUserProperty } from 'utils/analytics';
+import { z } from 'zod';
+import { AppContext, defaultContext } from './AppContext';
+import { useStorageState } from './useStorageState';
+import { useToggleMode } from './useToggleMode';
 
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const initialState = useMemo(() => initializer(defaultValue), []);
+  const { mode, toggleMode } = useToggleMode(defaultContext.mode);
+  const reducedMotion = !useMatchMedia('(prefers-reduced-motion: no-preference)', defaultContext.reducedMotion);
 
-  const [colorized, setColorized] = useState(initialState.colorized);
-  const [mode, setMode] = useState(initialState.mode);
-  const [sound, setSound] = useState(initialState.sound);
+  const [colorized, setColorized] = useStorageState('colorized', z.boolean(), defaultContext.colorized);
+  const [sound, setSound] = useStorageState('sound', z.boolean(), defaultContext.sound);
 
-  const reducedMotion = useReducedMotion();
-
-  // Update persisted state to local storage when state changes
+  // Log user preference changes to analytics
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ colorized, mode, sound }));
+    setUserProperty(AnalyticsEvent.Mode, mode);
+    setUserProperty(AnalyticsEvent.Colorized, colorized);
+    setUserProperty(AnalyticsEvent.Sound, sound);
   }, [mode, colorized, sound]);
 
-  const value: IAppContext = {
-    colorized,
-    mode,
-    sound,
-    reducedMotion,
-    toggleColorized: () => setColorized((colorized) => !colorized),
-    toggleMode: () => setMode((mode) => (mode === Mode.dark ? Mode.light : Mode.dark)),
-    toggleSound: () => setSound((sound) => !sound),
-  };
-
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider
+      value={{
+        colorized,
+        mode,
+        sound,
+        reducedMotion,
+        toggleColorized: () => setColorized((colorized) => !colorized),
+        toggleMode,
+        toggleSound: () => setSound((sound) => !sound),
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };

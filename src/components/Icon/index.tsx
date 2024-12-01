@@ -1,5 +1,5 @@
 import { SiGithub, SiLinkedin, SiX } from '@icons-pack/react-simple-icons';
-import { ArrowDownLeft, Moon, Play, Sun, Volume1, VolumeX } from 'react-feather';
+import { ArrowDownLeft, Moon, Play, Sun, Sunset, Volume1, VolumeX } from 'react-feather';
 
 enum IconType {
   linkedIn = 'linkedIn',
@@ -10,11 +10,12 @@ enum IconType {
   mute = 'mute',
   light = 'light',
   dark = 'dark',
+  system = 'system',
   move = 'move',
 }
 
 export const Icon = ({ type, className }: { type: keyof typeof IconType; className?: string }) => {
-  switch (type) {
+  switch (type as IconType) {
     case IconType.linkedIn:
       return <SiLinkedin className={className} />;
     case IconType.github:
@@ -31,9 +32,9 @@ export const Icon = ({ type, className }: { type: keyof typeof IconType; classNa
       return <Sun className={className} />;
     case IconType.dark:
       return <Moon className={className} />;
+    case IconType.system:
+      return <Sunset className={className} />;
     case IconType.move:
       return <ArrowDownLeft className={className} />;
-    default:
-      return null;
   }
 };
