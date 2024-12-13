@@ -1,0 +1,6 @@
+{
+  "all": true,
+  "exclude": ["coverage", "cypress", "dist"],
+  "temp-dir": "./coverage/.nyc_output",
+  "reporter": ["cobertura", "html"]
+}
