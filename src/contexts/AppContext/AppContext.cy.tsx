@@ -42,42 +42,32 @@ describe('AppContext', () => {
     cy.get('#mode4').should('have.text', 'system');
   });
 
-  it('also persists colorized', () => {
-    const Component = ({ id = 'colorized' }: { id?: string }) => {
-      const { mode, toggleMode } = useContext(AppContext);
+  it('also persists colorized and sound', () => {
+    ['colorized', 'sound'].map((test) => {
+      const Component = ({ id }: { id?: string }) => {
+        const { sound, colorized, toggleSound, toggleColorized } = useContext(AppContext);
 
-      return (
-        <>
-          <h1 id={id}>{mode}</h1>
-          <button onClick={toggleMode}>Toggle</button>
-        </>
-      );
-    };
+        return (
+          <>
+            <h1 id={id}>{String(test === 'colorized' ? colorized : sound)}</h1>
+            <button onClick={test === 'colorized' ? toggleColorized : toggleSound}>Toggle</button>
+          </>
+        );
+      };
 
-    cy.log('Stub media query to prefer light mode');
-    cy.matchMedia('(prefers-color-scheme: dark)', false);
+      cy.log(`Initial state for ${test}`);
+      cy.mount(<Component id="1" />);
+      cy.get('#1').should('have.text', 'false');
+      cy.get('button').click();
+      cy.get('#1').should('have.text', 'true');
 
-    cy.log('Initial mode state and toggle mode');
-    cy.mount(<Component />);
-    cy.get('#mode').should('have.text', 'system');
-    cy.get('button').click();
-    cy.get('#mode').should('have.text', 'dark');
-
-    cy.log('Rehydrate mode state');
-    cy.mount(<Component id={'mode2'} />);
-    cy.get('#mode2').should('have.text', 'dark');
-    cy.get('button').click();
-    cy.mount(<Component id={'mode3'} />);
-    cy.get('#mode3').should('have.text', 'light');
-    cy.get('button').click();
-    cy.get('#mode3').should('have.text', 'system');
-    cy.get('button').click();
-    cy.get('#mode3').should('have.text', 'dark');
-
-    cy.log('Clear local storage and rehydrate initial state');
-    cy.clearAllLocalStorage();
-    cy.mount(<Component id={'mode4'} />);
-    cy.get('#mode4').should('have.text', 'system');
+      cy.log(`Rehydrate state for ${test}`);
+      cy.mount(<Component id="2" />);
+      cy.get('#2').should('have.text', 'true');
+      cy.get('button').click();
+      cy.mount(<Component id="3" />);
+      cy.get('#3').should('have.text', 'false');
+    });
   });
 
   it('toggles mode intelligently', () => {

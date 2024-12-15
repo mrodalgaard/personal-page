@@ -6,5 +6,6 @@ describe('Personal Page', () => {
 
     cy.contains(title);
     cy.url().should('match', /^http(.+)\/$/);
+    cy.contains('Electrical Engineering');
   });
 });

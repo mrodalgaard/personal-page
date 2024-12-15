@@ -13,7 +13,7 @@ export interface AppContextType {
 
 export const defaultContext: AppContextType = {
   colorized: false,
-  mode: Mode.light,
+  mode: Mode.system,
   sound: false,
   reducedMotion: false,
   toggleColorized: () => {},

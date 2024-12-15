@@ -17,6 +17,10 @@ export default defineConfig(({ command }) => {
       watch: {
         ignored: ['**/coverage/**'],
       },
+      port: 3000,
+    },
+    preview: {
+      port: 3000,
     },
   };
 

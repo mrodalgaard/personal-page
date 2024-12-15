@@ -26,3 +26,12 @@ jobs:
         with:
           folder: dist
           clean: true
+
+  test_prod:
+    name: 🧑‍🔬 Test after deploy
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: yarn install --frozen-lockfile
+      - run: yarn test:prod

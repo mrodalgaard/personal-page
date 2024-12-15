@@ -22,7 +22,7 @@ describe('ThemeContext', () => {
     cy.matchMedia('(prefers-color-scheme: dark)', false);
 
     cy.mount(<Component />);
-    cy.get('#font').should('have.text', 'Titan One');
+    cy.get('#font').should('have.text', 'Cutive Mono');
     cy.get('#primary').should('have.text', lightColors.primary);
     cy.get('button').click();
     cy.get('#primary').should('have.text', darkColors.primary);
