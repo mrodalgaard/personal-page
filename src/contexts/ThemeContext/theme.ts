@@ -38,17 +38,17 @@ const sizes = {
 };
 
 export const lightColors: DefaultTheme['colors'] = {
-  primary: '#333',
+  primary: '#333333',
   secondary: '#c9282d',
-  background: '#fff',
-  text: '#333',
+  background: '#ffffff',
+  text: '#333333',
 };
 
 export const darkColors: DefaultTheme['colors'] = {
-  primary: '#ccc',
+  primary: '#cccccc',
   secondary: '#c9282d',
-  background: '#333',
-  text: '#fff',
+  background: '#333333',
+  text: '#ffffff',
 };
 
 export const theme: DefaultTheme = {

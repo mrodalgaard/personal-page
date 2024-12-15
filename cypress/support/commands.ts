@@ -61,7 +61,7 @@ Cypress.Commands.add('matchMedia', (query, matches = true) => {
   });
 });
 
-Cypress.Commands.add('injectAxeAndVisit', (url) => {
+Cypress.Commands.add('injectAxeAndVisit', (url, callback) => {
   // Remove CSP from index.html to be able to inject axe
   cy.intercept<unknown, string>(url, (req) => {
     req.continue((res) => {
@@ -71,5 +71,6 @@ Cypress.Commands.add('injectAxeAndVisit', (url) => {
 
   // Visit url and inject axe accessibility tester
   cy.visit(url);
+  callback?.();
   cy.injectAxe();
 });
